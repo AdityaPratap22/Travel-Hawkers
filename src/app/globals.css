@@ -1,26 +1,85 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --primary: #f05a28;
+  --primary-hover: #dc4816;
+  --dark-navy: #0b252c;
+  --dark-navy-surface: #10343e;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  color: #1e293b;
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+.font-script {
+  font-family: var(--font-script), 'Caveat', cursive;
+}
+
+.font-serif-italic {
+  font-family: var(--font-serif), Georgia, serif;
+}
+
+/* Hide scrollbar for tabs / carousel when needed */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Smooth transitions */
+* {
+  box-sizing: border-box;
+}
+
+/* Plane takeoff and dashed contrail animations */
+@keyframes planeTakeoff {
+  0%, 100% {
+    transform: translate(0px, 0px) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translate(3px, -3px) rotate(4deg) scale(1.06);
+  }
+  50% {
+    transform: translate(7px, -8px) rotate(8deg) scale(1.14);
+  }
+  75% {
+    transform: translate(4px, -4px) rotate(4deg) scale(1.08);
+  }
+}
+
+@keyframes dashStream {
+  from {
+    stroke-dashoffset: 32;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes trailPulse {
+  0%, 100% {
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-plane-takeoff {
+  animation: planeTakeoff 2.6s ease-in-out infinite;
+  transform-origin: bottom left;
+}
+
+.animate-dash-trail {
+  stroke-dasharray: 4 4;
+  animation: dashStream 1.2s linear infinite;
+}
+
+.animate-trail-pulse {
+  animation: trailPulse 2.6s ease-in-out infinite;
 }
