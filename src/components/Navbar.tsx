@@ -141,16 +141,21 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
               >
                 <Link
                   href={link.href}
-                  className={`text-[13px] xl:text-[14px] 2xl:text-[14.5px] font-semibold tracking-tight transition-colors flex items-center gap-0.5 xl:gap-1 py-2 whitespace-nowrap ${
+                  className={`text-[13px] xl:text-[14px] 2xl:text-[14.5px] font-semibold tracking-tight transition-all flex items-center gap-0.5 xl:gap-1 py-2 whitespace-nowrap relative group/nav ${
                     link.isActive
                       ? "text-[#f05a28]"
                       : "text-slate-700 hover:text-[#f05a28]"
                   }`}
                 >
                   <span>{link.title}</span>
+                  <span
+                    className={`absolute bottom-0 left-0 h-0.5 bg-[#f05a28] rounded-full transition-all duration-300 ${
+                      link.isActive ? "w-full" : "w-0 group-hover/nav:w-full"
+                    }`}
+                  />
                   {link.hasDropdown && (
                     <ChevronDown
-                      className={`w-3.5 h-3.5 text-slate-400 transition-transform ${
+                      className={`w-3.5 h-3.5 text-slate-400 transition-transform duration-300 ${
                         activeDropdown === link.title ? "rotate-180 text-[#f05a28]" : ""
                       }`}
                     />
@@ -159,12 +164,12 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
 
                 {/* Dropdown Menu */}
                 {link.hasDropdown && activeDropdown === link.title && (
-                  <div className="absolute top-full left-0 w-64 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/60 py-2.5 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
+                  <div className="absolute top-full left-0 w-64 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/60 py-2.5 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
                     {link.items?.map((item) => (
                       <Link
                         key={item.name}
                         href={item.href}
-                        className="block px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-orange-50/80 hover:text-[#f05a28] transition-colors"
+                        className="block px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-orange-50/80 hover:text-[#f05a28] transition-all transform hover:translate-x-1"
                       >
                         {item.name}
                       </Link>

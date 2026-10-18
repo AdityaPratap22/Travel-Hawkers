@@ -29,16 +29,8 @@ export default function Hero({}: HeroProps) {
         {/* Hero Content Area */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           <div className="lg:col-span-8 text-left space-y-6">
-            {/* Pill Badge */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/90 backdrop-blur-md border border-slate-200/80 shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-[#f05a28] animate-pulse" />
-              <span className="text-xs sm:text-[13px] font-bold tracking-widest text-slate-700 uppercase">
-                DREAM &bull; PLAN &bull; EXPLORE
-              </span>
-            </div>
-
             {/* Headline - Significantly increased size */}
-            <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[92px] font-bold tracking-tight text-slate-900 leading-[1.06]">
+            <h1 className="reveal font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[92px] font-bold tracking-tight text-slate-900 leading-[1.06]">
               Your next great
               <br />
               <span className="font-script text-[#f05a28] font-bold text-[1.22em] italic inline-block mr-3 sm:mr-5">
@@ -48,14 +40,14 @@ export default function Hero({}: HeroProps) {
             </h1>
 
             {/* Subtitle - Increased size */}
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-700 max-w-2xl font-normal leading-relaxed">
+            <p className="reveal delay-100 text-base sm:text-lg md:text-xl lg:text-2xl text-slate-700 max-w-2xl font-normal leading-relaxed">
               Explore handpicked holiday packages, popular destinations and
               unforgettable experiences &mdash; all in one place.
             </p>
           </div>
 
           {/* Right Floating: Airplane Trail on Left + Explore The World Shifted to the Right */}
-          <div className="lg:col-span-4 flex flex-col items-start lg:items-end justify-center">
+          <div className="reveal-right delay-200 lg:col-span-4 flex flex-col items-start lg:items-end justify-center">
             <div className="relative group inline-flex items-center gap-3.5 select-none">
               {/* Animated Dashed Loop Flight Trail & Taking-off Plane */}
               <div className="relative shrink-0">

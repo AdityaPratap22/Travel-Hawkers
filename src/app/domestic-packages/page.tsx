@@ -290,10 +290,10 @@ export default function DomesticPackagesPage() {
         {/* Packages Grid */}
         <section className="py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredPackages.map((pkg) => (
+            {filteredPackages.map((pkg, idx) => (
               <div
                 key={pkg.id}
-                className="bg-white rounded-3xl overflow-hidden border border-slate-200/90 shadow-xs hover:shadow-xl hover:border-orange-300 transition-all flex flex-col group"
+                className={`reveal delay-${(idx % 6) * 75} bg-white rounded-3xl overflow-hidden border border-slate-200/90 shadow-xs hover-card-elevate hover:border-orange-300 flex flex-col group hover-shine-container`}
               >
                 <div className="relative h-56 w-full overflow-hidden bg-slate-100">
                   <Image

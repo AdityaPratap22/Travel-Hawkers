@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans, Caveat, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import StructuredData from "@/components/StructuredData";
 import WhatsAppFloatingButton from "@/components/WhatsAppFloatingButton";
+import ScrollObserver from "@/components/ScrollObserver";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-sans",
@@ -181,6 +182,7 @@ export default function RootLayout({
       <body className="antialiased min-h-screen bg-white text-slate-800 font-sans">
         {children}
         <WhatsAppFloatingButton />
+        <ScrollObserver />
       </body>
     </html>
   );

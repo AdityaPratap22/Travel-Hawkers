@@ -7,6 +7,10 @@
   --dark-navy-surface: #10343e;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   color: #1e293b;
@@ -82,4 +86,221 @@ body {
 
 .animate-trail-pulse {
   animation: trailPulse 2.6s ease-in-out infinite;
+}
+
+/* Subtle float animation for badges, hero elements, icons */
+@keyframes subtleFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float {
+  animation: subtleFloat 4s ease-in-out infinite;
+}
+
+/* Shimmer sweep animation */
+@keyframes shimmerSweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* ==========================================================
+   ON-SCROLL REVEAL ANIMATIONS (GPU-accelerated)
+   ========================================================== */
+
+/* 1. Default reveal (fades in and translates up) */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 2. Reveal from left */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 3. Reveal from right */
+.reveal-right {
+  opacity: 0;
+  transform: translateX(32px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 4. Reveal with zoom / scale */
+.reveal-zoom {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-zoom.revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* 5. Pure fade-in */
+.reveal-fade {
+  opacity: 0;
+  transition: opacity 0.85s ease;
+  will-change: opacity;
+}
+
+.reveal-fade.revealed {
+  opacity: 1;
+}
+
+/* Stagger transition delay helpers */
+.delay-75 { transition-delay: 75ms; }
+.delay-100 { transition-delay: 100ms; }
+.delay-150 { transition-delay: 150ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-250 { transition-delay: 250ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+.delay-600 { transition-delay: 600ms; }
+.delay-700 { transition-delay: 700ms; }
+
+/* ==========================================================
+   ON-HOVER MICRO-INTERACTIONS
+   ========================================================== */
+
+/* Hover Card Elevate */
+.hover-card-elevate {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease;
+}
+
+.hover-card-elevate:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.12),
+              0 8px 12px -6px rgba(0, 0, 0, 0.05);
+}
+
+/* Hover Card Image Zoom */
+.hover-zoom-img {
+  overflow: hidden;
+}
+
+.hover-zoom-img img {
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-zoom-img:hover img {
+  transform: scale(1.08);
+}
+
+/* Hover Glow for Primary / Brand Elements */
+.hover-glow-orange {
+  transition: transform 0.25s ease, box-shadow 0.3s ease;
+}
+
+.hover-glow-orange:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(240, 90, 40, 0.35);
+}
+
+/* Hover Glow for WhatsApp Elements */
+.hover-glow-whatsapp {
+  transition: transform 0.25s ease, box-shadow 0.3s ease;
+}
+
+.hover-glow-whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(37, 211, 102, 0.45);
+}
+
+/* Hover Shimmer effect on interactive cards */
+.hover-shine-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.hover-shine-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    transparent 40%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 60%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.75s ease;
+  pointer-events: none;
+}
+
+.hover-shine-container:hover::after {
+  transform: translateX(100%);
+}
+
+/* Interactive pill badges */
+.interactive-badge {
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.interactive-badge:hover {
+  transform: scale(1.05);
+}
+
+/* Respect Accessibility Preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-zoom,
+  .reveal-fade {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }

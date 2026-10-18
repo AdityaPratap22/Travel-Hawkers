@@ -30,9 +30,13 @@ export default function TrustBar() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {benefits.map((benefit, idx) => {
             const Icon = benefit.icon;
+            const delays = ["delay-75", "delay-150", "delay-225", "delay-300"];
             return (
-              <div key={idx} className="flex items-center gap-3.5 group">
-                <div className="w-12 h-12 rounded-2xl bg-orange-50 group-hover:bg-[#f05a28] flex items-center justify-center text-[#f05a28] group-hover:text-white transition-all shadow-xs shrink-0">
+              <div
+                key={idx}
+                className={`reveal ${delays[idx] || ""} flex items-center gap-3.5 group p-2.5 rounded-2xl hover:bg-white hover:shadow-md transition-all duration-300 cursor-default`}
+              >
+                <div className="w-12 h-12 rounded-2xl bg-orange-50 group-hover:bg-[#f05a28] flex items-center justify-center text-[#f05a28] group-hover:text-white transition-all duration-300 shadow-xs shrink-0 group-hover:scale-110 group-hover:rotate-3">
                   <Icon className="w-6 h-6 stroke-[1.8]" />
                 </div>
                 <div className="flex flex-col">

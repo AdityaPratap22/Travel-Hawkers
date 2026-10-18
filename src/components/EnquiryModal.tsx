@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { X, CheckCircle2, ArrowRight, ShieldCheck, PhoneCall } from "lucide-react";
 import { openWhatsAppInquiry } from "@/utils/whatsapp";
+import WhatsAppIcon from "./WhatsAppIcon";
 
 interface EnquiryModalProps {
   isOpen: boolean;
@@ -76,8 +77,8 @@ export default function EnquiryModal({
 
         {submitted ? (
           <div className="py-6 text-center space-y-4">
-            <div className="w-16 h-16 rounded-full bg-emerald-100 text-[#25D366] flex items-center justify-center mx-auto shadow-xs">
-              <CheckCircle2 className="w-9 h-9" />
+            <div className="w-16 h-16 rounded-full bg-emerald-50 flex items-center justify-center mx-auto shadow-xs">
+              <WhatsAppIcon variant="colored" className="w-12 h-12" />
             </div>
             <h3 className="text-xl font-bold text-slate-900">
               WhatsApp Chat Opened!
@@ -197,10 +198,10 @@ export default function EnquiryModal({
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-[#f05a28] hover:bg-[#dc4816] text-white font-bold text-xs sm:text-sm py-3 rounded-xl shadow-lg shadow-orange-500/25 flex items-center justify-center gap-2 transition-all"
+                  className="w-full bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm py-3.5 rounded-xl shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2 transition-all transform hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-70"
                 >
-                  <span>{loading ? "Submitting..." : "Get Free Quote Now"}</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <WhatsAppIcon variant="white" className="w-4 h-4" />
+                  <span>{loading ? "Opening WhatsApp..." : "Get Free Quote on WhatsApp"}</span>
                 </button>
               </div>
 

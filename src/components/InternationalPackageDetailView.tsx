@@ -6,6 +6,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import EnquiryModal from "@/components/EnquiryModal";
+import WhatsAppIcon from "./WhatsAppIcon";
 import StructuredData from "@/components/StructuredData";
 import {
   InternationalPackageData,
@@ -469,8 +470,9 @@ export default function InternationalPackageDetailView({ pkg }: Props) {
                       href="https://wa.me/918700296047?text=Hi%20Travel%20Hawkers%2C%20I%20am%20interested%20in%20the%20international%20package%3A%20"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-bold py-3 rounded-xl transition-all text-center flex items-center justify-center gap-2"
+                      className="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs sm:text-sm font-bold py-3 rounded-xl transition-all text-center flex items-center justify-center gap-2 shadow-sm"
                     >
+                      <WhatsAppIcon variant="white" className="w-4 h-4" />
                       <span>Chat on WhatsApp</span>
                     </a>
                   </div>

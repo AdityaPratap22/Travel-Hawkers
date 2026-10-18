@@ -166,11 +166,11 @@ export default function ArticlesPage() {
         <section className="py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {paginatedArticles.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {paginatedArticles.map((article) => (
+              {paginatedArticles.map((article, idx) => (
                 <Link
                   key={article.id}
                   href={`/articles/${article.slug}`}
-                  className="bg-white rounded-3xl overflow-hidden border border-slate-200/90 shadow-xs hover:shadow-xl hover:border-orange-300 transition-all flex flex-col group"
+                  className={`reveal delay-${(idx % 6) * 75} bg-white rounded-3xl overflow-hidden border border-slate-200/90 shadow-xs hover-card-elevate hover:border-orange-300 flex flex-col group hover-shine-container`}
                 >
                   <div className="relative h-52 w-full overflow-hidden bg-slate-100">
                     <Image
