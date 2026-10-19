@@ -210,8 +210,17 @@ export default function Footer() {
 
         {/* Bottom Sub-footer */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
-          <div>
-            &copy; {new Date().getFullYear()} Travel Hawkers. All rights reserved.
+          <div suppressHydrationWarning>
+            &copy; {new Date().getFullYear()}{" "}
+            <a
+              href="https://businessvolunteers.online"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-300 hover:text-white font-medium transition-colors underline-offset-4 hover:underline"
+            >
+              Business Volunteers
+            </a>
+            . All rights reserved.
           </div>
           <div className="flex items-center gap-6">
             <Link href="#" className="hover:text-slate-200 transition-colors">
@@ -222,9 +231,14 @@ export default function Footer() {
               Terms &amp; Conditions
             </Link>
             <span>&bull;</span>
-            <Link href="#" className="hover:text-slate-200 transition-colors">
+            <a
+              href="/sitemap.xml"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-slate-200 transition-colors"
+            >
               Sitemap
-            </Link>
+            </a>
           </div>
         </div>
       </div>
