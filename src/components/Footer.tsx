@@ -176,7 +176,7 @@ export default function Footer() {
               <div className="flex items-start gap-3">
                 <Phone className="w-4 h-4 text-[#C59B58] shrink-0 mt-0.5" />
                 <a href="tel:+919355486036" className="hover:text-white transition-colors">
-                  +91 93554 86036 / +91 87002 96047
+                  +91 93554 86036
                 </a>
               </div>
               <div className="flex items-start gap-3">
@@ -199,7 +199,7 @@ export default function Footer() {
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-[#C59B58] shrink-0 mt-0.5" />
                 <span className="leading-relaxed">
-                  504, 5th Floor, Vipul Business Park, Sector 48, Central Park II, Gurugram, Haryana 122018
+                  E 68, Block FA, Tagore Garden, Tagore Garden Extension, New Delhi, India 110027
                 </span>
               </div>
             </div>

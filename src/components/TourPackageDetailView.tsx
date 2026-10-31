@@ -305,11 +305,11 @@ export default function TourPackageDetailView({
                 <ArrowRight className="w-4 h-4" />
               </button>
               <a
-                href="tel:+918700296047"
+                href="tel:+919355486036"
                 className="bg-white/10 hover:bg-white/20 text-white border border-white/30 text-xs sm:text-sm font-bold px-6 py-3.5 rounded-full backdrop-blur-md transition-colors flex items-center gap-2"
               >
                 <Phone className="w-4 h-4 text-orange-400" />
-                <span>Call Specialist: +91 87002 96047</span>
+                <span>Call Specialist: +91 93554 86036</span>
               </a>
             </div>
           </div>
@@ -567,7 +567,7 @@ export default function TourPackageDetailView({
                       <ArrowRight className="w-4 h-4" />
                     </button>
                     <a
-                      href="https://wa.me/918700296047?text=Hi%20Travel%20Hawkers%2C%20I%20am%20interested%20in%20booking%20the%20package%3A%20"
+                      href="https://wa.me/919355486036?text=Hi%20Travel%20Hawkers%2C%20I%20am%20interested%20in%20booking%20the%20package%3A%20"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs sm:text-sm font-bold py-3 rounded-xl transition-all text-center flex items-center justify-center gap-2 shadow-sm"
@@ -583,11 +583,11 @@ export default function TourPackageDetailView({
                       Need help customized specifically for you?
                     </div>
                     <a
-                      href="tel:+918700296047"
+                      href="tel:+919355486036"
                       className="inline-flex items-center gap-2 text-xs font-bold text-slate-900 hover:text-[#f05a28] mt-1"
                     >
                       <Phone className="w-3.5 h-3.5 text-[#f05a28]" />
-                      <span>+91 87002 96047 / 93554 86036</span>
+                      <span>+91 93554 86036</span>
                     </a>
                   </div>
                 </div>

@@ -87,18 +87,6 @@ export default function Navbar({}: NavbarProps) {
       hasDropdown: false,
     },
     {
-      title: "Visa Service",
-      href: "/visa-service",
-      isActive: pathname.startsWith("/visa-service"),
-      hasDropdown: false,
-    },
-    {
-      title: "Car Hire",
-      href: "/car-hire",
-      isActive: pathname.startsWith("/car-hire"),
-      hasDropdown: false,
-    },
-    {
       title: "Articles",
       href: "/articles",
       isActive: pathname.startsWith("/articles"),

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -14,6 +14,10 @@ import {
   Plane,
   Sparkles,
   Compass,
+  ChevronLeft,
+  ChevronRight,
+  Globe2,
+  Mountain,
 } from "lucide-react";
 
 interface HeroProps {
@@ -21,12 +25,112 @@ interface HeroProps {
   onOpenVideo?: () => void;
 }
 
+interface HeroSlide {
+  id: string;
+  type: "International" | "Domestic";
+  badge: string;
+  destination: string;
+  country: string;
+  tagline: string;
+  price: string;
+  link: string;
+  image: string;
+}
+
+const HERO_SLIDES: HeroSlide[] = [
+  {
+    id: "bali",
+    type: "International",
+    badge: "International Escape",
+    destination: "Bali",
+    country: "Indonesia",
+    tagline: "Tropical Clifftop Villas, Ubud Greenery & Sacred Temples",
+    price: "₹ 54,999",
+    link: "/international-packages#bali",
+    image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=2000&q=85",
+  },
+  {
+    id: "kashmir",
+    type: "Domestic",
+    badge: "Domestic Escape",
+    destination: "Kashmir",
+    country: "India",
+    tagline: "Dal Lake Luxury Houseboats, Gulmarg Gondola & Snow Peaks",
+    price: "₹ 32,499",
+    link: "/packages#kashmir-paradise",
+    image: "https://images.unsplash.com/photo-1598091383021-15ddea10925d?auto=format&fit=crop&w=2000&q=85",
+  },
+  {
+    id: "dubai",
+    type: "International",
+    badge: "International Escape",
+    destination: "Dubai & Abu Dhabi",
+    country: "UAE",
+    tagline: "Burj Khalifa, Arabian Desert Safari & Sheikh Zayed Mosque",
+    price: "₹ 49,999",
+    link: "/international-packages#dubai",
+    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=85",
+  },
+  {
+    id: "kerala",
+    type: "Domestic",
+    badge: "Domestic Escape",
+    destination: "Kerala",
+    country: "India",
+    tagline: "Alleppey Houseboat Backwaters, Tea Plantations & Ayurvedic Spas",
+    price: "₹ 18,999",
+    link: "/packages#goa-getaway",
+    image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=2000&q=85",
+  },
+  {
+    id: "vietnam",
+    type: "International",
+    badge: "International Escape",
+    destination: "Vietnam",
+    country: "Da Nang & Halong",
+    tagline: "Emerald Halong Bay Cruises & Iconic Golden Hand Bridge",
+    price: "₹ 44,999",
+    link: "/international-packages#vietnam",
+    image: "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=2000&q=85",
+  },
+  {
+    id: "ladakh",
+    type: "Domestic",
+    badge: "Domestic Escape",
+    destination: "Leh Ladakh",
+    country: "India",
+    tagline: "Azure Pangong Tso, Khardung La Pass & Ancient Monasteries",
+    price: "₹ 28,999",
+    link: "/packages#leh-ladakh-escape",
+    image: "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?auto=format&fit=crop&w=2000&q=85",
+  },
+];
+
 export default function Hero({ onSearch }: HeroProps) {
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [activeTab, setActiveTab] = useState<"packages" | "hotels" | "flights" | "custom">("packages");
   const [destination, setDestination] = useState("");
   const [dates, setDates] = useState("");
   const [travellers, setTravellers] = useState("2 Travellers");
   const [budget, setBudget] = useState("Any budget");
+
+  const nextSlide = useCallback(() => {
+    setCurrentSlideIndex((prev) => (prev + 1) % HERO_SLIDES.length);
+  }, []);
+
+  const prevSlide = useCallback(() => {
+    setCurrentSlideIndex((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length);
+  }, []);
+
+  // Continuous auto-slide every 4.2 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlideIndex((prev) => (prev + 1) % HERO_SLIDES.length);
+    }, 4200);
+    return () => clearInterval(timer);
+  }, []);
+
+  const currentSlide = HERO_SLIDES[currentSlideIndex];
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -44,35 +148,59 @@ export default function Hero({ onSearch }: HeroProps) {
 
   return (
     <section className="relative bg-[#FAF8F5] pt-10 sm:pt-16 lg:pt-20 pb-20 sm:pb-24 overflow-visible">
-      {/* Background Ultra-HD Paradise Scene */}
+      {/* Background Slideshow: Cross-fading High-Resolution Paradise Scenes */}
       <div className="absolute inset-0 pointer-events-none select-none z-0 overflow-hidden">
-        <Image
-          src="/hero-bg-4k.png"
-          alt="Luxury Resort Ocean Paradise"
-          fill
-          priority
-          unoptimized
-          sizes="100vw"
-          className="object-cover object-[center_right] sm:object-right-center"
-        />
-        {/* Soft, elegant directional gradient for text contrast on left while keeping right scenery vivid */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#FAF8F5] via-[#FAF8F5]/85 sm:via-[#FAF8F5]/70 to-transparent w-full sm:w-4/5 lg:w-3/5" />
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#FAF8F5] to-transparent" />
+        {HERO_SLIDES.map((slide, idx) => (
+          <div
+            key={slide.id}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              idx === currentSlideIndex ? "opacity-100 scale-100" : "opacity-0 scale-105"
+            } transform transition-transform duration-[4500ms]`}
+          >
+            <Image
+              src={slide.image}
+              alt={`${slide.destination} ${slide.country}`}
+              fill
+              priority={idx === 0}
+              unoptimized
+              sizes="100vw"
+              className="object-cover object-[center_right] sm:object-right-center"
+            />
+          </div>
+        ))}
+
+        {/* Seamless full-screen ambient gradient without any box/square cutoff */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#FAF8F5]/85 via-[#FAF8F5]/25 to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#FAF8F5] to-transparent pointer-events-none" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Hero Header Row */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center min-h-[400px] sm:min-h-[460px]">
-          {/* Left Column: Original Editorial Headline */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center min-h-[420px] sm:min-h-[480px]">
+          {/* Left Column: Editorial Headline & Slideshow Controls */}
           <div className="lg:col-span-7 text-left space-y-5 sm:space-y-6">
-            <div className="reveal">
+            {/* Slide Category & Destination Pill */}
+            <div className="reveal flex items-center gap-2.5 flex-wrap">
               <span className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.25em] text-[#B88434]">
                 EXTRAORDINARY PLACES. MEANINGFUL JOURNEYS.
               </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold tracking-wide bg-white/95 text-[#0B2724] border border-[#B58238]/30 shadow-xs backdrop-blur-sm">
+                {currentSlide.type === "International" ? (
+                  <Globe2 className="w-3.5 h-3.5 text-[#B58238]" />
+                ) : (
+                  <Mountain className="w-3.5 h-3.5 text-[#B58238]" />
+                )}
+                <span className="uppercase text-[10px] tracking-wider text-[#B58238] font-extrabold mr-1">
+                  {currentSlide.badge}:
+                </span>
+                <span className="font-semibold text-slate-800">
+                  {currentSlide.destination}, {currentSlide.country}
+                </span>
+              </span>
             </div>
 
-            {/* Original Headline with Balanced, Visible Scale */}
-            <h1 className="reveal delay-100 font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[66px] xl:text-[74px] font-bold tracking-tight text-slate-900 leading-[1.1] sm:leading-[1.08]">
+            {/* Headline with Balanced Scale */}
+            <h1 className="reveal delay-100 font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[64px] xl:text-[72px] font-bold tracking-tight text-slate-900 leading-[1.1] sm:leading-[1.08]">
               Your next great
               <br />
               <span className="font-script text-[#B58238] font-bold text-[1.2em] italic inline-block mr-3 sm:mr-4">
@@ -81,27 +209,87 @@ export default function Hero({ onSearch }: HeroProps) {
               <span>starts here.</span>
             </h1>
 
-            {/* Original Subtitle */}
-            <p className="reveal delay-150 text-sm sm:text-base md:text-lg text-slate-700 max-w-xl font-normal leading-relaxed">
-              Explore handpicked holiday packages, popular destinations and
-              unforgettable experiences &mdash; all in one place.
-            </p>
+            {/* Dynamic Slide Subtitle & Price Hook */}
+            <div className="reveal delay-150 space-y-2">
+              <p className="text-sm sm:text-base md:text-lg text-slate-700 max-w-xl font-normal leading-relaxed">
+                {currentSlide.tagline}
+              </p>
+              <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-600">
+                <span className="inline-block w-2 h-2 rounded-full bg-[#B58238] animate-pulse" />
+                <span>Featured Package starts at</span>
+                <span className="text-sm sm:text-base font-extrabold text-[#0B2724] bg-[#FAF5ED] border border-[#B58238]/30 px-2.5 py-0.5 rounded-md">
+                  {currentSlide.price}
+                </span>
+                <span className="text-xs text-slate-500 font-normal">/person</span>
+              </div>
+            </div>
 
             {/* Primary Action Buttons */}
             <div className="reveal delay-200 flex flex-wrap items-center gap-3.5 pt-1">
               <Link
-                href="/packages"
+                href={currentSlide.link}
                 className="bg-[#B58238] hover:bg-[#9E6F21] text-white font-semibold text-xs sm:text-sm px-6 py-3.5 rounded-lg shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 inline-flex items-center gap-2 cursor-pointer"
               >
-                <span>Explore Journeys</span>
+                <span>Explore {currentSlide.destination}</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 href="/contact-us"
-                className="bg-white/90 hover:bg-white text-slate-800 border border-stone-300 font-semibold text-xs sm:text-sm px-6 py-3.5 rounded-lg shadow-xs hover:shadow-md transition-all inline-flex items-center gap-2 cursor-pointer"
+                className="bg-white/95 hover:bg-white text-slate-800 border border-stone-300 font-semibold text-xs sm:text-sm px-6 py-3.5 rounded-lg shadow-xs hover:shadow-md transition-all inline-flex items-center gap-2 cursor-pointer"
               >
                 <span>Plan a Private Escape</span>
               </Link>
+            </div>
+
+            {/* Slideshow Controls (LuxTripper & Template style: 01 02 03 04 05 06 < >) */}
+            <div className="reveal delay-250 flex items-center gap-2 sm:gap-3 pt-3 select-none">
+              <div className="flex items-center gap-1.5 sm:gap-2 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full border border-stone-200 shadow-xs">
+                {HERO_SLIDES.map((slide, idx) => {
+                  const isActive = idx === currentSlideIndex;
+                  return (
+                    <button
+                      key={slide.id}
+                      type="button"
+                      onClick={() => setCurrentSlideIndex(idx)}
+                      title={`${slide.destination} (${slide.type})`}
+                      className={`text-[11px] sm:text-xs font-bold transition-all px-2 py-0.5 rounded-full cursor-pointer ${
+                        isActive
+                          ? "bg-[#0B2724] text-white shadow-xs scale-105"
+                          : "text-slate-500 hover:text-slate-900 hover:bg-stone-100"
+                      }`}
+                    >
+                      {String(idx + 1).padStart(2, "0")}
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Prev / Next Arrows */}
+              <div className="flex items-center gap-1.5">
+                <button
+                  type="button"
+                  onClick={prevSlide}
+                  title="Previous Destination"
+                  aria-label="Previous Destination"
+                  className="w-8 h-8 rounded-full bg-white/90 hover:bg-white border border-stone-200 shadow-xs flex items-center justify-center text-slate-700 hover:text-[#0B2724] transition-all cursor-pointer"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+                <button
+                  type="button"
+                  onClick={nextSlide}
+                  title="Next Destination"
+                  aria-label="Next Destination"
+                  className="w-8 h-8 rounded-full bg-white/90 hover:bg-white border border-stone-200 shadow-xs flex items-center justify-center text-slate-700 hover:text-[#0B2724] transition-all cursor-pointer"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              </div>
+
+              {/* Destination badge on slider */}
+              <span className="hidden sm:inline-block text-[11px] font-semibold text-slate-600 ml-2">
+                {currentSlide.type === "International" ? "✈️" : "🏔️"} {currentSlide.destination}
+              </span>
             </div>
           </div>
 

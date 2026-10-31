@@ -5,6 +5,7 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import EnquiryModal from "@/components/EnquiryModal";
+import PackageInfoModal, { PackageInfoData } from "@/components/PackageInfoModal";
 import {
   Clock,
   Building2,
@@ -16,12 +17,14 @@ import {
   ShieldCheck,
   Check,
   Filter,
+  Info,
 } from "lucide-react";
 
 export default function PackagesPage() {
   const [enquiryOpen, setEnquiryOpen] = useState(false);
   const [selectedPackage, setSelectedPackage] = useState<string | undefined>(undefined);
   const [activeFilter, setActiveFilter] = useState("All");
+  const [selectedModalPackage, setSelectedModalPackage] = useState<PackageInfoData | null>(null);
 
   const packagesList = [
     {
@@ -127,6 +130,23 @@ export default function PackagesPage() {
     setEnquiryOpen(true);
   };
 
+  const handleOpenInfo = (pkg: (typeof packagesList)[0]) => {
+    setSelectedModalPackage({
+      id: pkg.id,
+      title: pkg.title,
+      destination: pkg.destination,
+      duration: pkg.duration,
+      price: pkg.price,
+      originalPrice: pkg.originalPrice,
+      image: pkg.image,
+      badge: pkg.badge.label,
+      category: pkg.category as "International" | "Domestic" | "Weekend",
+      keyPoints: [pkg.overview, ...pkg.amenities],
+      highlights: pkg.amenities,
+      slug: `/packages/${pkg.id}`,
+    });
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Navbar onOpenEnquiry={() => handleOpenQuote("Custom Package")} />
@@ -180,7 +200,8 @@ export default function PackagesPage() {
                 <div
                   key={pkg.id}
                   id={pkg.id}
-                  className="group bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between"
+                  onClick={() => handleOpenInfo(pkg)}
+                  className="group bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between cursor-pointer"
                 >
                   {/* Image */}
                   <div className="relative h-60 w-full overflow-hidden">
@@ -258,13 +279,29 @@ export default function PackagesPage() {
                         </div>
                       </div>
 
-                      <button
-                        onClick={() => handleOpenQuote(pkg.title)}
-                        className="bg-[#f05a28] hover:bg-[#dc4816] text-white text-xs font-bold py-2.5 px-4 rounded-xl shadow-md shadow-orange-500/20 flex items-center gap-1.5 transition-all transform hover:-translate-y-0.5"
-                      >
-                        <span>Get a Quote</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </button>
+                      <div className="flex items-center gap-2">
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleOpenInfo(pkg);
+                          }}
+                          className="border border-[#0B2724]/20 hover:border-[#0B2724] text-[#0B2724] text-xs font-semibold py-2 px-3 rounded-xl transition-all"
+                        >
+                          View Info
+                        </button>
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleOpenQuote(pkg.title);
+                          }}
+                          className="bg-[#B58238] hover:bg-[#9c6e2e] text-white text-xs font-bold py-2.5 px-3.5 rounded-xl shadow-md flex items-center gap-1.5 transition-all transform hover:-translate-y-0.5"
+                        >
+                          <span>Get Quote</span>
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -281,17 +318,17 @@ export default function PackagesPage() {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 text-left">
               <div className="bg-white p-6 rounded-2xl border border-slate-200">
-                <ShieldCheck className="w-8 h-8 text-[#f05a28] mb-3" />
+                <ShieldCheck className="w-8 h-8 text-[#B58238] mb-3" />
                 <h4 className="text-sm font-bold text-slate-900">100% Customized Trips</h4>
                 <p className="text-xs text-slate-600 mt-1">Alter hotel dates, add extra excursions, or upgrade to luxury suites easily.</p>
               </div>
               <div className="bg-white p-6 rounded-2xl border border-slate-200">
-                <Check className="w-8 h-8 text-[#f05a28] mb-3" />
+                <Check className="w-8 h-8 text-[#B58238] mb-3" />
                 <h4 className="text-sm font-bold text-slate-900">Verified Quality Hotels</h4>
                 <p className="text-xs text-slate-600 mt-1">Every resort and hotel is inspected for cleanliness, service, and traveler safety.</p>
               </div>
               <div className="bg-white p-6 rounded-2xl border border-slate-200">
-                <Sparkles className="w-8 h-8 text-[#f05a28] mb-3" />
+                <Sparkles className="w-8 h-8 text-[#B58238] mb-3" />
                 <h4 className="text-sm font-bold text-slate-900">24/7 Dedicated Support</h4>
                 <p className="text-xs text-slate-600 mt-1">Direct contact with your dedicated travel manager throughout your journey.</p>
               </div>
@@ -301,6 +338,13 @@ export default function PackagesPage() {
       </main>
 
       <Footer />
+
+      <PackageInfoModal
+        isOpen={!!selectedModalPackage}
+        onClose={() => setSelectedModalPackage(null)}
+        pkg={selectedModalPackage}
+        onBookNow={(title) => handleOpenQuote(title)}
+      />
 
       <EnquiryModal
         isOpen={enquiryOpen}

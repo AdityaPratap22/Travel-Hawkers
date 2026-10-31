@@ -235,7 +235,7 @@ export default function CarHirePage() {
                     className="bg-[#f05a28] hover:bg-[#dc4816] text-white px-6 py-3 rounded-xl font-bold text-sm shadow-lg shadow-orange-500/30 flex items-center gap-2 transition-all transform hover:-translate-y-0.5"
                   >
                     <Phone className="w-4 h-4" />
-                    <span>Call 9355486036 / 8700296047</span>
+                    <span>Call +91 93554 86036</span>
                   </a>
                   <button
                     onClick={() => setEnquiryOpen(true)}

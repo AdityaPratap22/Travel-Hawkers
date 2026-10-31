@@ -148,11 +148,11 @@ export default function DomesticDestinationView({ destination }: Props) {
                 <ArrowRight className="w-4 h-4" />
               </button>
               <a
-                href="tel:+918700296047"
+                href="tel:+919355486036"
                 className="bg-white/10 hover:bg-white/20 text-white border border-white/30 text-xs sm:text-sm font-bold px-6 py-3.5 rounded-full backdrop-blur-md transition-colors flex items-center gap-2"
               >
                 <Phone className="w-4 h-4 text-orange-400" />
-                <span>Call Expert: +91 87002 96047</span>
+                <span>Call Expert: +91 93554 86036</span>
               </a>
             </div>
           </div>
@@ -234,10 +234,10 @@ export default function DomesticDestinationView({ destination }: Props) {
                     Speak directly with our destination specialist:
                   </span>
                   <a
-                    href="tel:+918700296047"
+                    href="tel:+919355486036"
                     className="block text-xs font-bold text-slate-800 hover:text-[#f05a28] mt-1"
                   >
-                    +91 87002 96047 / 93554 86036
+                    +91 93554 86036
                   </a>
                 </div>
               </div>

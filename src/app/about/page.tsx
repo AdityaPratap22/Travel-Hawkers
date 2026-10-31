@@ -64,10 +64,10 @@ export default function AboutPage() {
       badge: "Group Friendly",
     },
     {
-      title: "Car & Coach Rentals",
-      desc: "Reliable, insured, and comfortable transportation services tailored to your exact journey.",
-      icon: Bus,
-      badge: "Fleet Logistics",
+      title: "Chardham & Pilgrimage Tours",
+      desc: "Sacred and spiritually fulfilling yatras organized with priority darshan, comfortable stays, and verified transport.",
+      icon: Sparkles,
+      badge: "Spiritual",
     },
     {
       title: "Tailor-Made Indian Tours",
@@ -118,26 +118,18 @@ export default function AboutPage() {
     {
       icon: Users,
       title: "Expert Support at Every Step",
-      desc: "Experienced travel advisors assisting at every stage—from itinerary planning, visa advice, and hotel selection to 24/7 on-the-go ground support.",
+      desc: "Experienced travel advisors assisting at every stage—from itinerary planning, excursion curation, and hotel selection to 24/7 on-the-go ground support.",
     },
   ];
 
   const offices = [
     {
-      city: "Gurugram Head Office",
+      city: "New Delhi Head Office",
       type: "Corporate Headquarters",
-      address: "504, 5th Floor, Vipul Business Park, Central Park II, Sector 48, Gurugram, Haryana 122018",
-      phone: "+91 87002 96047",
-      phoneLink: "tel:+918700296047",
-      email: "info@travelhawkers.com",
-    },
-    {
-      city: "New Delhi Branch Office",
-      type: "Regional Office",
       address: "E 68, Block FA, Tagore Garden, Tagore Garden Extension, New Delhi, Delhi 110027",
       phone: "+91 93554 86036",
       phoneLink: "tel:+919355486036",
-      email: "saless@travelhawkers.com",
+      email: "info@travelhawkers.com",
     },
   ];
 
@@ -395,7 +387,7 @@ export default function AboutPage() {
                 <div className="text-xs font-bold text-orange-400 uppercase tracking-wider">Direct Customer Helpline Numbers</div>
                 <div className="text-base sm:text-lg font-bold">Speak with our certified holiday planners today</div>
                 <div className="text-xs text-slate-300">
-                  Call: +91 8700296047, 9355486036, 9818707442, 9999327347, 9873462224
+                  Call: +91 9355486036, 9818707442, 9999327347, 9873462224
                 </div>
               </div>
               <button

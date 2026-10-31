@@ -35,7 +35,7 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: "Call or WhatsApp",
-      detail: "+91 93554 86036 / 87002 96047",
+      detail: "+91 93554 86036",
       subtext: "Mon-Sun: 24/7 Dedicated Support",
       href: "tel:+919355486036",
       cta: "Call Now",
@@ -50,15 +50,7 @@ export default function ContactPage() {
     },
     {
       icon: MapPin,
-      title: "Gurugram Office",
-      detail: "504, 5th Floor, Vipul Business Park",
-      subtext: "Sector 48, Central Park II, Gurugram, Haryana 122018",
-      href: "https://maps.google.com/?q=Vipul+Business+Park+Sector+48+Gurugram",
-      cta: "Get Directions",
-    },
-    {
-      icon: MapPin,
-      title: "New Delhi Office",
+      title: "New Delhi Head Office",
       detail: "E 68, Block FA, Tagore Garden",
       subtext: "Tagore Garden Extension, New Delhi 110027",
       href: "https://maps.google.com/?q=Tagore+Garden+New+Delhi",
@@ -76,8 +68,8 @@ export default function ContactPage() {
       a: "To reserve your holiday, a small initial deposit (usually 20-25%) is required. The balance can be paid in convenient installments before your travel date. We accept all major credit/debit cards, UPI, and bank transfers.",
     },
     {
-      q: "Do you help with visas and travel insurance?",
-      a: "Yes, our visa assistance desk provides complete document verification, appointment scheduling, and guidance for international destinations including Dubai, Bali, Thailand, Europe, and more.",
+      q: "Can you customize itineraries for groups and family celebrations?",
+      a: "Yes! We specialize in crafting tailor-made itineraries for family holidays, honeymoons, anniversaries, and corporate group tours with curated stays and dedicated ground support.",
     },
     {
       q: "What if I need assistance during my vacation?",

@@ -6,26 +6,25 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import EnquiryModal from "@/components/EnquiryModal";
+import PackageInfoModal, { PackageInfoData } from "@/components/PackageInfoModal";
 import {
   Globe2,
   Clock,
   Sparkles,
-  CheckCircle2,
   Phone,
   ArrowRight,
   Star,
-  Hotel,
-  Plane,
   FileCheck,
-  ShieldCheck,
-  ChevronRight,
-  Compass,
+  MapPin,
+  CheckCircle2,
+  Info,
 } from "lucide-react";
 
 interface InternationalPackage {
   id: string;
   title: string;
   country: string;
+  citiesCovered: string[];
   duration: string;
   price: string;
   originalPrice: string;
@@ -34,31 +33,42 @@ interface InternationalPackage {
   image: string;
   badge?: string;
   overview: string;
+  keyPoints: string[];
   highlights: string[];
   inclusions: string[];
   visaInfo: string;
+  slug: string;
 }
 
 export default function InternationalPackagesPage() {
   const [enquiryOpen, setEnquiryOpen] = useState(false);
-  const [selectedPackage, setSelectedPackage] = useState<string>("Dubai & Abu Dhabi Tour");
+  const [selectedPackageTitle, setSelectedPackageTitle] = useState<string>("International Package");
   const [selectedFilter, setSelectedFilter] = useState<string>("All");
+  const [selectedModalPackage, setSelectedModalPackage] = useState<PackageInfoData | null>(null);
 
   const packages: InternationalPackage[] = [
     {
       id: "dubai-abu-dhabi",
-      title: "Dubai & Abu Dhabi Futuristic Grandeur",
+      slug: "/dubai-abu-dhabi",
+      title: "Dubai & Abu Dhabi Tour Package",
       country: "United Arab Emirates",
+      citiesCovered: ["Dubai City", "Dubai Marina", "Abu Dhabi", "Yas Island"],
       duration: "6 Nights / 7 Days",
       price: "₹48,999",
       originalPrice: "₹59,000",
       rating: 4.96,
       reviews: 284,
       badge: "Most Popular",
-      image:
-        "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=80",
+      image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80",
       overview:
         "Journey through the world’s most futuristic destinations! Dubai 4 Nights & Abu Dhabi 2 Nights. Enjoy 360-degree views from Burj Khalifa 124th floor, Ferrari World, Desert Safari dune bashing, and Sheikh Zayed Grand Mosque.",
+      keyPoints: [
+        "Dubai: Burj Khalifa 124th floor observation deck & Dubai Mall dancing fountains",
+        "Dubai: 4x4 Land Cruiser desert safari with dune bashing, camel rides & BBQ dinner",
+        "Abu Dhabi: Guided visit to the majestic white marble Sheikh Zayed Grand Mosque",
+        "Abu Dhabi: Ferrari World Yas Island entrance with Formula Rossa fastest coaster",
+        "Dubai Marina: Luxury 2-hour Dhow cruise with international buffet dinner",
+      ],
       highlights: [
         "Burj Khalifa 124th floor observation deck & Dubai Mall",
         "Ferrari World Abu Dhabi with Formula Rossa (fastest coaster)",
@@ -70,18 +80,26 @@ export default function InternationalPackagesPage() {
     },
     {
       id: "singapore-malaysia",
-      title: "Singapore & Malaysia Twin Country Wonder",
+      slug: "/singapore-malaysia",
+      title: "Singapore & Malaysia Tour Package",
       country: "Singapore & Malaysia",
+      citiesCovered: ["Singapore", "Sentosa Island", "Kuala Lumpur", "Genting Highlands"],
       duration: "6 Nights / 7 Days",
       price: "₹54,499",
       originalPrice: "₹66,000",
       rating: 4.93,
       reviews: 215,
       badge: "Family Favorite",
-      image:
-        "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=900&q=80",
+      image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1200&q=80",
       overview:
         "Kuala Lumpur 3 Nights & Singapore 3 Nights. Marvel at Universal Studios Sentosa, Gardens by the Bay futuristic Supertrees, Genting Highlands cable car, and Petronas Twin Towers.",
+      keyPoints: [
+        "Singapore: Full-day Universal Studios Singapore access with unlimited rides on Sentosa",
+        "Singapore: Gardens by the Bay featuring the mist-filled Cloud Forest & Flower Dome",
+        "Kuala Lumpur: Iconic Petronas Twin Towers skybridge photo stop & King's Palace",
+        "Genting Highlands: Two-way Awana SkyWay cable car ride with Batu Caves golden statue",
+        "Seamless luxury AC coach transfer between Malaysia and Singapore included",
+      ],
       highlights: [
         "Full-day Universal Studios Singapore access with unlimited rides",
         "Gardens by the Bay Cloud Forest & Flower Dome",
@@ -93,18 +111,26 @@ export default function InternationalPackagesPage() {
     },
     {
       id: "vietnam",
-      title: "Escape to Vietnam (Hanoi, Halong Bay & Da Nang)",
+      slug: "/vietnam",
+      title: "Vietnam Tour Package (Hanoi, Halong Bay & Da Nang)",
       country: "Vietnam",
+      citiesCovered: ["Hanoi", "Halong Bay", "Da Nang", "Ba Na Hills", "Hoi An"],
       duration: "6 Nights / 7 Days",
       price: "₹42,999",
       originalPrice: "₹52,000",
       rating: 4.94,
       reviews: 178,
       badge: "Trending Destination",
-      image:
-        "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=900&q=80",
+      image: "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1200&q=80",
       overview:
         "2 Days Hanoi, 1 Day Halong Bay Cruise, 2 Days Da Nang & 2 Days Hoi An. Cruise through Halong Bay limestone karsts, marvel at the Golden Hand Bridge in Ba Na Hills, and stroll lantern-lit Hoi An.",
+      keyPoints: [
+        "Halong Bay: Overnight luxury cruise through UNESCO limestone karsts with kayaking & caves",
+        "Da Nang / Ba Na Hills: World-famous Golden Bridge held aloft by giant stone hands in the mist",
+        "Hanoi: Historic Old Quarter cyclo tour, street food delicacies & Water Puppet Theater",
+        "Hoi An: Ancient lantern-lit UNESCO town cycling tour & basket boat river ride",
+        "Domestic flight from Hanoi to Da Nang included in package",
+      ],
       highlights: [
         "Overnight Halong Bay Luxury Cruise with kayaking & cave exploration",
         "Ba Na Hills Golden Hand Bridge suspended in misty clouds",
@@ -116,41 +142,57 @@ export default function InternationalPackagesPage() {
     },
     {
       id: "mystical-bhutan",
+      slug: "/mystical-bhutan",
       title: "Mystical Bhutan (Paro, Thimphu & Punakha)",
       country: "Bhutan",
+      citiesCovered: ["Paro", "Thimphu", "Punakha", "Dochula Pass"],
       duration: "6 Nights / 7 Days",
       price: "₹38,500",
       originalPrice: "₹46,000",
       rating: 4.98,
       reviews: 132,
       badge: "Himalayan Serenity",
-      image:
-        "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=900&q=80",
+      image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80",
       overview:
         "Gross National Happiness in the majestic Eastern Himalayas. Paro 2N, Thimphu 2N, Punakha 2N. Trek to the iconic Tiger’s Nest (Taktsang Monastery) perched 900m above the valley floor.",
+      keyPoints: [
+        "Paro: Cliffside pilgrimage trek to the sacred Tiger's Nest (Taktsang Monastery)",
+        "Punakha: Grand 17th-century Punakha Dzong at the confluence of Pho Chhu and Mo Chhu",
+        "Thimphu: 169ft Buddha Dordenma golden statue overlooking the mountain valley",
+        "Dochula Pass: 108 memorial chortens with 360-degree views of snowcapped Himalayan peaks",
+        "All meals (Breakfast, Lunch & Dinner) included daily on AP plan",
+      ],
       highlights: [
         "Taktsang Monastery (Tiger's Nest) cliffside trek",
         "Punakha Dzong at the confluence of Pho Chhu and Mo Chhu",
         "Thimphu Buddha Dordenma 169ft giant golden statue",
         "Traditional Bhutanese archer cultural demonstration",
       ],
-      inclusions: ["3-Star Heritage Bhutanese Hotels", "All Meals (AP Plan)", "English-speaking Bhutan Guide", "Sustainable Dev Fee (SDF) Advice"],
+      inclusions: ["3-Star Heritage Bhutanese Hotels", "All Meals (AP Plan)", "English-speaking Bhutan Guide", "All Internal Permits"],
       visaInfo: "No Visa Needed for Indians (Entry Permit via Voter ID / Passport)",
     },
     {
       id: "indonesia",
+      slug: "/indonesia",
       title: "Bali Tropical Paradise (Ubud, Kuta & Nusa Penida)",
       country: "Indonesia",
+      citiesCovered: ["Ubud", "Kuta / Seminyak", "Nusa Penida", "Tanah Lot"],
       duration: "5 Nights / 6 Days",
       price: "₹34,999",
       originalPrice: "₹43,500",
       rating: 4.91,
       reviews: 260,
       badge: "Honeymoon Special",
-      image:
-        "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=900&q=80",
+      image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1200&q=80",
       overview:
         "Ubud private pool villa stays, Tegallalang rice terrace jungle swings, sacred Tanah Lot sunset temple, and an exhilarating speedboat island excursion to Nusa Penida's Kelingking T-Rex cliff.",
+      keyPoints: [
+        "Ubud: Private luxury pool villa stay with romantic floating breakfast",
+        "Nusa Penida: Speedboat excursion to T-Rex shaped Kelingking Beach & Broken Beach",
+        "Tanah Lot: Ancient Hindu sea temple perched on offshore rock during sunset",
+        "Uluwatu: Dramatic 70m ocean cliff temple with traditional Kecak fire dance",
+        "Tegallalang: Iconic Bali jungle swing over emerald terraced rice paddies",
+      ],
       highlights: [
         "Private pool villa upgrade in Ubud with floating breakfast",
         "Nusa Penida West Island tour: Kelingking Beach & Broken Beach",
@@ -162,18 +204,26 @@ export default function InternationalPackagesPage() {
     },
     {
       id: "thailand",
-      title: "Thailand Delight (Bangkok, Pattaya & Coral Island)",
+      slug: "/thailand",
+      title: "Thailand Tour Package (Bangkok & Pattaya)",
       country: "Thailand",
+      citiesCovered: ["Bangkok", "Pattaya", "Coral Island (Koh Larn)"],
       duration: "4 Nights / 5 Days",
       price: "₹24,999",
       originalPrice: "₹31,000",
       rating: 4.87,
       reviews: 320,
       badge: "Super Value",
-      image:
-        "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=900&q=80",
+      image: "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=1200&q=80",
       overview:
         "Thailand offers the ultimate tropical escape. Speedboat to Coral Island Pattaya with parasailing and undersea walk, followed by Bangkok’s glittering Golden Buddha temples and Chao Phraya dinner cruise.",
+      keyPoints: [
+        "Pattaya: Speedboat across turquoise waters to Coral Island (Koh Larn) with Indian buffet lunch",
+        "Pattaya: World-renowned Alcazar Cabaret Show with VIP theater seating",
+        "Bangkok: Guided temple tour of Wat Traimit (Solid Gold Buddha) & Marble Temple",
+        "Bangkok: Chao Phraya Princess luxury dinner cruise with live international band",
+        "Shopping tours of Pratunam Wholesale Market, Platinum Mall & MBK Center",
+      ],
       highlights: [
         "Coral Island speedboat ride with Indian buffet lunch",
         "Alcazar Cabaret Show VIP seating in Pattaya",
@@ -183,49 +233,132 @@ export default function InternationalPackagesPage() {
       inclusions: ["4-Star Hotels in Pattaya & Bangkok", "Daily Breakfast", "Coral Island Speedboat Tour", "All Airport & Inter-City Transfers"],
       visaInfo: "Visa-Free Exemption for Indian Passport Holders",
     },
+    {
+      id: "europe-grand-tour",
+      slug: "/packages",
+      title: "Paris & Swiss Alps Dream Vacation",
+      country: "Europe",
+      citiesCovered: ["Paris", "Lucerne", "Interlaken", "Zurich"],
+      duration: "7 Nights / 8 Days",
+      price: "₹1,24,999",
+      originalPrice: "₹1,45,000",
+      rating: 4.97,
+      reviews: 95,
+      badge: "Luxury Flagship",
+      image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=80",
+      overview:
+        "Paris romance meets Swiss alpine majesty. Experience the top deck of Eiffel Tower, Seine river cruise, Lucerne Chapel Bridge, and the snowclad peak of Mt. Titlis with world-famous Rotair cable car.",
+      keyPoints: [
+        "Paris: Eiffel Tower 2nd/top floor priority entry & evening illuminated Seine River cruise",
+        "Paris: Guided city drive covering Champs-Élysées, Arc de Triomphe, and Louvre museum",
+        "Switzerland: Mt. Titlis excursion with Ice Flyer chairlift & 360-degree revolving Rotair",
+        "Lucerne & Interlaken: Scenic alpine lakes, wooden Chapel Bridge, and Jungfrau vistas",
+        "High-speed TGV Lyria train from Paris to Switzerland included",
+      ],
+      highlights: [
+        "Eiffel Tower priority tickets & illuminated Seine River cruise",
+        "Mt. Titlis cable car & glacier cliff walk in Switzerland",
+        "Lucerne walking tour & scenic Lake Lucerne panoramic views",
+        "High-speed TGV international train between France and Switzerland",
+      ],
+      inclusions: ["4-Star Central City Hotels", "Daily Buffet Breakfast", "All High-Speed Train Tickets", "Mt. Titlis Mountain Excursion Pass"],
+      visaInfo: "Schengen Visa Document Preparation & Appointment Scheduling",
+    },
+    {
+      id: "maldives-luxury",
+      slug: "/packages",
+      title: "Maldives Overwater Luxury Villa Escape",
+      country: "Maldives",
+      citiesCovered: ["North Malé Atoll", "Private Resort Island"],
+      duration: "3 Nights / 4 Days",
+      price: "₹69,999",
+      originalPrice: "₹82,000",
+      rating: 4.99,
+      reviews: 142,
+      badge: "All-Inclusive Resort",
+      image: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=1200&q=80",
+      overview:
+        "Wake up above crystal turquoise lagoons with direct access to vibrant coral reefs. Stay in luxury overwater villas with all-inclusive dining, sunset dolphin cruises, and complimentary snorkeling gear.",
+      keyPoints: [
+        "Stay in authentic Overwater Villa perched above turquoise turquoise lagoon",
+        "All-Inclusive dining: Unlimited breakfast, lunch, 3-course dinner & premium beverages",
+        "Complimentary return speedboat/seaplane transfers from Velana International Airport",
+        "Sunset dolphin safari cruise & complimentary non-motorized water sports",
+        "Zero visa hassle: 30-Day Free Tourist Visa upon arrival for Indians",
+      ],
+      highlights: [
+        "Water Villa with private sundeck and ladder into the lagoon",
+        "All-Inclusive meal & beverage plan at luxury resort",
+        "Return speedboat transfers from Malé Airport",
+        "Complimentary snorkeling equipment & sunset cruise",
+      ],
+      inclusions: ["Luxury Overwater Villa", "All Meals & Unlimited Drinks", "Return Airport Speedboat Transfer", "Green Tax & Service Charges"],
+      visaInfo: "Free 30-Day Visa on Arrival for Indian Nationals",
+    },
   ];
 
-  const countries = ["All", "United Arab Emirates", "Singapore & Malaysia", "Vietnam", "Bhutan", "Indonesia", "Thailand"];
+  const countries = ["All", "United Arab Emirates", "Singapore & Malaysia", "Vietnam", "Bhutan", "Indonesia", "Thailand", "Europe", "Maldives"];
 
   const filteredPackages = packages.filter((pkg) => {
     if (selectedFilter === "All") return true;
     return pkg.country === selectedFilter;
   });
 
+  const handleOpenModal = (pkg: InternationalPackage) => {
+    setSelectedModalPackage({
+      id: pkg.id,
+      title: pkg.title,
+      destination: `${pkg.country} (${pkg.citiesCovered.join(", ")})`,
+      duration: pkg.duration,
+      price: pkg.price,
+      originalPrice: pkg.originalPrice,
+      image: pkg.image,
+      badge: pkg.badge,
+      category: "International",
+      citiesCovered: pkg.citiesCovered,
+      keyPoints: pkg.keyPoints,
+      highlights: pkg.highlights,
+      inclusions: pkg.inclusions,
+      slug: pkg.slug,
+    });
+  };
+
   return (
-    <div className="min-h-screen flex flex-col bg-[#fafafa]">
+    <div className="min-h-screen flex flex-col bg-[#FAF8F5]">
       <Navbar onOpenEnquiry={() => setEnquiryOpen(true)} />
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-slate-950 via-slate-900 to-orange-950 text-white py-16 lg:py-24 relative overflow-hidden">
-          <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#f05a28_1px,transparent_1px)] [background-size:24px_24px]"></div>
+        <section className="bg-gradient-to-br from-[#0B2724] via-[#091F1D] to-[#123834] text-white py-16 lg:py-24 relative overflow-hidden">
+          <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#C59B58_1px,transparent_1px)] [background-size:24px_24px]"></div>
 
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-left">
             <div className="max-w-3xl space-y-4">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight">
+              <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#C59B58] block">
+                WORLDWIDE CURATED JOURNEYS
+              </span>
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold tracking-tight text-white leading-[1.12]">
                 International Tour Packages <br />
-                <span className="text-[#f05a28]">& Exotic Holidays</span>
+                <span className="text-[#C59B58]">&amp; Exotic Holidays</span>
               </h1>
-              <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-                Step outside borders with seamless visa assistance, handpicked 4-star hotels, authentic Indian dining options abroad, and private transfers.
-                Explore Dubai, Singapore, Vietnam, Bali, Thailand, and Bhutan with total confidence.
+              <p className="text-stone-200/90 text-sm sm:text-base leading-relaxed">
+                Step outside borders with seamless visa assistance, handpicked 4-star hotels, verified private transfers, and curated itineraries across Dubai, Singapore, Vietnam, Bali, Thailand, Bhutan, Europe, and the Maldives.
               </p>
 
-              <div className="flex flex-wrap items-center gap-4 pt-4">
+              <div className="flex flex-wrap items-center gap-4 pt-3">
                 <a
                   href="tel:+919355486036"
-                  className="bg-[#f05a28] hover:bg-[#dc4816] text-white px-6 py-3 rounded-xl font-bold text-xs sm:text-sm shadow-lg shadow-orange-500/30 flex items-center gap-2"
+                  className="bg-[#C59B58] hover:bg-[#B58A43] text-[#0B2724] px-6 py-3.5 rounded-xl font-bold text-xs sm:text-sm shadow-lg flex items-center gap-2 transition-all transform hover:-translate-y-0.5 cursor-pointer"
                 >
                   <Phone className="w-4 h-4" />
                   <span>Call +91 93554 86036</span>
                 </a>
                 <Link
-                  href="/visa-service"
-                  className="bg-white/15 hover:bg-white/25 text-white px-6 py-3 rounded-xl font-bold text-xs sm:text-sm border border-white/20 transition-all flex items-center gap-1.5"
+                  href="/packages"
+                  className="bg-white/15 hover:bg-white/25 text-white px-6 py-3.5 rounded-xl font-semibold text-xs sm:text-sm border border-white/25 backdrop-blur-md transition-all flex items-center gap-2"
                 >
-                  <FileCheck className="w-4 h-4 text-orange-400" />
-                  <span>Explore Visa Services</span>
+                  <Sparkles className="w-4 h-4 text-[#C59B58]" />
+                  <span>Explore All Packages</span>
                 </Link>
               </div>
             </div>
@@ -233,17 +366,18 @@ export default function InternationalPackagesPage() {
         </section>
 
         {/* Filter Bar */}
-        <section className="sticky top-24 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200/80 shadow-xs">
+        <section className="sticky top-20 z-30 bg-white/95 backdrop-blur-md border-b border-stone-200/80 shadow-xs">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 overflow-x-auto scrollbar-none">
             <div className="flex items-center gap-2 min-w-max">
               {countries.map((cntry) => (
                 <button
                   key={cntry}
+                  type="button"
                   onClick={() => setSelectedFilter(cntry)}
-                  className={`text-xs font-bold px-4 py-2 rounded-full transition-all ${
+                  className={`text-xs font-semibold px-4 py-2 rounded-full transition-all cursor-pointer ${
                     selectedFilter === cntry
-                      ? "bg-[#f05a28] text-white shadow-sm shadow-orange-500/30"
-                      : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                      ? "bg-[#B58238] text-white shadow-xs font-bold"
+                      : "bg-[#FAF8F5] text-slate-700 hover:bg-stone-200 border border-stone-200"
                   }`}
                 >
                   {cntry}
@@ -254,96 +388,143 @@ export default function InternationalPackagesPage() {
         </section>
 
         {/* Packages Grid */}
-        <section className="py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <section className="py-14 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-left mb-8">
+            <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#B88434] block mb-1">
+              EXPLORE BY DESTINATION &amp; CITY
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+              {selectedFilter === "All" ? "Featured International Packages" : `${selectedFilter} Tour Packages`}
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-500 mt-1">
+              Tap on any package card to inspect day-wise itinerary, covered cities, and key points.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 sm:gap-8">
             {filteredPackages.map((pkg, idx) => (
               <div
                 key={pkg.id}
-                className={`reveal delay-${(idx % 6) * 75} bg-white rounded-3xl overflow-hidden border border-slate-200/90 shadow-xs hover-card-elevate hover:border-orange-300 flex flex-col group hover-shine-container`}
+                onClick={() => handleOpenModal(pkg)}
+                className={`reveal delay-${(idx % 6) * 75} bg-white rounded-3xl overflow-hidden border border-stone-200/90 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col group cursor-pointer transform hover:-translate-y-1.5`}
               >
-                <div className="relative h-56 w-full overflow-hidden bg-slate-100">
+                {/* Image Banner */}
+                <div className="relative h-60 w-full overflow-hidden bg-slate-100">
                   <Image
                     src={pkg.image}
                     alt={pkg.title}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
+
+                  {/* Badge */}
                   {pkg.badge && (
-                    <div className="absolute top-3 left-3 bg-[#f05a28] text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-md">
+                    <div className="absolute top-3.5 left-3.5 bg-[#B58238] text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-md uppercase tracking-wider">
                       {pkg.badge}
                     </div>
                   )}
-                  <div className="absolute bottom-3 right-3 bg-white/95 backdrop-blur-md text-slate-900 text-xs font-bold px-3 py-1 rounded-lg flex items-center gap-1 shadow-md">
+
+                  {/* Rating */}
+                  <div className="absolute top-3.5 right-3.5 bg-white/95 backdrop-blur-md text-slate-900 text-xs font-bold px-2.5 py-1 rounded-lg flex items-center gap-1 shadow-md">
                     <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                     <span>{pkg.rating}</span>
                     <span className="text-slate-400 font-normal">({pkg.reviews})</span>
                   </div>
+
+                  {/* Quick Info Hint Button */}
+                  <div className="absolute bottom-3 left-3">
+                    <span className="bg-black/60 backdrop-blur-md text-white text-[10px] font-semibold px-2.5 py-1 rounded-full flex items-center gap-1">
+                      <Info className="w-3 h-3" />
+                      Tap for info &amp; key points
+                    </span>
+                  </div>
                 </div>
 
-                <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+                {/* Content */}
+                <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4 text-left">
                   <div className="space-y-3">
+                    {/* Country & Duration */}
                     <div className="flex items-center justify-between text-xs text-slate-500 font-medium">
-                      <span className="flex items-center gap-1 font-semibold text-slate-700">
-                        <Globe2 className="w-3.5 h-3.5 text-[#f05a28]" />
+                      <span className="flex items-center gap-1 font-semibold text-slate-800">
+                        <Globe2 className="w-3.5 h-3.5 text-[#B58238]" />
                         {pkg.country}
                       </span>
                       <span className="flex items-center gap-1">
-                        <Clock className="w-3.5 h-3.5 text-slate-400" />
+                        <Clock className="w-3.5 h-3.5 text-[#B58238]" />
                         {pkg.duration}
                       </span>
                     </div>
 
-                    <Link href={`/${pkg.id}`}>
-                      <h2 className="text-lg font-black text-slate-900 group-hover:text-[#f05a28] transition-colors leading-snug">
-                        {pkg.title}
-                      </h2>
-                    </Link>
+                    {/* Title */}
+                    <h3 className="text-lg font-serif font-bold text-slate-900 group-hover:text-[#B58238] transition-colors leading-snug">
+                      {pkg.title}
+                    </h3>
 
-                    <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed">
-                      {pkg.overview}
-                    </p>
-
-                    <div className="bg-emerald-50 rounded-xl p-2.5 border border-emerald-100 text-[11px] text-emerald-800 flex items-center gap-1.5">
-                      <FileCheck className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                      <span className="font-semibold">{pkg.visaInfo}</span>
+                    {/* Cities Covered Badges */}
+                    <div className="flex flex-wrap gap-1.5 pt-1">
+                      {pkg.citiesCovered.map((city, cIdx) => (
+                        <span
+                          key={cIdx}
+                          className="inline-flex items-center gap-1 text-[11px] font-semibold bg-[#FAF5ED] text-stone-800 border border-[#EADBCC] px-2.5 py-0.5 rounded-md"
+                        >
+                          <MapPin className="w-2.5 h-2.5 text-[#B58238]" />
+                          {city}
+                        </span>
+                      ))}
                     </div>
 
-                    <div className="border-t border-slate-100 pt-3 space-y-1.5">
-                      <div className="text-[11px] font-bold text-slate-700 uppercase tracking-wider">
-                        Trip Highlights:
-                      </div>
-                      {pkg.highlights.slice(0, 3).map((hl, i) => (
-                        <div key={i} className="flex items-start gap-1.5 text-xs text-slate-600">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#f05a28] shrink-0 mt-0.5" />
-                          <span className="line-clamp-1">{hl}</span>
+                    {/* Key City Points / Highlights */}
+                    <div className="space-y-1.5 pt-2 border-t border-stone-100">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 block">
+                        Key City Highlights:
+                      </span>
+                      {pkg.keyPoints.slice(0, 3).map((pt, pIdx) => (
+                        <div key={pIdx} className="flex items-start gap-1.5 text-xs text-slate-600">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                          <span className="line-clamp-2 leading-relaxed">{pt}</span>
                         </div>
                       ))}
                     </div>
                   </div>
 
-                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between gap-2">
+                  {/* Price & Action Row */}
+                  <div className="pt-4 border-t border-stone-100 flex items-center justify-between gap-3">
                     <div>
-                      <div className="text-[11px] text-slate-400 line-through">{pkg.originalPrice}</div>
-                      <div className="text-xl font-black text-slate-900">
-                        {pkg.price} <span className="text-[10px] font-normal text-slate-500">/ person</span>
+                      <span className="text-[10px] text-slate-400 uppercase tracking-wider block">
+                        From
+                      </span>
+                      <div className="flex items-baseline gap-1.5">
+                        <span className="text-xl font-serif font-bold text-slate-900">
+                          {pkg.price}
+                        </span>
+                        <span className="text-[11px] text-slate-400">/person</span>
                       </div>
                     </div>
 
                     <div className="flex items-center gap-2">
-                      <Link
-                        href={`/${pkg.id}`}
-                        className="border border-slate-200 hover:border-orange-500 text-slate-700 hover:text-orange-600 text-xs font-bold px-3 py-2 rounded-xl transition-all"
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleOpenModal(pkg);
+                        }}
+                        className="bg-[#FAF5ED] hover:bg-[#F3E8D7] text-[#B58238] border border-[#EADBCC] text-xs font-bold py-2.5 px-3 rounded-lg transition-all cursor-pointer"
                       >
                         Details
-                      </Link>
+                      </button>
+
                       <button
-                        onClick={() => {
-                          setSelectedPackage(pkg.title);
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedPackageTitle(pkg.title);
                           setEnquiryOpen(true);
                         }}
-                        className="bg-[#f05a28] hover:bg-[#dc4816] text-white text-xs font-bold px-3.5 py-2 rounded-xl shadow-md transition-all flex items-center gap-1"
+                        className="bg-[#B58238] hover:bg-[#9E6F21] text-white text-xs font-semibold py-2.5 px-4 rounded-lg shadow-sm hover:shadow-md flex items-center gap-1 transition-all cursor-pointer"
                       >
-                        <span>Quote</span>
+                        <span>Get Quote</span>
                         <ArrowRight className="w-3.5 h-3.5" />
                       </button>
                     </div>
@@ -356,10 +537,24 @@ export default function InternationalPackagesPage() {
       </main>
 
       <Footer />
+
+      {/* Package Info Modal */}
+      <PackageInfoModal
+        isOpen={!!selectedModalPackage}
+        onClose={() => setSelectedModalPackage(null)}
+        pkg={selectedModalPackage}
+        onBookNow={(title) => {
+          setSelectedPackageTitle(title);
+          setSelectedModalPackage(null);
+          setEnquiryOpen(true);
+        }}
+      />
+
+      {/* Enquiry Modal */}
       <EnquiryModal
         isOpen={enquiryOpen}
         onClose={() => setEnquiryOpen(false)}
-        packageTitle={`International Package Inquiry: ${selectedPackage}`}
+        packageTitle={selectedPackageTitle}
       />
     </div>
   );

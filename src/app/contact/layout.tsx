@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact Us | Travel Hawkers - Get Free Holiday Quotes & Support",
   description:
-    "Reach out to Travel Hawkers for customized tour planning, hotel reservations, car hire, and immediate holiday support. Call +91 87002 96047 or visit our Delhi NCR offices.",
+    "Reach out to Travel Hawkers for customized tour planning, hotel reservations, and immediate holiday support. Call +91 93554 86036 or visit our Delhi office.",
   alternates: {
     canonical: "https://travelhawkers.com/contact-us",
   },
