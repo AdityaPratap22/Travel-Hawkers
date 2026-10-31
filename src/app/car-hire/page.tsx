@@ -264,7 +264,7 @@ export default function CarHirePage() {
                       <WhatsAppIcon variant="colored" className="w-12 h-12 mx-auto" />
                       <h4 className="font-bold text-slate-900 text-base">WhatsApp Booking Opened!</h4>
                       <p className="text-xs text-slate-600 leading-relaxed">
-                        Your vehicle request details are ready. If WhatsApp didn't open automatically, chat directly with our transport desk at <strong className="text-slate-800">+91 93554 86036</strong>.
+                        Your vehicle request details are ready. If WhatsApp didn&apos;t open automatically, chat directly with our transport desk at <strong className="text-slate-800">+91 93554 86036</strong>.
                       </p>
                       <button
                         onClick={() => setBookingSubmitted(false)}

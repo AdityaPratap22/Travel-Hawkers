@@ -168,7 +168,7 @@ export default function ContactPage() {
                     <WhatsAppIcon variant="colored" className="w-12 h-12 mx-auto" />
                     <h4 className="text-base font-bold text-slate-900">WhatsApp Chat Opened!</h4>
                     <p className="text-xs text-slate-600">
-                      Your enquiry details have been pre-filled. If WhatsApp didn't launch automatically, chat directly with our holiday desk at <strong className="text-slate-800">+91 93554 86036</strong>.
+                      Your enquiry details have been pre-filled. If WhatsApp didn&apos;t launch automatically, chat directly with our holiday desk at <strong className="text-slate-800">+91 93554 86036</strong>.
                     </p>
                     <button
                       onClick={() => setSubmitted(false)}

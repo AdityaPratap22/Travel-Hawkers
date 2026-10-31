@@ -37,37 +37,35 @@ function LinkedinIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-
 export default function Footer() {
   const quickLinks = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about-us" },
-    { name: "Domestic Packages", href: "/domestic-packages" },
-    { name: "International Packages", href: "/international-packages" },
-    { name: "Weekend Getaways", href: "/weekend-getaways" },
-    { name: "Chardham Yatra", href: "/chardham-yatra" },
-    { name: "Visa Service", href: "/visa-service" },
-    { name: "Car Hire", href: "/car-hire" },
-    { name: "Articles", href: "/articles" },
+    { name: "Destinations", href: "/destinations" },
+    { name: "Holiday Packages", href: "/packages" },
+    { name: "Experiences", href: "/experiences" },
+    { name: "Travel Blog", href: "/articles" },
     { name: "Contact Us", href: "/contact-us" },
   ];
 
   const popularDestinations = [
-    { name: "Himachal Packages", href: "/domestic-packages/himachal" },
-    { name: "Rajasthan Heritage", href: "/domestic-packages/rajasthan" },
-    { name: "Kerala Backwaters", href: "/domestic-packages/kerala" },
-    { name: "Dubai & Abu Dhabi", href: "/dubai-abu-dhabi" },
-    { name: "Bali, Indonesia", href: "/indonesia" },
-    { name: "Singapore & Malaysia", href: "/singapore-malaysia" },
-    { name: "Jim Corbett Safari", href: "/jim-corbett" },
+    { name: "Leh Ladakh", href: "/ladakh-tour-packages" },
+    { name: "Bali", href: "/indonesia" },
+    { name: "Dubai", href: "/dubai-abu-dhabi" },
+    { name: "Goa", href: "/goa-tour-packages" },
+    { name: "Jaipur", href: "/jaipur-tour-package" },
+    { name: "Kerala", href: "/kerala-tour-packages" },
+    { name: "Thailand", href: "/thailand" },
+    { name: "Singapore", href: "/singapore-malaysia" },
   ];
 
   return (
-    <footer id="contact" className="relative bg-[#0b252c] text-white pt-16 sm:pt-20 pb-8 overflow-hidden">
-      {/* Decorative compass/dotted route lines */}
-      <div className="absolute right-12 bottom-20 w-80 h-80 opacity-5 pointer-events-none border border-dashed border-white rounded-full" />
-      <div className="absolute right-24 bottom-32 text-white/5 text-9xl pointer-events-none select-none">
-        ✈
+    <footer id="contact" className="relative bg-[#081E1C] text-white pt-16 sm:pt-20 pb-8 overflow-hidden">
+      {/* Decorative subtle mountain silhouette outline watermark */}
+      <div className="absolute right-0 bottom-0 w-full h-80 opacity-5 pointer-events-none select-none">
+        <svg viewBox="0 0 1200 400" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full object-cover">
+          <path d="M0 400 L200 200 L350 300 L500 120 L700 320 L850 180 L1050 350 L1200 220 L1200 400 Z" fill="white" />
+        </svg>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -86,8 +84,8 @@ export default function Footer() {
               </div>
             </Link>
 
-            <p className="text-xs sm:text-sm text-slate-300/80 leading-relaxed max-w-sm">
-              We create unforgettable travel experiences with handpicked packages, expert guidance and personalized service. Let&apos;s explore the world together.
+            <p className="text-xs sm:text-sm text-stone-300/85 leading-relaxed max-w-sm">
+              We create unforgettable travel experiences with handpicked packages, expert guidance and personalised service. Let&apos;s explore the world together.
             </p>
 
             {/* Social Icons */}
@@ -97,7 +95,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Facebook"
-                className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#f05a28] flex items-center justify-center text-white transition-colors"
+                className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#B58238] flex items-center justify-center text-white transition-colors"
               >
                 <FacebookIcon className="w-4 h-4" />
               </a>
@@ -106,7 +104,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
-                className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#f05a28] flex items-center justify-center text-white transition-colors"
+                className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#B58238] flex items-center justify-center text-white transition-colors"
               >
                 <InstagramIcon className="w-4 h-4" />
               </a>
@@ -115,7 +113,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="YouTube"
-                className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#f05a28] flex items-center justify-center text-white transition-colors"
+                className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#B58238] flex items-center justify-center text-white transition-colors"
               >
                 <YoutubeIcon className="w-4 h-4" />
               </a>
@@ -124,7 +122,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
-                className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#f05a28] flex items-center justify-center text-white transition-colors"
+                className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#B58238] flex items-center justify-center text-white transition-colors"
               >
                 <LinkedinIcon className="w-4 h-4" />
               </a>
@@ -141,7 +139,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-xs sm:text-sm text-slate-300 hover:text-[#f05a28] transition-colors"
+                    className="text-xs sm:text-sm text-stone-300 hover:text-[#DEB887] transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -160,7 +158,7 @@ export default function Footer() {
                 <li key={dest.name}>
                   <Link
                     href={dest.href}
-                    className="text-xs sm:text-sm text-slate-300 hover:text-[#f05a28] transition-colors"
+                    className="text-xs sm:text-sm text-stone-300 hover:text-[#DEB887] transition-colors"
                   >
                     {dest.name}
                   </Link>
@@ -174,9 +172,9 @@ export default function Footer() {
             <h4 className="text-sm font-bold text-white tracking-wide uppercase">
               Contact Us
             </h4>
-            <div className="space-y-3.5 text-xs sm:text-sm text-slate-300">
+            <div className="space-y-3.5 text-xs sm:text-sm text-stone-300">
               <div className="flex items-start gap-3">
-                <Phone className="w-4 h-4 text-[#f05a28] shrink-0 mt-0.5" />
+                <Phone className="w-4 h-4 text-[#C59B58] shrink-0 mt-0.5" />
                 <a href="tel:+919355486036" className="hover:text-white transition-colors">
                   +91 93554 86036 / +91 87002 96047
                 </a>
@@ -189,17 +187,17 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-[#25D366] transition-colors font-medium flex items-center gap-1.5"
                 >
-                  <span>Chat on WhatsApp (+91 93554 86036)</span>
+                  <span>Chat on WhatsApp</span>
                 </a>
               </div>
               <div className="flex items-start gap-3">
-                <Mail className="w-4 h-4 text-[#f05a28] shrink-0 mt-0.5" />
+                <Mail className="w-4 h-4 text-[#C59B58] shrink-0 mt-0.5" />
                 <a href="mailto:info@travelhawkers.com" className="hover:text-white transition-colors">
                   info@travelhawkers.com
                 </a>
               </div>
               <div className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-[#f05a28] shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-[#C59B58] shrink-0 mt-0.5" />
                 <span className="leading-relaxed">
                   504, 5th Floor, Vipul Business Park, Sector 48, Central Park II, Gurugram, Haryana 122018
                 </span>
@@ -209,25 +207,25 @@ export default function Footer() {
         </div>
 
         {/* Bottom Sub-footer */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-400 gap-4">
           <div suppressHydrationWarning>
             &copy; {new Date().getFullYear()}{" "}
             <a
               href="https://businessvolunteers.online"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-300 hover:text-white font-medium transition-colors underline-offset-4 hover:underline"
+              className="text-stone-300 hover:text-white font-medium transition-colors underline-offset-4 hover:underline"
             >
               Business Volunteers
             </a>
             . All rights reserved.
           </div>
           <div className="flex items-center gap-6">
-            <Link href="#" className="hover:text-slate-200 transition-colors">
+            <Link href="/about-us" className="hover:text-stone-200 transition-colors">
               Privacy Policy
             </Link>
             <span>&bull;</span>
-            <Link href="#" className="hover:text-slate-200 transition-colors">
+            <Link href="/about-us" className="hover:text-stone-200 transition-colors">
               Terms &amp; Conditions
             </Link>
             <span>&bull;</span>
@@ -235,7 +233,7 @@ export default function Footer() {
               href="/sitemap.xml"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-slate-200 transition-colors"
+              className="hover:text-stone-200 transition-colors"
             >
               Sitemap
             </a>

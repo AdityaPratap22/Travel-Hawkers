@@ -40,11 +40,11 @@ export default function HomeClient() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white selection:bg-[#f05a28] selection:text-white">
+    <div className="min-h-screen flex flex-col bg-[#FAF8F5] selection:bg-[#B58238] selection:text-white">
       {/* Top Navbar */}
       <Navbar onOpenEnquiry={() => handleOpenEnquiry()} />
 
-      {/* Main Content */}
+      {/* Main Content - Exact 9 Original Sections Preserved */}
       <main className="flex-1">
         {/* 1. Hero Section */}
         <Hero

@@ -1,12 +1,12 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import EnquiryModal from "@/components/EnquiryModal";
-import { articlesMetadata, ArticleMeta } from "@/data/articlesData";
+import { articlesMetadata } from "@/data/articlesData";
 import {
   Calendar,
   Clock,
@@ -39,10 +39,15 @@ export default function ArticlesPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
 
-  // Reset to page 1 on filter/search change
-  useEffect(() => {
+  const handleCategoryChange = (cat: string) => {
+    setSelectedCategory(cat);
     setCurrentPage(1);
-  }, [selectedCategory, searchQuery]);
+  };
+
+  const handleSearchChange = (query: string) => {
+    setSearchQuery(query);
+    setCurrentPage(1);
+  };
 
   const filteredArticles = useMemo(() => {
     const q = searchQuery.toLowerCase().trim();
@@ -112,7 +117,7 @@ export default function ArticlesPage() {
                   type="text"
                   placeholder="Search articles on Shimla, Kedarnath, Bali, Tiger Safaris, Dubai..."
                   value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onChange={(e) => handleSearchChange(e.target.value)}
                   className="w-full bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl pl-11 pr-4 py-3 text-xs sm:text-sm text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#f05a28] focus:border-transparent transition-all"
                 />
               </div>
@@ -127,7 +132,7 @@ export default function ArticlesPage() {
               {CATEGORIES.map((cat) => (
                 <button
                   key={cat}
-                  onClick={() => setSelectedCategory(cat)}
+                  onClick={() => handleCategoryChange(cat)}
                   className={`text-xs font-bold px-4 py-2 rounded-full transition-all ${
                     selectedCategory === cat
                       ? "bg-[#f05a28] text-white shadow-sm shadow-orange-500/30"

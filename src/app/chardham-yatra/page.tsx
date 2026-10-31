@@ -344,7 +344,7 @@ export default function ChardhamYatraPage() {
                   <WhatsAppIcon variant="colored" className="w-12 h-12 mx-auto" />
                   <h4 className="font-bold text-white text-base">WhatsApp Booking Opened!</h4>
                   <p className="text-xs text-slate-300 leading-relaxed">
-                    Your Char Dham Yatra booking inquiry details have been forwarded to WhatsApp. If the chat didn't launch automatically, chat directly with our pilgrimage coordinator at <strong className="text-white">+91 93554 86036</strong>.
+                    Your Char Dham Yatra booking inquiry details have been forwarded to WhatsApp. If the chat didn&apos;t launch automatically, chat directly with our pilgrimage coordinator at <strong className="text-white">+91 93554 86036</strong>.
                   </p>
                   <button
                     onClick={() => setCallbackSubmitted(false)}

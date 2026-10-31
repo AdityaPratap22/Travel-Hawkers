@@ -25,7 +25,7 @@ export default function TrustBar() {
   ];
 
   return (
-    <section className="bg-slate-50/80 border-y border-slate-200/60 py-6 sm:py-8">
+    <section className="bg-[#FAF8F5] border-b border-stone-200/60 pb-12 sm:pb-16 pt-2">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {benefits.map((benefit, idx) => {
@@ -34,13 +34,13 @@ export default function TrustBar() {
             return (
               <div
                 key={idx}
-                className={`reveal ${delays[idx] || ""} flex items-center gap-3.5 group p-2.5 rounded-2xl hover:bg-white hover:shadow-md transition-all duration-300 cursor-default`}
+                className={`reveal ${delays[idx] || ""} flex items-center gap-3.5 group p-2 rounded-xl transition-all duration-300 cursor-default`}
               >
-                <div className="w-12 h-12 rounded-2xl bg-orange-50 group-hover:bg-[#f05a28] flex items-center justify-center text-[#f05a28] group-hover:text-white transition-all duration-300 shadow-xs shrink-0 group-hover:scale-110 group-hover:rotate-3">
-                  <Icon className="w-6 h-6 stroke-[1.8]" />
+                <div className="w-11 h-11 rounded-full bg-[#FAF5ED] border border-[#EADBCC] flex items-center justify-center text-[#B58238] transition-all duration-300 shadow-xs shrink-0 group-hover:bg-[#B58238] group-hover:text-white">
+                  <Icon className="w-5 h-5 stroke-[1.8]" />
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-[#f05a28] transition-colors leading-snug">
+                  <span className="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-[#B58238] transition-colors leading-snug">
                     {benefit.title}
                   </span>
                   <span className="text-[11px] sm:text-xs text-slate-500 font-medium">

@@ -1,10 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --primary: #f05a28;
-  --primary-hover: #dc4816;
-  --dark-navy: #0b252c;
-  --dark-navy-surface: #10343e;
+  --primary: #b58238;
+  --primary-hover: #9e6f21;
+  --primary-light: #faf5ed;
+  --forest-dark: #0b2724;
+  --forest-dark-hover: #123834;
+  --forest-surface: #0e2e2a;
+  --bg-cream: #faf8f5;
+  --bg-sand: #f5f0e6;
+  --dark-navy: #0b2724;
+  --dark-navy-surface: #123834;
 }
 
 html {
@@ -226,13 +232,15 @@ body {
 }
 
 /* Hover Glow for Primary / Brand Elements */
-.hover-glow-orange {
+.hover-glow-orange,
+.hover-glow-gold {
   transition: transform 0.25s ease, box-shadow 0.3s ease;
 }
 
-.hover-glow-orange:hover {
+.hover-glow-orange:hover,
+.hover-glow-gold:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px -5px rgba(240, 90, 40, 0.35);
+  box-shadow: 0 10px 25px -5px rgba(181, 130, 56, 0.4);
 }
 
 /* Hover Glow for WhatsApp Elements */

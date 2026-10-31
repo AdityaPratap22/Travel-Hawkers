@@ -2,7 +2,8 @@
 
 import { useRef } from "react";
 import Image from "next/image";
-import { Star, ChevronLeft, ChevronRight } from "lucide-react";
+import Link from "next/link";
+import { Star, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import { TESTIMONIALS } from "@/data/travelData";
 
 export default function Testimonials() {
@@ -25,76 +26,91 @@ export default function Testimonials() {
         {/* Section Header */}
         <div className="reveal flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-4">
           <div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
+            <span className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#B88434] block mb-1">
+              REVIEWS
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-slate-900 tracking-tight">
               What Our Travellers Say
             </h2>
-            <p className="mt-1.5 text-xs sm:text-sm text-slate-500 max-w-xl">
-              Real stories from happy travellers.
+            <p className="mt-1 text-xs sm:text-sm text-slate-500 max-w-xl">
+              Real stories from happy travellers across India and abroad.
             </p>
           </div>
 
-          {/* Carousel navigation buttons */}
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => scroll("left")}
-              aria-label="Previous testimonial"
-              className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-slate-200 hover:border-[#f05a28] hover:bg-orange-50 flex items-center justify-center text-slate-600 hover:text-[#f05a28] transition-all transform hover:scale-105 shadow-2xs"
+          <div className="flex items-center gap-4">
+            <Link
+              href="/about-us"
+              className="text-xs sm:text-sm font-semibold text-slate-700 hover:text-[#B58238] flex items-center gap-1.5 transition-colors group"
             >
-              <ChevronLeft className="w-4 h-4" />
-            </button>
-            <button
-              onClick={() => scroll("right")}
-              aria-label="Next testimonial"
-              className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-slate-200 hover:border-[#f05a28] hover:bg-orange-50 flex items-center justify-center text-slate-600 hover:text-[#f05a28] transition-all transform hover:scale-105 shadow-2xs"
-            >
-              <ChevronRight className="w-4 h-4" />
-            </button>
+              <span>View All Reviews</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+
+            {/* Slider arrows */}
+            <div className="flex items-center gap-1.5">
+              <button
+                type="button"
+                onClick={() => scroll("left")}
+                aria-label="Previous testimonial"
+                className="w-8 h-8 rounded-full border border-stone-200 hover:border-slate-800 flex items-center justify-center text-slate-600 hover:text-slate-900 transition-colors shadow-2xs cursor-pointer"
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </button>
+              <button
+                type="button"
+                onClick={() => scroll("right")}
+                aria-label="Next testimonial"
+                className="w-8 h-8 rounded-full border border-stone-200 hover:border-slate-800 flex items-center justify-center text-slate-600 hover:text-slate-900 transition-colors shadow-2xs cursor-pointer"
+              >
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
           </div>
         </div>
 
-        {/* Testimonials Grid / Track */}
+        {/* Testimonials Carousel with original TESTIMONIALS data */}
         <div
           ref={scrollRef}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 overflow-x-auto pb-4 no-scrollbar scroll-smooth"
+          className="flex gap-5 sm:gap-6 overflow-x-auto pb-4 pt-1 snap-x snap-mandatory no-scrollbar"
         >
-          {TESTIMONIALS.slice(0, 3).map((item, idx) => {
-            const delays = ["delay-75", "delay-150", "delay-225"];
+          {TESTIMONIALS.map((test, idx) => {
+            const delays = ["delay-75", "delay-150", "delay-225", "delay-300"];
             return (
               <div
-                key={item.id}
-                className={`reveal ${delays[idx] || ""} bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-sm hover-card-elevate hover:border-orange-200 flex flex-col justify-between`}
+                key={test.id}
+                className={`reveal ${delays[idx] || ""} flex-none w-[300px] sm:w-[340px] md:w-[370px] bg-[#FAF8F5] rounded-2xl p-6 border border-stone-200/80 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between snap-start text-left`}
               >
                 <div>
-                  {/* 5 Stars */}
-                  <div className="flex items-center gap-1 text-amber-400 mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400 transition-transform hover:scale-125" />
+                  {/* Star Rating */}
+                  <div className="flex items-center gap-1 mb-3.5">
+                    {[...Array(test.rating)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                     ))}
                   </div>
 
-                  {/* Review Text */}
-                  <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
-                    &ldquo;{item.comment}&rdquo;
+                  {/* Comment */}
+                  <p className="text-xs sm:text-sm text-slate-700 font-normal leading-relaxed italic mb-6">
+                    &ldquo;{test.comment}&rdquo;
                   </p>
                 </div>
 
-                {/* Author info */}
-                <div className="flex items-center gap-3.5 mt-6 pt-5 border-t border-slate-100">
-                  <div className="relative w-11 h-11 rounded-full overflow-hidden border-2 border-orange-100 group-hover:border-[#f05a28] transition-colors">
+                {/* Author Info */}
+                <div className="flex items-center gap-3 pt-4 border-t border-stone-200/60">
+                  <div className="relative w-10 h-10 rounded-full overflow-hidden shrink-0 border border-[#B58238]/40">
                     <Image
-                      src={item.avatar}
-                      alt={item.name}
+                      src={test.avatar}
+                      alt={test.name}
                       fill
-                      sizes="44px"
                       className="object-cover"
+                      sizes="40px"
                     />
                   </div>
                   <div>
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-900">
-                      {item.name}
-                    </h4>
-                    <p className="text-[11px] text-slate-400 font-medium">
-                      {item.location}
+                    <h3 className="text-xs sm:text-sm font-bold text-slate-900 leading-tight">
+                      {test.name}
+                    </h3>
+                    <p className="text-[11px] text-slate-500 font-medium">
+                      {test.location}
                     </p>
                   </div>
                 </div>

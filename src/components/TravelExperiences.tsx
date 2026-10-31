@@ -14,15 +14,18 @@ export default function TravelExperiences({ onSelectExperience }: TravelExperien
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="reveal mb-8 sm:mb-12 text-left">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
+          <span className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#B88434] block mb-1">
+            OUR EXPERIENCES
+          </span>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-slate-900 tracking-tight">
             Travel Experiences
           </h2>
-          <p className="mt-1.5 text-xs sm:text-sm text-slate-500 max-w-xl">
+          <p className="mt-1 text-xs sm:text-sm text-slate-500 max-w-xl">
             More than just holidays &mdash; experience the extraordinary.
           </p>
         </div>
 
-        {/* 6 Category Cards Grid */}
+        {/* 6 Category Cards Grid from original EXPERIENCES data */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-5">
           {EXPERIENCES.map((exp, idx) => {
             const delays = ["delay-75", "delay-150", "delay-200", "delay-250", "delay-300", "delay-400"];
@@ -45,12 +48,12 @@ export default function TravelExperiences({ onSelectExperience }: TravelExperien
 
                 {/* Content */}
                 <div className="relative z-10 flex flex-col items-start gap-2 transform group-hover:-translate-y-1 transition-transform duration-300">
-                  <span className="text-xs sm:text-sm font-bold text-white group-hover:text-orange-300 transition-colors leading-tight">
+                  <span className="text-xs sm:text-sm font-bold text-white group-hover:text-[#DEB887] transition-colors leading-tight">
                     {exp.title}
                   </span>
 
-                  <div className="w-7 h-7 rounded-full bg-white/20 backdrop-blur-md group-hover:bg-[#f05a28] flex items-center justify-center text-white transition-all duration-300 group-hover:scale-110">
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  <div className="w-7 h-7 rounded-full bg-white/20 backdrop-blur-md group-hover:bg-[#B58238] flex items-center justify-center text-white transition-all duration-300 group-hover:scale-110">
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                   </div>
                 </div>
               </div>

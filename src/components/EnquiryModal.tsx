@@ -117,7 +117,7 @@ export default function EnquiryModal({
                   placeholder="e.g. Aditya Sharma"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#f05a28]"
+                  className="w-full text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#B58238]"
                 />
               </div>
 
@@ -132,7 +132,7 @@ export default function EnquiryModal({
                     placeholder="+91 98765 43210"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    className="w-full text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#f05a28]"
+                    className="w-full text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#B58238]"
                   />
                 </div>
                 <div>
@@ -145,7 +145,7 @@ export default function EnquiryModal({
                     placeholder="name@example.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#f05a28]"
+                    className="w-full text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#B58238]"
                   />
                 </div>
               </div>
@@ -161,7 +161,7 @@ export default function EnquiryModal({
                     placeholder="e.g. Bali, Leh, Dubai"
                     value={currentDestination}
                     onChange={(e) => setCustomDestination(e.target.value)}
-                    className="w-full text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#f05a28]"
+                    className="w-full text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#B58238]"
                   />
                 </div>
                 <div>
@@ -171,7 +171,7 @@ export default function EnquiryModal({
                   <select
                     value={travellers}
                     onChange={(e) => setTravellers(e.target.value)}
-                    className="w-full text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#f05a28]"
+                    className="w-full text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#B58238]"
                   >
                     <option value="1 Solo Traveller">1 Solo</option>
                     <option value="2 Adults (Couple)">2 Adults (Couple)</option>
@@ -190,7 +190,7 @@ export default function EnquiryModal({
                   placeholder="Dates, budget or hotel preferences..."
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
-                  className="w-full text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 focus:outline-none focus:ring-2 focus:ring-[#f05a28] resize-none"
+                  className="w-full text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 focus:outline-none focus:ring-2 focus:ring-[#B58238] resize-none"
                 />
               </div>
 
@@ -212,7 +212,7 @@ export default function EnquiryModal({
                 </div>
                 <span>&bull;</span>
                 <div className="flex items-center gap-1">
-                  <PhoneCall className="w-3.5 h-3.5 text-[#f05a28]" />
+                  <PhoneCall className="w-3.5 h-3.5 text-[#B58238]" />
                   <span>Instant Call Back</span>
                 </div>
               </div>

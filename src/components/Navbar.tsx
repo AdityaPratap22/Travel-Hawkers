@@ -10,7 +10,7 @@ interface NavbarProps {
   onOpenEnquiry?: (packageTitle?: string) => void;
 }
 
-export default function Navbar({ onOpenEnquiry }: NavbarProps) {
+export default function Navbar({}: NavbarProps) {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
@@ -43,8 +43,8 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
         { name: "Kerala Tour Packages", href: "/domestic-packages/kerala" },
         { name: "Goa Tour Packages", href: "/domestic-packages/goa" },
         { name: "Ladakh Tour Packages", href: "/domestic-packages/ladakh" },
-        { name: "Golden Triangle Tour", href: "/domestic-packages/golden-triangle" },
-        { name: "Same Day Tour Packages", href: "/domestic-packages/same-day" },
+        { name: "Golden Triangle Tour", href: "/golden-triangle-tour-packages" },
+        { name: "Same Day Tour Packages", href: "/same-day-tour-packages" },
       ],
     },
     {
@@ -113,8 +113,8 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white/40 backdrop-blur-md border-b border-white/25 shadow-xs transition-all">
-      <div className="max-w-[1600px] mx-auto px-3 sm:px-5 lg:px-6 xl:px-8">
+    <header className="sticky top-0 z-50 bg-[#FAF8F5]/60 backdrop-blur-xl border-b border-stone-200/40 shadow-xs transition-all">
+      <div className="max-w-[1650px] mx-auto px-3 sm:px-5 lg:px-6 xl:px-8">
         <div className="flex items-center justify-between h-20 xl:h-22">
           {/* Logo */}
           <Link href="/" className="flex items-center group py-1 shrink-0">
@@ -130,8 +130,8 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-2.5 xl:gap-4 2xl:gap-5.5">
+          {/* Desktop Navigation - All 10 Original Sections */}
+          <nav className="hidden lg:flex items-center gap-2 xl:gap-3 2xl:gap-4">
             {navLinks.map((link) => (
               <div
                 key={link.title}
@@ -141,35 +141,34 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
               >
                 <Link
                   href={link.href}
-                  className={`text-[13px] xl:text-[14px] 2xl:text-[14.5px] font-semibold tracking-tight transition-all flex items-center gap-0.5 xl:gap-1 py-2 whitespace-nowrap relative group/nav ${
+                  className={`text-[12px] xl:text-[13px] 2xl:text-[14px] font-medium tracking-tight transition-all flex items-center gap-1 py-2 whitespace-nowrap relative group/nav ${
                     link.isActive
-                      ? "text-[#f05a28]"
-                      : "text-slate-700 hover:text-[#f05a28]"
+                      ? "text-[#B58238] font-semibold"
+                      : "text-slate-700 hover:text-[#B58238]"
                   }`}
                 >
                   <span>{link.title}</span>
-                  <span
-                    className={`absolute bottom-0 left-0 h-0.5 bg-[#f05a28] rounded-full transition-all duration-300 ${
-                      link.isActive ? "w-full" : "w-0 group-hover/nav:w-full"
-                    }`}
-                  />
                   {link.hasDropdown && (
                     <ChevronDown
-                      className={`w-3.5 h-3.5 text-slate-400 transition-transform duration-300 ${
-                        activeDropdown === link.title ? "rotate-180 text-[#f05a28]" : ""
+                      className={`w-3.5 h-3.5 transition-transform duration-200 opacity-60 group-hover/nav:opacity-100 ${
+                        activeDropdown === link.title ? "rotate-180 text-[#B58238]" : ""
                       }`}
                     />
+                  )}
+                  {/* Subtle luxury underline on active */}
+                  {link.isActive && (
+                    <span className="absolute bottom-0 inset-x-0 h-0.5 bg-[#B58238] rounded-full" />
                   )}
                 </Link>
 
                 {/* Dropdown Menu */}
                 {link.hasDropdown && activeDropdown === link.title && (
-                  <div className="absolute top-full left-0 w-64 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/60 py-2.5 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+                  <div className="absolute top-full left-0 w-64 bg-white rounded-2xl shadow-xl border border-stone-200/80 py-2 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
                     {link.items?.map((item) => (
                       <Link
                         key={item.name}
                         href={item.href}
-                        className="block px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-orange-50/80 hover:text-[#f05a28] transition-all transform hover:translate-x-1"
+                        className="block px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-[#FAF5ED] hover:text-[#B58238] transition-all transform hover:translate-x-1"
                       >
                         {item.name}
                       </Link>
@@ -180,24 +179,25 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
             ))}
           </nav>
 
-          {/* Right Action Section (Search only) */}
+          {/* Right Action Section (Search button) */}
           <div className="hidden lg:flex items-center shrink-0">
             <div className="relative">
               <button
+                type="button"
                 onClick={() => setSearchOpen(!searchOpen)}
-                className="w-9 h-9 flex items-center justify-center rounded-full text-slate-600 hover:text-[#f05a28] hover:bg-white/50 transition-colors"
+                className="w-9 h-9 flex items-center justify-center rounded-full text-slate-700 hover:text-[#B58238] hover:bg-[#FAF5ED] transition-colors cursor-pointer"
                 aria-label="Search"
               >
                 <Search className="w-4 h-4" />
               </button>
               {searchOpen && (
-                <div className="absolute right-0 top-12 w-80 bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-slate-100 p-3 z-50">
-                  <div className="flex items-center gap-2 bg-slate-50 rounded-xl px-3.5 py-2.5 border border-slate-200">
+                <div className="absolute right-0 top-12 w-80 bg-white rounded-2xl shadow-2xl border border-stone-200/80 p-3 z-50">
+                  <div className="flex items-center gap-2 bg-[#FAF8F5] rounded-xl px-3.5 py-2.5 border border-stone-200">
                     <Search className="w-4 h-4 text-slate-400" />
                     <input
                       type="text"
                       placeholder="Search Bali, Dubai, Chardham..."
-                      className="w-full text-xs bg-transparent outline-none text-slate-800"
+                      className="w-full text-xs bg-transparent outline-none text-slate-800 font-medium"
                       autoFocus
                     />
                   </div>
@@ -206,11 +206,12 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
             </div>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile menu hamburger button */}
           <div className="flex items-center lg:hidden">
             <button
+              type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-slate-700 hover:text-slate-900 rounded-lg"
+              className="p-2 text-slate-700 hover:text-slate-900 rounded-lg cursor-pointer"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -221,9 +222,9 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
 
       {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white/95 backdrop-blur-xl border-b border-white/50 px-4 pt-2 pb-6 space-y-3 shadow-xl max-h-[85vh] overflow-y-auto">
+        <div className="lg:hidden bg-[#FAF8F5]/90 backdrop-blur-2xl border-b border-stone-200/60 px-4 pt-2 pb-6 space-y-3 shadow-2xl max-h-[85vh] overflow-y-auto">
           <div className="py-2">
-            <div className="flex items-center gap-2 bg-white/80 rounded-lg px-3 py-2 border border-slate-200/80 mb-3">
+            <div className="flex items-center gap-2 bg-[#FAF8F5] rounded-lg px-3 py-2 border border-stone-200 mb-3">
               <Search className="w-4 h-4 text-slate-400" />
               <input
                 type="text"
@@ -232,13 +233,13 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
               />
             </div>
             {navLinks.map((link) => (
-              <div key={link.title} className="py-2 border-b border-slate-100/80">
+              <div key={link.title} className="py-2 border-b border-stone-100">
                 <div className="flex items-center justify-between">
                   <Link
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
                     className={`block text-sm font-bold ${
-                      link.isActive ? "text-[#f05a28]" : "text-slate-800 hover:text-[#f05a28]"
+                      link.isActive ? "text-[#B58238]" : "text-slate-800 hover:text-[#B58238]"
                     }`}
                   >
                     {link.title}
@@ -249,12 +250,12 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
                       onClick={() =>
                         setMobileExpanded(mobileExpanded === link.title ? null : link.title)
                       }
-                      className="p-1 text-slate-400 hover:text-[#f05a28]"
+                      className="p-1 text-slate-400 hover:text-[#B58238]"
                       aria-label={`Toggle ${link.title} submenu`}
                     >
                       <ChevronDown
                         className={`w-4 h-4 transition-transform ${
-                          mobileExpanded === link.title ? "rotate-180 text-[#f05a28]" : ""
+                          mobileExpanded === link.title ? "rotate-180 text-[#B58238]" : ""
                         }`}
                       />
                     </button>
@@ -262,13 +263,13 @@ export default function Navbar({ onOpenEnquiry }: NavbarProps) {
                 </div>
 
                 {link.hasDropdown && mobileExpanded === link.title && (
-                  <div className="pl-3 mt-1.5 space-y-1 bg-slate-50/70 rounded-xl p-2">
+                  <div className="pl-3 mt-1.5 space-y-1 bg-[#FAF8F5] rounded-xl p-2 border border-stone-100">
                     {link.items?.map((item) => (
                       <Link
                         key={item.name}
                         href={item.href}
                         onClick={() => setMobileMenuOpen(false)}
-                        className="block text-xs font-medium text-slate-600 hover:text-[#f05a28] py-1"
+                        className="block text-xs font-medium text-slate-600 hover:text-[#B58238] py-1"
                       >
                         {item.name}
                       </Link>
