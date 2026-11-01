@@ -119,17 +119,17 @@ export default function Navbar({}: NavbarProps) {
           </Link>
 
           {/* Desktop Navigation - All 10 Original Sections */}
-          <nav className="hidden lg:flex items-center gap-2 xl:gap-3 2xl:gap-4">
+          <nav className="hidden lg:flex items-center gap-1.5 xl:gap-2.5 2xl:gap-4 flex-nowrap">
             {navLinks.map((link) => (
               <div
                 key={link.title}
-                className="relative"
+                className="relative shrink-0"
                 onMouseEnter={() => link.hasDropdown && setActiveDropdown(link.title)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <Link
                   href={link.href}
-                  className={`text-[12px] xl:text-[13px] 2xl:text-[14px] font-medium tracking-tight transition-all flex items-center gap-1 py-2 whitespace-nowrap relative group/nav ${
+                  className={`text-[11.5px] xl:text-[13px] 2xl:text-[14px] font-medium tracking-tight transition-all flex items-center gap-0.5 xl:gap-1 py-2 px-1 xl:px-1.5 whitespace-nowrap relative group/nav ${
                     link.isActive
                       ? "text-[#B58238] font-semibold"
                       : "text-slate-700 hover:text-[#B58238]"
@@ -138,7 +138,7 @@ export default function Navbar({}: NavbarProps) {
                   <span>{link.title}</span>
                   {link.hasDropdown && (
                     <ChevronDown
-                      className={`w-3.5 h-3.5 transition-transform duration-200 opacity-60 group-hover/nav:opacity-100 ${
+                      className={`w-3 h-3 xl:w-3.5 xl:h-3.5 transition-transform duration-200 opacity-60 group-hover/nav:opacity-100 ${
                         activeDropdown === link.title ? "rotate-180 text-[#B58238]" : ""
                       }`}
                     />
@@ -199,7 +199,7 @@ export default function Navbar({}: NavbarProps) {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-slate-700 hover:text-slate-900 rounded-lg cursor-pointer"
+              className="p-2.5 text-slate-700 hover:text-slate-900 rounded-xl cursor-pointer active:scale-95 transition-all"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -210,23 +210,23 @@ export default function Navbar({}: NavbarProps) {
 
       {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#FAF8F5]/90 backdrop-blur-2xl border-b border-stone-200/60 px-4 pt-2 pb-6 space-y-3 shadow-2xl max-h-[85vh] overflow-y-auto">
-          <div className="py-2">
-            <div className="flex items-center gap-2 bg-[#FAF8F5] rounded-lg px-3 py-2 border border-stone-200 mb-3">
-              <Search className="w-4 h-4 text-slate-400" />
+        <div className="lg:hidden bg-[#FAF8F5] border-b border-stone-200 px-4 pt-3 pb-8 space-y-3 shadow-2xl max-h-[85vh] overflow-y-auto animate-in fade-in slide-in-from-top-2 duration-200">
+          <div className="py-1">
+            <div className="flex items-center gap-2 bg-white rounded-xl px-3.5 py-2.5 border border-stone-200 mb-3 shadow-2xs">
+              <Search className="w-4 h-4 text-slate-400 shrink-0" />
               <input
                 type="text"
                 placeholder="Search packages, destinations..."
-                className="w-full text-xs bg-transparent outline-none text-slate-800"
+                className="w-full text-xs bg-transparent outline-none text-slate-800 font-medium"
               />
             </div>
             {navLinks.map((link) => (
-              <div key={link.title} className="py-2 border-b border-stone-100">
-                <div className="flex items-center justify-between">
+              <div key={link.title} className="py-1.5 border-b border-stone-200/60">
+                <div className="flex items-center justify-between min-h-[44px]">
                   <Link
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`block text-sm font-bold ${
+                    className={`block text-sm font-bold py-1.5 ${
                       link.isActive ? "text-[#B58238]" : "text-slate-800 hover:text-[#B58238]"
                     }`}
                   >
@@ -238,7 +238,7 @@ export default function Navbar({}: NavbarProps) {
                       onClick={() =>
                         setMobileExpanded(mobileExpanded === link.title ? null : link.title)
                       }
-                      className="p-1 text-slate-400 hover:text-[#B58238]"
+                      className="p-2 text-slate-400 hover:text-[#B58238] active:scale-95"
                       aria-label={`Toggle ${link.title} submenu`}
                     >
                       <ChevronDown
@@ -251,13 +251,13 @@ export default function Navbar({}: NavbarProps) {
                 </div>
 
                 {link.hasDropdown && mobileExpanded === link.title && (
-                  <div className="pl-3 mt-1.5 space-y-1 bg-[#FAF8F5] rounded-xl p-2 border border-stone-100">
+                  <div className="pl-3 mt-1.5 mb-2 space-y-1 bg-white rounded-xl p-2.5 border border-stone-200/80 shadow-2xs">
                     {link.items?.map((item) => (
                       <Link
                         key={item.name}
                         href={item.href}
                         onClick={() => setMobileMenuOpen(false)}
-                        className="block text-xs font-medium text-slate-600 hover:text-[#B58238] py-1"
+                        className="block text-xs font-semibold text-slate-700 hover:text-[#B58238] py-2 px-2 rounded-lg hover:bg-[#FAF8F5] transition-colors"
                       >
                         {item.name}
                       </Link>

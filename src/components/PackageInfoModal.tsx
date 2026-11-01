@@ -261,14 +261,14 @@ export default function PackageInfoModal({
             </div>
           )}
 
-          <div className="flex items-center gap-2.5 w-full sm:w-auto order-1 sm:order-2">
+          <div className="flex items-center gap-2 sm:gap-2.5 w-full sm:w-auto order-1 sm:order-2">
             <a
               href={`https://wa.me/919355486036?text=${whatsappMessage}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 sm:flex-initial bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs sm:text-sm font-bold py-3 px-5 rounded-xl shadow-md flex items-center justify-center gap-2 transition-all cursor-pointer"
+              className="flex-1 sm:flex-initial bg-[#25D366] hover:bg-[#20bd5a] text-white text-[11px] sm:text-sm font-bold py-2.5 sm:py-3 px-3 sm:px-5 rounded-xl shadow-md flex items-center justify-center gap-1.5 sm:gap-2 transition-all cursor-pointer text-center"
             >
-              <WhatsAppIcon variant="white" className="w-4 h-4" />
+              <WhatsAppIcon variant="white" className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
               <span>Inquire on WhatsApp</span>
             </a>
 
@@ -278,10 +278,10 @@ export default function PackageInfoModal({
                 onClose();
                 if (onBookNow) onBookNow(pkg.title);
               }}
-              className="flex-1 sm:flex-initial bg-[#B58238] hover:bg-[#9E6F21] text-white text-xs sm:text-sm font-semibold py-3 px-5 rounded-xl shadow-md flex items-center justify-center gap-1.5 transition-all cursor-pointer"
+              className="flex-1 sm:flex-initial bg-[#B58238] hover:bg-[#9E6F21] text-white text-[11px] sm:text-sm font-semibold py-2.5 sm:py-3 px-3 sm:px-5 rounded-xl shadow-md flex items-center justify-center gap-1 sm:gap-1.5 transition-all cursor-pointer text-center"
             >
               <span>Get Custom Quote</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
             </button>
           </div>
         </div>

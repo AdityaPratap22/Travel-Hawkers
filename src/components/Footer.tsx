@@ -60,7 +60,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer id="contact" className="relative bg-[#081E1C] text-white pt-16 sm:pt-20 pb-8 overflow-hidden">
+    <footer id="contact" className="relative bg-[#081E1C] text-white pt-12 sm:pt-16 lg:pt-20 pb-8 overflow-hidden">
       {/* Decorative subtle mountain silhouette outline watermark */}
       <div className="absolute right-0 bottom-0 w-full h-80 opacity-5 pointer-events-none select-none">
         <svg viewBox="0 0 1200 400" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full object-cover">
@@ -69,72 +69,72 @@ export default function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 sm:pb-16 border-b border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-8 pb-10 sm:pb-14 lg:pb-16 border-b border-white/10">
           {/* Brand Info */}
-          <div className="lg:col-span-4 space-y-5">
+          <div className="lg:col-span-4 space-y-4 sm:space-y-5 text-left">
             <Link href="/" className="group inline-block">
-              <div className="relative w-28 h-28 sm:w-32 sm:h-32 bg-white rounded-2xl p-2 shadow-md transition-transform group-hover:scale-105">
+              <div className="relative w-24 h-24 sm:w-28 sm:h-28 bg-white rounded-2xl p-2 shadow-md transition-transform group-hover:scale-105">
                 <Image
                   src="/logo.png"
                   alt="Travel Hawkers Logo"
                   fill
-                  sizes="128px"
+                  sizes="112px"
                   className="object-contain p-1"
                 />
               </div>
             </Link>
 
-            <p className="text-xs sm:text-sm text-stone-300/85 leading-relaxed max-w-sm">
+            <p className="text-xs sm:text-sm text-stone-300/85 leading-relaxed max-w-sm font-normal">
               We create unforgettable travel experiences with handpicked packages, expert guidance and personalised service. Let&apos;s explore the world together.
             </p>
 
             {/* Social Icons */}
-            <div className="flex items-center gap-3 pt-2">
+            <div className="flex items-center gap-2.5 sm:gap-3 pt-1 sm:pt-2">
               <a
                 href="https://facebook.com"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Facebook"
-                className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#B58238] flex items-center justify-center text-white transition-colors"
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 hover:bg-[#B58238] flex items-center justify-center text-white transition-colors"
               >
-                <FacebookIcon className="w-4 h-4" />
+                <FacebookIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </a>
               <a
                 href="https://instagram.com"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
-                className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#B58238] flex items-center justify-center text-white transition-colors"
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 hover:bg-[#B58238] flex items-center justify-center text-white transition-colors"
               >
-                <InstagramIcon className="w-4 h-4" />
+                <InstagramIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </a>
               <a
                 href="https://youtube.com"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="YouTube"
-                className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#B58238] flex items-center justify-center text-white transition-colors"
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 hover:bg-[#B58238] flex items-center justify-center text-white transition-colors"
               >
-                <YoutubeIcon className="w-4 h-4" />
+                <YoutubeIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </a>
               <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
-                className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#B58238] flex items-center justify-center text-white transition-colors"
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 hover:bg-[#B58238] flex items-center justify-center text-white transition-colors"
               >
-                <LinkedinIcon className="w-4 h-4" />
+                <LinkedinIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </a>
             </div>
           </div>
 
           {/* Quick Links */}
-          <div className="lg:col-span-2 space-y-4">
-            <h4 className="text-sm font-bold text-white tracking-wide uppercase">
+          <div className="lg:col-span-2 space-y-3 sm:space-y-4 text-left">
+            <h4 className="text-xs sm:text-sm font-bold text-white tracking-wider uppercase">
               Quick Links
             </h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-2 sm:space-y-2.5">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <Link
@@ -149,11 +149,11 @@ export default function Footer() {
           </div>
 
           {/* Popular Destinations */}
-          <div className="lg:col-span-3 space-y-4">
-            <h4 className="text-sm font-bold text-white tracking-wide uppercase">
+          <div className="lg:col-span-3 space-y-3 sm:space-y-4 text-left">
+            <h4 className="text-xs sm:text-sm font-bold text-white tracking-wider uppercase">
               Popular Destinations
             </h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-2 sm:space-y-2.5">
               {popularDestinations.map((dest) => (
                 <li key={dest.name}>
                   <Link
@@ -168,18 +168,18 @@ export default function Footer() {
           </div>
 
           {/* Contact Us */}
-          <div className="lg:col-span-3 space-y-4">
-            <h4 className="text-sm font-bold text-white tracking-wide uppercase">
+          <div className="lg:col-span-3 space-y-3 sm:space-y-4 text-left">
+            <h4 className="text-xs sm:text-sm font-bold text-white tracking-wider uppercase">
               Contact Us
             </h4>
-            <div className="space-y-3.5 text-xs sm:text-sm text-stone-300">
-              <div className="flex items-start gap-3">
+            <div className="space-y-3 text-xs sm:text-sm text-stone-300">
+              <div className="flex items-start gap-2.5 sm:gap-3">
                 <Phone className="w-4 h-4 text-[#C59B58] shrink-0 mt-0.5" />
                 <a href="tel:+919355486036" className="hover:text-white transition-colors">
                   +91 93554 86036
                 </a>
               </div>
-              <div className="flex items-start gap-3">
+              <div className="flex items-start gap-2.5 sm:gap-3">
                 <WhatsAppIcon variant="green" className="w-4 h-4 shrink-0 mt-0.5" />
                 <a
                   href="https://wa.me/919355486036"
@@ -190,13 +190,13 @@ export default function Footer() {
                   <span>Chat on WhatsApp</span>
                 </a>
               </div>
-              <div className="flex items-start gap-3">
+              <div className="flex items-start gap-2.5 sm:gap-3">
                 <Mail className="w-4 h-4 text-[#C59B58] shrink-0 mt-0.5" />
                 <a href="mailto:info@travelhawkers.com" className="hover:text-white transition-colors">
                   info@travelhawkers.com
                 </a>
               </div>
-              <div className="flex items-start gap-3">
+              <div className="flex items-start gap-2.5 sm:gap-3">
                 <MapPin className="w-4 h-4 text-[#C59B58] shrink-0 mt-0.5" />
                 <span className="leading-relaxed">
                   E 68, Block FA, Tagore Garden, Tagore Garden Extension, New Delhi, India 110027
@@ -207,7 +207,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Sub-footer */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-400 gap-4">
+        <div className="pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] sm:text-xs text-stone-400 gap-3 sm:gap-4 text-center sm:text-left">
           <div suppressHydrationWarning>
             &copy; {new Date().getFullYear()}{" "}
             <a
@@ -220,7 +220,7 @@ export default function Footer() {
             </a>
             . All rights reserved.
           </div>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-4 sm:gap-6 flex-wrap justify-center">
             <Link href="/about-us" className="hover:text-stone-200 transition-colors">
               Privacy Policy
             </Link>

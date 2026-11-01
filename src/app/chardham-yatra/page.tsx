@@ -18,24 +18,26 @@ import {
   Sun,
   MapPin,
   Sparkles,
+  Mail,
 } from "lucide-react";
-import { openWhatsAppInquiry } from "@/utils/whatsapp";
-import WhatsAppIcon from "@/components/WhatsAppIcon";
+import { submitEmailEnquiry } from "@/utils/enquiry";
 
 export default function ChardhamYatraPage() {
   const [enquiryOpen, setEnquiryOpen] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState<string>("Chardham Yatra 10N/11D Package");
   const [callbackName, setCallbackName] = useState("");
+  const [callbackEmail, setCallbackEmail] = useState("");
   const [callbackPhone, setCallbackPhone] = useState("");
   const [callbackPilgrims, setCallbackPilgrims] = useState(2);
   const [callbackMonth, setCallbackMonth] = useState("May 2026 (Opening Season)");
   const [callbackSubmitted, setCallbackSubmitted] = useState(false);
 
-  const handleCallbackSubmit = (e: React.FormEvent) => {
+  const handleCallbackSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    openWhatsAppInquiry({
+    await submitEmailEnquiry({
       packageTitle: "Char Dham Yatra 2026 Pilgrimage Package",
       name: callbackName,
+      email: callbackEmail,
       phone: callbackPhone,
       travellers: `${callbackPilgrims} Pilgrims`,
       dates: callbackMonth,
@@ -340,42 +342,55 @@ export default function ChardhamYatraPage() {
                 <strong className="text-white">+91 93554 86036</strong>.
               </p>
               {callbackSubmitted ? (
-                <div className="bg-emerald-950/80 border border-emerald-500/40 rounded-2xl p-6 text-center space-y-3">
-                  <WhatsAppIcon variant="colored" className="w-12 h-12 mx-auto" />
-                  <h4 className="font-bold text-white text-base">WhatsApp Booking Opened!</h4>
-                  <p className="text-xs text-slate-300 leading-relaxed">
-                    Your Char Dham Yatra booking inquiry details have been forwarded to WhatsApp. If the chat didn&apos;t launch automatically, chat directly with our pilgrimage coordinator at <strong className="text-white">+91 93554 86036</strong>.
+                <div className="bg-amber-50/15 border border-[#B58238]/40 rounded-2xl p-6 text-center space-y-3">
+                  <CheckCircle2 className="w-10 h-10 text-[#C59B58] mx-auto" />
+                  <h4 className="font-bold text-white text-base font-serif">Yatra Request Received</h4>
+                  <p className="text-xs text-stone-300 leading-relaxed">
+                    Jai Badri Vishal! Our pilgrimage specialist will email your comprehensive Chardham itinerary and pricing to <strong className="text-white">{callbackEmail || callbackPhone}</strong> shortly.
                   </p>
                   <button
                     onClick={() => setCallbackSubmitted(false)}
-                    className="text-xs font-bold text-[#25D366] hover:underline"
+                    className="text-xs text-[#C59B58] font-bold hover:underline cursor-pointer"
                   >
                     Submit another inquiry
                   </button>
                 </div>
               ) : (
                 <form onSubmit={handleCallbackSubmit} className="space-y-4">
-                  <div>
-                    <label className="text-[11px] font-bold text-slate-300 uppercase">Full Name</label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="Enter your name"
-                      value={callbackName}
-                      onChange={(e) => setCallbackName(e.target.value)}
-                      className="w-full mt-1 px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white text-xs placeholder:text-slate-400 outline-none focus:border-[#25D366]"
-                    />
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                      <label className="text-[11px] font-bold text-slate-300 uppercase">Full Name</label>
+                      <input
+                        type="text"
+                        required
+                        placeholder="Enter your name"
+                        value={callbackName}
+                        onChange={(e) => setCallbackName(e.target.value)}
+                        className="w-full mt-1 px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white text-xs placeholder:text-slate-400 outline-none focus:border-[#B58238]"
+                      />
+                    </div>
+                    <div>
+                      <label className="text-[11px] font-bold text-slate-300 uppercase">Email Address</label>
+                      <input
+                        type="email"
+                        required
+                        placeholder="name@example.com"
+                        value={callbackEmail}
+                        onChange={(e) => setCallbackEmail(e.target.value)}
+                        className="w-full mt-1 px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white text-xs placeholder:text-slate-400 outline-none focus:border-[#B58238]"
+                      />
+                    </div>
                   </div>
                   <div className="grid grid-cols-2 gap-3">
                     <div>
-                      <label className="text-[11px] font-bold text-slate-300 uppercase">Phone / WhatsApp</label>
+                      <label className="text-[11px] font-bold text-slate-300 uppercase">Phone Number</label>
                       <input
                         type="tel"
                         required
                         placeholder="+91 Mobile"
                         value={callbackPhone}
                         onChange={(e) => setCallbackPhone(e.target.value)}
-                        className="w-full mt-1 px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white text-xs placeholder:text-slate-400 outline-none focus:border-[#25D366]"
+                        className="w-full mt-1 px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white text-xs placeholder:text-slate-400 outline-none focus:border-[#B58238]"
                       />
                     </div>
                     <div>
@@ -385,7 +400,7 @@ export default function ChardhamYatraPage() {
                         min={1}
                         value={callbackPilgrims}
                         onChange={(e) => setCallbackPilgrims(Number(e.target.value))}
-                        className="w-full mt-1 px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white text-xs placeholder:text-slate-400 outline-none focus:border-[#25D366]"
+                        className="w-full mt-1 px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white text-xs placeholder:text-slate-400 outline-none focus:border-[#B58238]"
                       />
                     </div>
                   </div>
@@ -394,7 +409,7 @@ export default function ChardhamYatraPage() {
                     <select
                       value={callbackMonth}
                       onChange={(e) => setCallbackMonth(e.target.value)}
-                      className="w-full mt-1 px-4 py-3 rounded-xl bg-[#10343e] border border-white/20 text-white text-xs outline-none focus:border-[#25D366]"
+                      className="w-full mt-1 px-4 py-3 rounded-xl bg-[#10343e] border border-white/20 text-white text-xs outline-none focus:border-[#B58238]"
                     >
                       <option>May 2026 (Opening Season)</option>
                       <option>June 2026 (Summer Break)</option>
@@ -404,10 +419,10 @@ export default function ChardhamYatraPage() {
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs py-3.5 rounded-xl shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2.5 transition-all transform hover:scale-[1.02]"
+                    className="w-full bg-[#B58238] hover:bg-[#9E6F21] text-white font-bold text-xs py-3.5 rounded-xl shadow-lg flex items-center justify-center gap-2.5 transition-all transform hover:scale-[1.02] cursor-pointer"
                   >
-                    <WhatsAppIcon variant="white" className="w-4 h-4" />
-                    <span>Request Yatra Itinerary on WhatsApp</span>
+                    <Mail className="w-4 h-4" />
+                    <span>Request Yatra Itinerary via Email</span>
                   </button>
                 </form>
               )}

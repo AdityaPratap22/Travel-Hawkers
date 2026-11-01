@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import {
   Users,
   Luggage,
@@ -9,13 +10,15 @@ import {
   MapPin,
   Calendar,
   CheckCircle2,
+  Mail,
+  ArrowRight,
 } from "lucide-react";
-import { openWhatsAppInquiry } from "@/utils/whatsapp";
-import WhatsAppIcon from "./WhatsAppIcon";
+import { submitEmailEnquiry } from "@/utils/enquiry";
 
 export default function WhyChooseUsAndCustomPlan() {
   const [formData, setFormData] = useState({
     name: "",
+    email: "",
     phone: "",
     destination: "",
     dates: "",
@@ -24,21 +27,22 @@ export default function WhyChooseUsAndCustomPlan() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
-      openWhatsAppInquiry({
-        name: formData.name,
-        phone: formData.phone,
-        destination: formData.destination,
-        dates: formData.dates,
-        message: formData.message,
-      });
-      setLoading(false);
-      setSubmitted(true);
-      setFormData({ name: "", phone: "", destination: "", dates: "", message: "" });
-    }, 400);
+
+    await submitEmailEnquiry({
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      destination: formData.destination,
+      dates: formData.dates,
+      message: formData.message,
+    });
+
+    setLoading(false);
+    setSubmitted(true);
+    setFormData({ name: "", email: "", phone: "", destination: "", dates: "", message: "" });
   };
 
   const features = [
@@ -65,36 +69,36 @@ export default function WhyChooseUsAndCustomPlan() {
   ];
 
   return (
-    <section id="about" className="py-16 sm:py-24 bg-[#FAF8F5] overflow-hidden">
+    <section id="about" className="py-12 sm:py-16 lg:py-24 bg-[#FAF8F5] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
           {/* Left Column: Why Travel With Travel Hawkers */}
-          <div className="reveal-left lg:col-span-5 space-y-6 text-left">
+          <div className="reveal-left lg:col-span-5 space-y-5 sm:space-y-6 text-left">
             <div>
-              <span className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#B88434] block mb-1">
+              <span className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#B88434] block mb-1">
                 OUR PROMISE
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-900 tracking-tight leading-[1.12]">
-                Why Travel with<br />Travel Hawkers?
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-900 tracking-tight leading-[1.12]">
+                Why Travel with<br className="hidden sm:inline" /> Travel Hawkers?
               </h2>
               <p className="mt-2 text-xs sm:text-sm text-slate-600 font-normal leading-relaxed max-w-md">
                 We create extraordinary travel experiences with expert guidance, handpicked packages and personalised service.
               </p>
             </div>
 
-            <div className="space-y-4 pt-2">
+            <div className="space-y-3 sm:space-y-4 pt-1 sm:pt-2">
               {features.map((feat, i) => {
                 const Icon = feat.icon;
                 return (
-                  <div key={i} className="flex items-start gap-4 group p-2 rounded-xl transition-all duration-300">
-                    <div className="w-11 h-11 rounded-full bg-[#FAF5ED] border border-[#EADBCC] flex items-center justify-center text-[#B58238] shrink-0 group-hover:bg-[#B58238] group-hover:text-white transition-all duration-300 shadow-2xs group-hover:scale-105">
-                      <Icon className="w-5 h-5 stroke-[1.8]" />
+                  <div key={i} className="flex items-start gap-3 sm:gap-4 group p-1.5 sm:p-2 rounded-xl transition-all duration-300">
+                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#FAF5ED] border border-[#EADBCC] flex items-center justify-center text-[#B58238] shrink-0 group-hover:bg-[#B58238] group-hover:text-white transition-all duration-300 shadow-2xs group-hover:scale-105">
+                      <Icon className="w-4 h-4 sm:w-5 sm:h-5 stroke-[1.8]" />
                     </div>
                     <div>
-                      <h3 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[#B58238] transition-colors leading-snug">
+                      <h3 className="text-xs sm:text-base font-bold text-slate-900 group-hover:text-[#B58238] transition-colors leading-snug">
                         {feat.title}
                       </h3>
-                      <p className="text-xs text-slate-500 font-medium mt-0.5 leading-relaxed">
+                      <p className="text-[11px] sm:text-xs text-slate-500 font-medium mt-0.5 leading-relaxed">
                         {feat.desc}
                       </p>
                     </div>
@@ -106,32 +110,32 @@ export default function WhyChooseUsAndCustomPlan() {
 
           {/* Right Column: Original Embedded Custom Plan Form */}
           <div className="reveal-right delay-150 lg:col-span-7">
-            <div className="bg-white rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl border border-stone-200/80">
-              <div className="text-left mb-6">
-                <span className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#B88434] block mb-1">
+            <div className="bg-white rounded-3xl p-5 sm:p-7 lg:p-10 shadow-xl border border-stone-200/80">
+              <div className="text-left mb-5 sm:mb-6">
+                <span className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#B88434] block mb-1">
                   TAILOR-MADE TRIPS
                 </span>
-                <h3 className="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-serif font-bold text-slate-900 tracking-tight">
                   Plan Your Custom Holiday
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-500 mt-1 font-medium">
-                  Tell us your dream destination and dates. Our team will tailor a personalised itinerary for you on WhatsApp.
+                  Tell us your dream destination and dates. Our team will tailor a personalised itinerary and quotation sent directly to your email.
                 </p>
               </div>
 
               {submitted ? (
                 <div className="py-10 text-center space-y-4">
-                  <div className="w-14 h-14 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 mx-auto">
+                  <div className="w-14 h-14 bg-amber-50 border border-amber-200 rounded-full flex items-center justify-center text-[#B58238] mx-auto">
                     <CheckCircle2 className="w-7 h-7" />
                   </div>
-                  <h4 className="text-lg font-bold text-slate-900 font-serif">Inquiry Initiated!</h4>
+                  <h4 className="text-lg font-bold text-slate-900 font-serif">Custom Plan Request Received!</h4>
                   <p className="text-xs sm:text-sm text-slate-600 max-w-sm mx-auto font-medium">
-                    WhatsApp has opened with your trip details. Our travel consultant will be right with you.
+                    Thank you! Our destination specialists are crafting your custom itinerary and will email you the full quote shortly.
                   </p>
                   <button
                     type="button"
                     onClick={() => setSubmitted(false)}
-                    className="text-xs font-bold text-[#B58238] hover:underline"
+                    className="text-xs font-bold text-[#B58238] hover:underline cursor-pointer"
                   >
                     Submit another request
                   </button>
@@ -155,7 +159,24 @@ export default function WhyChooseUsAndCustomPlan() {
                     </div>
                     <div>
                       <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1">
-                        Phone / WhatsApp *
+                        Email Address *
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        placeholder="name@example.com"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        className="w-full text-xs sm:text-sm bg-[#FAF8F5] border border-stone-200 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#B58238] transition-all font-medium"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Phone & Destination */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1">
+                        Phone Number *
                       </label>
                       <input
                         type="tel"
@@ -166,10 +187,6 @@ export default function WhyChooseUsAndCustomPlan() {
                         className="w-full text-xs sm:text-sm bg-[#FAF8F5] border border-stone-200 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#B58238] transition-all font-medium"
                       />
                     </div>
-                  </div>
-
-                  {/* Destination & Dates */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1">
                         Where would you like to travel? *
@@ -178,7 +195,7 @@ export default function WhyChooseUsAndCustomPlan() {
                         <input
                           type="text"
                           required
-                          placeholder="e.g. Bali, Switzerland, Kashmir"
+                          placeholder="e.g. Bali, Kashmir, Dubai"
                           value={formData.destination}
                           onChange={(e) => setFormData({ ...formData, destination: e.target.value })}
                           className="w-full text-xs sm:text-sm bg-[#FAF8F5] border border-stone-200 rounded-xl pl-9 pr-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#B58238] transition-all font-medium"
@@ -186,21 +203,23 @@ export default function WhyChooseUsAndCustomPlan() {
                         <MapPin className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
                       </div>
                     </div>
-                    <div>
-                      <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1">
-                        When would you like to travel? *
-                      </label>
-                      <div className="relative">
-                        <input
-                          type="text"
-                          required
-                          placeholder="e.g. Next month, 5 days"
-                          value={formData.dates}
-                          onChange={(e) => setFormData({ ...formData, dates: e.target.value })}
-                          className="w-full text-xs sm:text-sm bg-[#FAF8F5] border border-stone-200 rounded-xl pl-9 pr-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#B58238] transition-all font-medium"
-                        />
-                        <Calendar className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
-                      </div>
+                  </div>
+
+                  {/* Dates */}
+                  <div>
+                    <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1">
+                      When would you like to travel? *
+                    </label>
+                    <div className="relative">
+                      <input
+                        type="text"
+                        required
+                        placeholder="e.g. Next month, 5 days"
+                        value={formData.dates}
+                        onChange={(e) => setFormData({ ...formData, dates: e.target.value })}
+                        className="w-full text-xs sm:text-sm bg-[#FAF8F5] border border-stone-200 rounded-xl pl-9 pr-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#B58238] transition-all font-medium"
+                      />
+                      <Calendar className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
                     </div>
                   </div>
 
@@ -222,14 +241,11 @@ export default function WhyChooseUsAndCustomPlan() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs sm:text-sm py-3.5 rounded-xl shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2.5 transition-all transform hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-70 cursor-pointer"
+                    className="w-full bg-[#B58238] hover:bg-[#9E6F21] text-white font-bold text-xs sm:text-sm py-3.5 rounded-xl shadow-lg flex items-center justify-center gap-2.5 transition-all transform hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-70 cursor-pointer"
                   >
-                    {loading ? (
-                      <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                    ) : (
-                      <WhatsAppIcon variant="white" className="w-5 h-5" />
-                    )}
-                    <span>{loading ? "Opening WhatsApp..." : "Send Custom Plan on WhatsApp"}</span>
+                    <Mail className="w-4 h-4" />
+                    <span>{loading ? "Submitting Custom Plan..." : "Request Custom Plan via Email"}</span>
+                    <ArrowRight className="w-4 h-4" />
                   </button>
                 </form>
               )}

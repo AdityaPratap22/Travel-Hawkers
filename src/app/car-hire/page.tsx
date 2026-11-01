@@ -21,9 +21,9 @@ import {
   ChevronRight,
   Calendar,
   Check,
+  Mail,
 } from "lucide-react";
-import { openWhatsAppInquiry } from "@/utils/whatsapp";
-import WhatsAppIcon from "@/components/WhatsAppIcon";
+import { submitEmailEnquiry } from "@/utils/enquiry";
 
 export default function CarHirePage() {
   const [enquiryOpen, setEnquiryOpen] = useState(false);
@@ -31,6 +31,7 @@ export default function CarHirePage() {
   const [pickupCity, setPickupCity] = useState("Delhi NCR");
   const [destinationCity, setDestinationCity] = useState("");
   const [pickupDate, setPickupDate] = useState(new Date().toISOString().split("T")[0]);
+  const [customerEmail, setCustomerEmail] = useState("");
   const [mobileNumber, setMobileNumber] = useState("");
   const [tripType, setTripType] = useState("Outstation");
   const [bookingSubmitted, setBookingSubmitted] = useState(false);
@@ -181,12 +182,13 @@ export default function CarHirePage() {
     },
   ];
 
-  const handleQuickBook = (e: React.FormEvent) => {
+  const handleQuickBook = async (e: React.FormEvent) => {
     e.preventDefault();
-    openWhatsAppInquiry({
+    await submitEmailEnquiry({
       packageTitle: `Car Hire - ${tripType} (${selectedVehicle})`,
       destination: destinationCity || "Not specified",
       dates: pickupDate,
+      email: customerEmail,
       phone: mobileNumber,
       message: `Pickup City: ${pickupCity}\nDestination: ${destinationCity}\nTrip Type: ${tripType}\nVehicle: ${selectedVehicle}\nPickup Date: ${pickupDate}`,
     });
@@ -260,15 +262,17 @@ export default function CarHirePage() {
                   </div>
 
                   {bookingSubmitted ? (
-                    <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-6 text-center space-y-3">
-                      <WhatsAppIcon variant="colored" className="w-12 h-12 mx-auto" />
-                      <h4 className="font-bold text-slate-900 text-base">WhatsApp Booking Opened!</h4>
+                    <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6 text-center space-y-3">
+                      <div className="w-12 h-12 bg-white rounded-full border border-amber-200 flex items-center justify-center text-[#B58238] mx-auto shadow-xs">
+                        <Check className="w-6 h-6" />
+                      </div>
+                      <h4 className="font-bold text-slate-900 text-base font-serif">Cab Booking Request Received!</h4>
                       <p className="text-xs text-slate-600 leading-relaxed">
-                        Your vehicle request details are ready. If WhatsApp didn&apos;t open automatically, chat directly with our transport desk at <strong className="text-slate-800">+91 93554 86036</strong>.
+                        Your vehicle booking details have been submitted. Our transport manager will email your vehicle confirmation and rate slip to <strong className="text-slate-800">{customerEmail || mobileNumber}</strong> shortly.
                       </p>
                       <button
                         onClick={() => setBookingSubmitted(false)}
-                        className="text-xs font-bold text-[#25D366] hover:underline"
+                        className="text-xs font-bold text-[#B58238] hover:underline cursor-pointer"
                       >
                         Book another cab
                       </button>
@@ -282,9 +286,9 @@ export default function CarHirePage() {
                             type="button"
                             key={type}
                             onClick={() => setTripType(type)}
-                            className={`py-2 rounded-lg transition-colors ${
+                            className={`py-2 rounded-lg transition-colors cursor-pointer ${
                               tripType === type
-                                ? "bg-white text-[#25D366] shadow-xs font-bold"
+                                ? "bg-white text-[#B58238] shadow-xs font-bold"
                                 : "hover:text-slate-900"
                             }`}
                           >
@@ -300,7 +304,7 @@ export default function CarHirePage() {
                         <select
                           value={selectedVehicle}
                           onChange={(e) => setSelectedVehicle(e.target.value)}
-                          className="w-full text-xs font-semibold bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 focus:ring-2 focus:ring-[#25D366] outline-none"
+                          className="w-full text-xs font-semibold bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 focus:ring-2 focus:ring-[#B58238] outline-none"
                         >
                           <option>Toyota Innova Crysta (6-7 Seater)</option>
                           <option>Swift Dzire / Toyota Etios (Sedan)</option>
@@ -319,11 +323,11 @@ export default function CarHirePage() {
                           </label>
                           <input
                             type="text"
-                            placeholder="e.g. Delhi / Gurugram"
+                            placeholder="e.g. Delhi NCR"
                             required
                             value={pickupCity}
                             onChange={(e) => setPickupCity(e.target.value)}
-                            className="w-full text-xs bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 focus:border-[#25D366] outline-none"
+                            className="w-full text-xs bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 focus:border-[#B58238] outline-none"
                           />
                         </div>
                         <div>
@@ -336,7 +340,7 @@ export default function CarHirePage() {
                             required
                             value={destinationCity}
                             onChange={(e) => setDestinationCity(e.target.value)}
-                            className="w-full text-xs bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 focus:border-[#25D366] outline-none"
+                            className="w-full text-xs bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 focus:border-[#B58238] outline-none"
                           />
                         </div>
                       </div>
@@ -351,12 +355,12 @@ export default function CarHirePage() {
                             required
                             value={pickupDate}
                             onChange={(e) => setPickupDate(e.target.value)}
-                            className="w-full text-xs bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 focus:border-[#25D366] outline-none"
+                            className="w-full text-xs bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 focus:border-[#B58238] outline-none"
                           />
                         </div>
                         <div>
                           <label className="block text-xs font-bold text-slate-700 mb-1">
-                            Your WhatsApp / Mobile
+                            Mobile Number
                           </label>
                           <input
                             type="tel"
@@ -364,17 +368,31 @@ export default function CarHirePage() {
                             required
                             value={mobileNumber}
                             onChange={(e) => setMobileNumber(e.target.value)}
-                            className="w-full text-xs bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 focus:border-[#25D366] outline-none"
+                            className="w-full text-xs bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 focus:border-[#B58238] outline-none"
                           />
                         </div>
                       </div>
 
+                      <div>
+                        <label className="block text-xs font-bold text-slate-700 mb-1">
+                          Email Address
+                        </label>
+                        <input
+                          type="email"
+                          placeholder="name@example.com"
+                          required
+                          value={customerEmail}
+                          onChange={(e) => setCustomerEmail(e.target.value)}
+                          className="w-full text-xs bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 focus:border-[#B58238] outline-none"
+                        />
+                      </div>
+
                       <button
                         type="submit"
-                        className="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs py-3.5 rounded-xl shadow-lg shadow-emerald-500/25 transition-all flex items-center justify-center gap-2 transform hover:-translate-y-0.5"
+                        className="w-full bg-[#B58238] hover:bg-[#9E6F21] text-white font-bold text-xs py-3.5 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 transform hover:-translate-y-0.5 cursor-pointer"
                       >
-                        <WhatsAppIcon variant="white" className="w-4 h-4" />
-                        <span>Book Cab on WhatsApp</span>
+                        <Mail className="w-4 h-4" />
+                        <span>Request Cab Booking via Email</span>
                       </button>
                     </form>
                   )}

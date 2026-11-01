@@ -128,29 +128,29 @@ export default function TrendingPackages({ onGetQuote }: TrendingPackagesProps) 
   };
 
   return (
-    <section id="packages" className="py-14 sm:py-20 bg-[#FAF8F5]">
+    <section id="packages" className="py-12 sm:py-16 lg:py-20 bg-[#FAF8F5]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="reveal flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 gap-4">
+        <div className="reveal flex flex-col sm:flex-row sm:items-end justify-between mb-6 sm:mb-8 lg:mb-10 gap-3 sm:gap-4">
           <div>
-            <span className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#B88434] block mb-1">
+            <span className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#B88434] block mb-1">
               FEATURED PACKAGES
             </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-slate-900 tracking-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-slate-900 tracking-tight leading-tight">
               Curated Journeys for Every Traveller
             </h2>
-            <p className="mt-1 text-xs sm:text-sm text-slate-500 max-w-xl">
+            <p className="mt-1 text-xs sm:text-sm text-slate-500 max-w-xl font-medium">
               Tap any package to explore day-wise highlights, cities covered, and inclusions.
             </p>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center justify-between sm:justify-end gap-3 sm:gap-4 pt-1 sm:pt-0">
             <Link
               href="/packages"
               className="text-xs sm:text-sm font-semibold text-slate-700 hover:text-[#B58238] flex items-center gap-1.5 transition-colors group"
             >
               <span>View All Packages</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
 
             {/* Slider arrows */}
@@ -159,7 +159,7 @@ export default function TrendingPackages({ onGetQuote }: TrendingPackagesProps) 
                 type="button"
                 onClick={() => scroll("left")}
                 aria-label="Previous package"
-                className="w-8 h-8 rounded-full border border-stone-200 hover:border-slate-800 flex items-center justify-center text-slate-600 hover:text-slate-900 transition-colors shadow-2xs cursor-pointer"
+                className="w-8 h-8 rounded-full border border-stone-200 hover:border-slate-800 flex items-center justify-center text-slate-600 hover:text-slate-900 transition-colors shadow-2xs cursor-pointer active:scale-95"
               >
                 <ChevronLeft className="w-4 h-4" />
               </button>
@@ -167,7 +167,7 @@ export default function TrendingPackages({ onGetQuote }: TrendingPackagesProps) 
                 type="button"
                 onClick={() => scroll("right")}
                 aria-label="Next package"
-                className="w-8 h-8 rounded-full border border-stone-200 hover:border-slate-800 flex items-center justify-center text-slate-600 hover:text-slate-900 transition-colors shadow-2xs cursor-pointer"
+                className="w-8 h-8 rounded-full border border-stone-200 hover:border-slate-800 flex items-center justify-center text-slate-600 hover:text-slate-900 transition-colors shadow-2xs cursor-pointer active:scale-95"
               >
                 <ChevronRight className="w-4 h-4" />
               </button>
@@ -178,7 +178,7 @@ export default function TrendingPackages({ onGetQuote }: TrendingPackagesProps) 
         {/* Packages Carousel */}
         <div
           ref={scrollRef}
-          className="flex gap-5 sm:gap-6 overflow-x-auto pb-4 pt-1 snap-x snap-mandatory no-scrollbar"
+          className="flex gap-4 sm:gap-5 lg:gap-6 overflow-x-auto pb-4 pt-1 snap-x snap-mandatory no-scrollbar"
         >
           {PACKAGES.map((pkg, idx) => {
             const isFav = favorites[pkg.id];
@@ -187,31 +187,31 @@ export default function TrendingPackages({ onGetQuote }: TrendingPackagesProps) 
               <div
                 key={pkg.id}
                 onClick={() => handleOpenInfo(pkg)}
-                className={`reveal ${delays[idx] || ""} flex-none w-[270px] sm:w-[300px] md:w-[320px] bg-white rounded-2xl overflow-hidden border border-stone-200/80 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group snap-start cursor-pointer transform hover:-translate-y-1.5`}
+                className={`reveal ${delays[idx] || ""} flex-none w-[255px] sm:w-[285px] md:w-[315px] bg-white rounded-2xl overflow-hidden border border-stone-200/80 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group snap-start cursor-pointer transform hover:-translate-y-1.5`}
               >
                 {/* Image & Badges */}
-                <div className="relative h-48 sm:h-52 w-full overflow-hidden">
+                <div className="relative h-44 sm:h-48 md:h-52 w-full overflow-hidden">
                   <Image
                     src={pkg.image}
                     alt={pkg.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    sizes="320px"
+                    sizes="(max-width: 640px) 255px, 320px"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
 
                   {/* Top Badge */}
                   {pkg.badge && (
-                    <div className="absolute top-3 left-3">
-                      <span className="bg-[#B58238] text-white text-[11px] font-bold px-2.5 py-1 rounded-md shadow-xs uppercase tracking-wider">
+                    <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3">
+                      <span className="bg-[#B58238] text-white text-[10px] sm:text-[11px] font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md shadow-xs uppercase tracking-wider">
                         {pkg.badge.label}
                       </span>
                     </div>
                   )}
 
                   {/* Quick Info Hint Button */}
-                  <div className="absolute bottom-2.5 left-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="bg-black/60 backdrop-blur-md text-white text-[10px] font-semibold px-2 py-0.5 rounded-full flex items-center gap-1">
+                  <div className="absolute bottom-2.5 left-3 opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="bg-black/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] font-semibold px-2 py-0.5 rounded-full flex items-center gap-1">
                       <Info className="w-3 h-3" />
                       Tap for info
                     </span>
@@ -222,29 +222,29 @@ export default function TrendingPackages({ onGetQuote }: TrendingPackagesProps) 
                     type="button"
                     onClick={(e) => toggleFavorite(pkg.id, e)}
                     aria-label="Save to wishlist"
-                    className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-slate-700 hover:text-rose-500 hover:bg-white transition-all shadow-xs cursor-pointer"
+                    className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-slate-700 hover:text-rose-500 hover:bg-white transition-all shadow-xs cursor-pointer active:scale-95"
                   >
                     <Heart
-                      className={`w-4 h-4 ${isFav ? "fill-rose-500 text-rose-500" : ""}`}
+                      className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${isFav ? "fill-rose-500 text-rose-500" : ""}`}
                     />
                   </button>
                 </div>
 
                 {/* Card Content */}
-                <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
+                <div className="p-3.5 sm:p-4 md:p-5 flex-1 flex flex-col justify-between text-left">
                   <div>
-                    <h3 className="text-base sm:text-lg font-serif font-bold text-slate-900 group-hover:text-[#B58238] transition-colors leading-snug">
+                    <h3 className="text-sm sm:text-base md:text-lg font-serif font-bold text-slate-900 group-hover:text-[#B58238] transition-colors leading-snug">
                       {pkg.title}
                     </h3>
 
                     {/* Duration */}
-                    <div className="flex items-center gap-1.5 text-xs text-slate-500 font-medium mt-1 mb-3">
+                    <div className="flex items-center gap-1.5 text-xs text-slate-500 font-medium mt-1 mb-2.5 sm:mb-3">
                       <Clock className="w-3.5 h-3.5 text-[#B58238]" />
                       <span>{pkg.duration}</span>
                     </div>
 
                     {/* Amenities Line */}
-                    <div className="flex items-center gap-3 text-[11px] text-slate-600 border-t border-stone-100 pt-3 mb-4">
+                    <div className="flex items-center gap-2.5 sm:gap-3 text-[10px] sm:text-[11px] text-slate-600 border-t border-stone-100 pt-2.5 sm:pt-3 mb-3 sm:mb-4">
                       <div className="flex items-center gap-1">
                         <Building2 className="w-3.5 h-3.5 text-[#B58238]" />
                         <span>Hotel</span>

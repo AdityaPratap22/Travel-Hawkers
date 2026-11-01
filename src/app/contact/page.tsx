@@ -14,8 +14,7 @@ import {
   Sparkles,
   ArrowRight,
 } from "lucide-react";
-import { openWhatsAppInquiry } from "@/utils/whatsapp";
-import WhatsAppIcon from "@/components/WhatsAppIcon";
+import { submitEmailEnquiry } from "@/utils/enquiry";
 
 export default function ContactPage() {
   const [enquiryOpen, setEnquiryOpen] = useState(false);
@@ -77,22 +76,20 @@ export default function ContactPage() {
     },
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
-      openWhatsAppInquiry({
-        name: formData.name,
-        phone: formData.phone,
-        email: formData.email,
-        destination: formData.destination,
-        dates: formData.dates,
-        message: formData.message,
-      });
-      setLoading(false);
-      setSubmitted(true);
-      setFormData({ name: "", phone: "", email: "", destination: "", dates: "", message: "" });
-    }, 400);
+    await submitEmailEnquiry({
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      destination: formData.destination,
+      dates: formData.dates,
+      message: formData.message,
+    });
+    setLoading(false);
+    setSubmitted(true);
+    setFormData({ name: "", phone: "", email: "", destination: "", dates: "", message: "" });
   };
 
   return (
@@ -156,15 +153,17 @@ export default function ContactPage() {
                 </p>
 
                 {submitted ? (
-                  <div className="mt-8 bg-emerald-50 border border-emerald-200 rounded-2xl p-6 text-center space-y-3">
-                    <WhatsAppIcon variant="colored" className="w-12 h-12 mx-auto" />
-                    <h4 className="text-base font-bold text-slate-900">WhatsApp Chat Opened!</h4>
-                    <p className="text-xs text-slate-600">
-                      Your enquiry details have been pre-filled. If WhatsApp didn&apos;t launch automatically, chat directly with our holiday desk at <strong className="text-slate-800">+91 93554 86036</strong>.
+                  <div className="mt-8 bg-amber-50 border border-amber-200 rounded-2xl p-6 text-center space-y-3">
+                    <div className="w-12 h-12 bg-white rounded-full border border-amber-200 flex items-center justify-center text-[#B58238] mx-auto shadow-xs">
+                      <CheckCircle2 className="w-7 h-7" />
+                    </div>
+                    <h4 className="text-base font-bold text-slate-900 font-serif">Enquiry Submitted Successfully!</h4>
+                    <p className="text-xs text-slate-600 leading-relaxed max-w-md mx-auto">
+                      Thank you for contacting Travel Hawkers! Our holiday designers will review your requirements and email your detailed quotation within 2-4 hours.
                     </p>
                     <button
                       onClick={() => setSubmitted(false)}
-                      className="mt-2 text-xs font-bold text-[#25D366] hover:underline"
+                      className="mt-2 text-xs font-bold text-[#B58238] hover:underline cursor-pointer"
                     >
                       Send another enquiry
                     </button>
@@ -182,7 +181,7 @@ export default function ContactPage() {
                           placeholder="Aditya Sharma"
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                          className="w-full text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#25D366]"
+                          className="w-full text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#B58238]"
                         />
                       </div>
                       <div>
@@ -195,7 +194,7 @@ export default function ContactPage() {
                           placeholder="+91 98765 43210"
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          className="w-full text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#25D366]"
+                          className="w-full text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#B58238]"
                         />
                       </div>
                     </div>
@@ -211,7 +210,7 @@ export default function ContactPage() {
                           placeholder="aditya@example.com"
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          className="w-full text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#25D366]"
+                          className="w-full text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#B58238]"
                         />
                       </div>
                       <div>
@@ -224,7 +223,7 @@ export default function ContactPage() {
                           placeholder="Bali, Leh Ladakh, Dubai..."
                           value={formData.destination}
                           onChange={(e) => setFormData({ ...formData, destination: e.target.value })}
-                          className="w-full text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#25D366]"
+                          className="w-full text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#B58238]"
                         />
                       </div>
                     </div>
@@ -238,7 +237,7 @@ export default function ContactPage() {
                         placeholder="e.g. Next month or Nov 2026"
                         value={formData.dates}
                         onChange={(e) => setFormData({ ...formData, dates: e.target.value })}
-                        className="w-full text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#25D366]"
+                        className="w-full text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#B58238]"
                       />
                     </div>
 
@@ -251,21 +250,18 @@ export default function ContactPage() {
                         placeholder="Tell us about number of adults/kids, budget preference, or hotel choices..."
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        className="w-full text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#25D366] resize-none"
+                        className="w-full text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#B58238] resize-none"
                       />
                     </div>
 
                     <button
                       type="submit"
                       disabled={loading}
-                      className="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs sm:text-sm py-3.5 rounded-xl shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2.5 transition-all transform hover:-translate-y-0.5"
+                      className="w-full bg-[#0B2724] hover:bg-[#123834] text-white font-bold text-xs sm:text-sm py-3.5 rounded-xl shadow-lg flex items-center justify-center gap-2.5 transition-all transform hover:-translate-y-0.5 cursor-pointer"
                     >
-                      {loading ? (
-                        <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                      ) : (
-                        <WhatsAppIcon variant="white" className="w-5 h-5" />
-                      )}
-                      <span>{loading ? "Opening WhatsApp..." : "Send Custom Trip Request on WhatsApp"}</span>
+                      <Mail className="w-4 h-4 text-[#C59B58]" />
+                      <span>{loading ? "Sending Enquiry..." : "Send Message & Get Quote"}</span>
+                      <ArrowRight className="w-4 h-4" />
                     </button>
                   </form>
                 )}
