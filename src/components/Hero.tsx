@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -14,8 +14,8 @@ import {
   Plane,
   Sparkles,
   Compass,
-  ChevronLeft,
-  ChevronRight,
+  ChevronDown,
+  X,
   Globe2,
   Mountain,
 } from "lucide-react";
@@ -105,15 +105,9 @@ export default function Hero({ onSearch }: HeroProps) {
   const [destination, setDestination] = useState("");
   const [dates, setDates] = useState("");
   const [travellers, setTravellers] = useState("2 Travellers");
+  const [isCustomTraveller, setIsCustomTraveller] = useState(false);
+  const [customTravellerText, setCustomTravellerText] = useState("");
   const [budget, setBudget] = useState("Any budget");
-
-  const nextSlide = useCallback(() => {
-    setCurrentSlideIndex((prev) => (prev + 1) % HERO_SLIDES.length);
-  }, []);
-
-  const prevSlide = useCallback(() => {
-    setCurrentSlideIndex((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length);
-  }, []);
 
   // Continuous auto-slide every 4.2 seconds
   useEffect(() => {
@@ -224,57 +218,6 @@ export default function Hero({ onSearch }: HeroProps) {
               >
                 <span>Plan a Private Escape</span>
               </Link>
-            </div>
-
-            {/* Slideshow Controls (LuxTripper & Template style: 01 02 03 04 05 06 < >) */}
-            <div className="reveal delay-250 flex items-center gap-2 sm:gap-3 pt-2 sm:pt-3 select-none max-w-full overflow-x-auto no-scrollbar scrollbar-none">
-              <div className="flex items-center gap-1 sm:gap-1.5 md:gap-2 bg-white/90 backdrop-blur-md px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border border-stone-200 shadow-xs shrink-0">
-                {HERO_SLIDES.map((slide, idx) => {
-                  const isActive = idx === currentSlideIndex;
-                  return (
-                    <button
-                      key={slide.id}
-                      type="button"
-                      onClick={() => setCurrentSlideIndex(idx)}
-                      title={`${slide.destination} (${slide.type})`}
-                      className={`text-[10px] sm:text-xs font-bold transition-all px-1.5 sm:px-2 py-0.5 rounded-full cursor-pointer ${
-                        isActive
-                          ? "bg-[#0B2724] text-white shadow-xs scale-105"
-                          : "text-slate-500 hover:text-slate-900 hover:bg-stone-100"
-                      }`}
-                    >
-                      {String(idx + 1).padStart(2, "0")}
-                    </button>
-                  );
-                })}
-              </div>
-
-              {/* Prev / Next Arrows */}
-              <div className="flex items-center gap-1.5 shrink-0">
-                <button
-                  type="button"
-                  onClick={prevSlide}
-                  title="Previous Destination"
-                  aria-label="Previous Destination"
-                  className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/90 hover:bg-white border border-stone-200 shadow-xs flex items-center justify-center text-slate-700 hover:text-[#0B2724] transition-all cursor-pointer active:scale-95"
-                >
-                  <ChevronLeft className="w-4 h-4" />
-                </button>
-                <button
-                  type="button"
-                  onClick={nextSlide}
-                  title="Next Destination"
-                  aria-label="Next Destination"
-                  className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/90 hover:bg-white border border-stone-200 shadow-xs flex items-center justify-center text-slate-700 hover:text-[#0B2724] transition-all cursor-pointer active:scale-95"
-                >
-                  <ChevronRight className="w-4 h-4" />
-                </button>
-              </div>
-
-              {/* Destination badge on slider */}
-              <span className="hidden sm:inline-block text-[11px] font-semibold text-slate-600 ml-2 truncate">
-                {currentSlide.type === "International" ? "✈️" : "🏔️"} {currentSlide.destination}
-              </span>
             </div>
           </div>
 
@@ -408,82 +351,179 @@ export default function Hero({ onSearch }: HeroProps) {
             </button>
           </div>
 
-          {/* Search Inputs Row: optimized for mobile (1 col), tablet (2 cols + full span button), desktop (12 cols) */}
+          {/* Search Inputs Row: Dropdown menus for destination, dates, travellers, and budget */}
           <form onSubmit={handleSearchSubmit} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3 sm:gap-4 items-center">
-            {/* Field 1: Destination */}
-            <div className="lg:col-span-3 flex items-center gap-3 p-2 sm:p-2.5 rounded-xl hover:bg-stone-50 transition-colors border border-transparent hover:border-stone-200">
-              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#FAF5ED] flex items-center justify-center text-[#B58238] shrink-0">
-                <MapPin className="w-4 h-4" />
+            {/* Field 1: Destination Dropdown */}
+            <div className="lg:col-span-3 flex items-center justify-between gap-2 p-2 sm:p-2.5 rounded-xl hover:bg-stone-50 transition-colors border border-transparent hover:border-stone-200 group/field cursor-pointer">
+              <div className="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1">
+                <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#FAF5ED] flex items-center justify-center text-[#B58238] shrink-0 group-hover/field:scale-105 transition-transform">
+                  <MapPin className="w-4 h-4" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <label htmlFor="search-destination" className="block text-[10px] sm:text-[11px] font-bold text-slate-800 uppercase tracking-wider cursor-pointer">
+                    Destination
+                  </label>
+                  <select
+                    id="search-destination"
+                    value={destination}
+                    onChange={(e) => setDestination(e.target.value)}
+                    className="w-full text-xs text-slate-700 bg-transparent outline-none font-medium py-0.5 cursor-pointer appearance-none truncate pr-2"
+                  >
+                    <option value="">Where do you want to go?</option>
+                    <optgroup label="Popular Domestic">
+                      <option value="Kashmir">Kashmir (Gulmarg, Dal Lake)</option>
+                      <option value="Himachal Pradesh">Himachal (Manali, Shimla)</option>
+                      <option value="Leh Ladakh">Leh Ladakh &amp; Pangong</option>
+                      <option value="Kerala">Kerala Backwaters &amp; Munnar</option>
+                      <option value="Goa">Goa Beaches &amp; Resorts</option>
+                      <option value="Rajasthan">Rajasthan (Jaipur, Udaipur)</option>
+                      <option value="Chardham Yatra">Chardham Yatra (Uttarakhand)</option>
+                      <option value="Golden Triangle">Golden Triangle (Delhi-Agra-Jaipur)</option>
+                      <option value="Weekend Getaways">Weekend Getaways (Rishikesh, Corbett)</option>
+                    </optgroup>
+                    <optgroup label="International Escapes">
+                      <option value="Bali">Bali &amp; Indonesia</option>
+                      <option value="Dubai">Dubai &amp; Abu Dhabi (UAE)</option>
+                      <option value="Vietnam">Vietnam (Da Nang &amp; Halong)</option>
+                      <option value="Thailand">Thailand (Phuket &amp; Krabi)</option>
+                      <option value="Singapore & Malaysia">Singapore &amp; Malaysia</option>
+                      <option value="Bhutan">Mystical Bhutan</option>
+                    </optgroup>
+                  </select>
+                </div>
               </div>
-              <div className="flex-1 min-w-0">
-                <label className="block text-[10px] sm:text-[11px] font-bold text-slate-800 uppercase tracking-wider">
-                  Destination
-                </label>
-                <input
-                  type="text"
-                  placeholder="Where do you want to go?"
-                  value={destination}
-                  onChange={(e) => setDestination(e.target.value)}
-                  className="w-full text-xs text-slate-700 placeholder:text-slate-400 bg-transparent outline-none truncate font-medium py-0.5"
-                />
-              </div>
+              <ChevronDown className="w-3.5 h-3.5 text-slate-400 group-hover/field:text-[#B58238] transition-colors shrink-0 pointer-events-none" />
             </div>
 
-            {/* Field 2: Travel Dates */}
-            <div className="lg:col-span-3 flex items-center gap-3 p-2 sm:p-2.5 rounded-xl hover:bg-stone-50 transition-colors border border-transparent hover:border-stone-200">
-              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#FAF5ED] flex items-center justify-center text-[#B58238] shrink-0">
-                <Calendar className="w-4 h-4" />
+            {/* Field 2: Travel Dates Dropdown */}
+            <div className="lg:col-span-3 flex items-center justify-between gap-2 p-2 sm:p-2.5 rounded-xl hover:bg-stone-50 transition-colors border border-transparent hover:border-stone-200 group/field cursor-pointer">
+              <div className="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1">
+                <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#FAF5ED] flex items-center justify-center text-[#B58238] shrink-0 group-hover/field:scale-105 transition-transform">
+                  <Calendar className="w-4 h-4" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <label htmlFor="search-dates" className="block text-[10px] sm:text-[11px] font-bold text-slate-800 uppercase tracking-wider cursor-pointer">
+                    Travel Dates
+                  </label>
+                  <select
+                    id="search-dates"
+                    value={dates}
+                    onChange={(e) => setDates(e.target.value)}
+                    className="w-full text-xs text-slate-700 bg-transparent outline-none font-medium py-0.5 cursor-pointer appearance-none truncate pr-2"
+                  >
+                    <option value="">Select dates</option>
+                    <option value="Immediate / This Month">This Month (Immediate)</option>
+                    <option value="Next Month">Next Month</option>
+                    <option value="Summer 2026 (May - June)">Summer 2026 (May - June)</option>
+                    <option value="Monsoon 2026 (July - August)">Monsoon 2026 (July - Aug)</option>
+                    <option value="Festive Season (September - October)">Festive Season (Sep - Oct)</option>
+                    <option value="Winter Escapes (November - December)">Winter Escapes (Nov - Dec)</option>
+                    <option value="New Year 2027 Getaways">New Year 2027</option>
+                    <option value="Flexible Dates">Flexible / Any Dates</option>
+                  </select>
+                </div>
               </div>
-              <div className="flex-1 min-w-0">
-                <label className="block text-[10px] sm:text-[11px] font-bold text-slate-800 uppercase tracking-wider">
-                  Travel Dates
-                </label>
-                <input
-                  type="text"
-                  placeholder="Select dates"
-                  value={dates}
-                  onChange={(e) => setDates(e.target.value)}
-                  className="w-full text-xs text-slate-700 placeholder:text-slate-400 bg-transparent outline-none truncate font-medium py-0.5"
-                />
-              </div>
+              <ChevronDown className="w-3.5 h-3.5 text-slate-400 group-hover/field:text-[#B58238] transition-colors shrink-0 pointer-events-none" />
             </div>
 
-            {/* Field 3: Travellers */}
-            <div className="lg:col-span-2 flex items-center gap-3 p-2 sm:p-2.5 rounded-xl hover:bg-stone-50 transition-colors border border-transparent hover:border-stone-200">
-              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#FAF5ED] flex items-center justify-center text-[#B58238] shrink-0">
-                <Users className="w-4 h-4" />
+            {/* Field 3: Travellers Dropdown or Custom Input */}
+            <div className="lg:col-span-2 flex items-center justify-between gap-2 p-2 sm:p-2.5 rounded-xl hover:bg-stone-50 transition-colors border border-transparent hover:border-stone-200 group/field cursor-pointer">
+              <div className="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1">
+                <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#FAF5ED] flex items-center justify-center text-[#B58238] shrink-0 group-hover/field:scale-105 transition-transform">
+                  <Users className="w-4 h-4" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center justify-between">
+                    <label htmlFor={isCustomTraveller ? "search-travellers-custom" : "search-travellers"} className="block text-[10px] sm:text-[11px] font-bold text-slate-800 uppercase tracking-wider cursor-pointer">
+                      Travellers
+                    </label>
+                    {isCustomTraveller && (
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setIsCustomTraveller(false);
+                          setTravellers("2 Travellers");
+                        }}
+                        className="text-[9px] font-bold text-[#B58238] hover:underline flex items-center gap-0.5 cursor-pointer"
+                        title="Switch back to list"
+                      >
+                        List <X className="w-2.5 h-2.5" />
+                      </button>
+                    )}
+                  </div>
+                  {isCustomTraveller ? (
+                    <input
+                      id="search-travellers-custom"
+                      type="text"
+                      autoFocus
+                      placeholder="Type e.g. 15 adults"
+                      value={customTravellerText}
+                      onChange={(e) => {
+                        setCustomTravellerText(e.target.value);
+                        setTravellers(e.target.value || "Custom");
+                      }}
+                      className="w-full text-xs text-slate-800 placeholder:text-slate-400 bg-transparent outline-none font-semibold py-0.5 truncate pr-2 border-b border-[#B58238]"
+                    />
+                  ) : (
+                    <select
+                      id="search-travellers"
+                      value={travellers}
+                      onChange={(e) => {
+                        const val = e.target.value;
+                        if (val === "Custom") {
+                          setIsCustomTraveller(true);
+                          setTravellers("");
+                          setCustomTravellerText("");
+                        } else {
+                          setIsCustomTraveller(false);
+                          setTravellers(val);
+                        }
+                      }}
+                      className="w-full text-xs text-slate-700 bg-transparent outline-none font-medium py-0.5 cursor-pointer appearance-none truncate pr-2"
+                    >
+                      <option value="2 Travellers">2 Travellers (Couple)</option>
+                      <option value="1 Traveller (Solo)">1 Traveller (Solo)</option>
+                      <option value="2 Adults + 1 Child">2 Adults + 1 Child</option>
+                      <option value="2 Adults + 2 Children">2 Adults + 2 Children</option>
+                      <option value="3 - 4 Adults (Small Group)">3 - 4 Adults (Small Group)</option>
+                      <option value="5 - 8 Adults (Family Group)">5 - 8 Adults (Family Group)</option>
+                      <option value="9+ Adults (Large Group)">9+ Adults (Group Tour)</option>
+                      <option value="Custom">Custom</option>
+                    </select>
+                  )}
+                </div>
               </div>
-              <div className="flex-1 min-w-0">
-                <label className="block text-[10px] sm:text-[11px] font-bold text-slate-800 uppercase tracking-wider">
-                  Travellers
-                </label>
-                <input
-                  type="text"
-                  value={travellers}
-                  onChange={(e) => setTravellers(e.target.value)}
-                  placeholder="2 Travellers"
-                  className="w-full text-xs text-slate-700 placeholder:text-slate-400 bg-transparent outline-none truncate font-medium py-0.5"
-                />
-              </div>
+              {!isCustomTraveller && (
+                <ChevronDown className="w-3.5 h-3.5 text-slate-400 group-hover/field:text-[#B58238] transition-colors shrink-0 pointer-events-none" />
+              )}
             </div>
 
-            {/* Field 4: Budget */}
-            <div className="lg:col-span-2 flex items-center gap-3 p-2 sm:p-2.5 rounded-xl hover:bg-stone-50 transition-colors border border-transparent hover:border-stone-200">
-              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#FAF5ED] flex items-center justify-center text-[#B58238] shrink-0">
-                <Wallet className="w-4 h-4" />
+            {/* Field 4: Budget Dropdown */}
+            <div className="lg:col-span-2 flex items-center justify-between gap-2 p-2 sm:p-2.5 rounded-xl hover:bg-stone-50 transition-colors border border-transparent hover:border-stone-200 group/field cursor-pointer">
+              <div className="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1">
+                <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#FAF5ED] flex items-center justify-center text-[#B58238] shrink-0 group-hover/field:scale-105 transition-transform">
+                  <Wallet className="w-4 h-4" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <label htmlFor="search-budget" className="block text-[10px] sm:text-[11px] font-bold text-slate-800 uppercase tracking-wider cursor-pointer">
+                    Budget
+                  </label>
+                  <select
+                    id="search-budget"
+                    value={budget}
+                    onChange={(e) => setBudget(e.target.value)}
+                    className="w-full text-xs text-slate-700 bg-transparent outline-none font-medium py-0.5 cursor-pointer appearance-none truncate pr-2"
+                  >
+                    <option value="Any budget">Any budget</option>
+                    <option value="Under ₹15,000 / person">Under ₹15,000 / person</option>
+                    <option value="₹15,000 - ₹30,000 / person">₹15,000 - ₹30,000 / person</option>
+                    <option value="₹30,000 - ₹50,000 / person">₹30,000 - ₹50,000 / person</option>
+                    <option value="₹50,000 - ₹1,00,000 / person">₹50,000 - ₹1,00,000 (Premium)</option>
+                    <option value="₹1,00,000+ Luxury Private">₹1,00,000+ (Luxury Private)</option>
+                  </select>
+                </div>
               </div>
-              <div className="flex-1 min-w-0">
-                <label className="block text-[10px] sm:text-[11px] font-bold text-slate-800 uppercase tracking-wider">
-                  Budget
-                </label>
-                <input
-                  type="text"
-                  value={budget}
-                  onChange={(e) => setBudget(e.target.value)}
-                  placeholder="Any budget"
-                  className="w-full text-xs text-slate-700 placeholder:text-slate-400 bg-transparent outline-none truncate font-medium py-0.5"
-                />
-              </div>
+              <ChevronDown className="w-3.5 h-3.5 text-slate-400 group-hover/field:text-[#B58238] transition-colors shrink-0 pointer-events-none" />
             </div>
 
             {/* Field 5: Submit Button (Full width on tablet & mobile, 2 cols on desktop) */}

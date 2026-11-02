@@ -22,6 +22,8 @@ export default function EnquiryModal({
   const [email, setEmail] = useState("");
   const [customDestination, setCustomDestination] = useState<string | null>(null);
   const [travellers, setTravellers] = useState("2 Adults (Couple)");
+  const [isCustomTraveller, setIsCustomTraveller] = useState(false);
+  const [customTravellerText, setCustomTravellerText] = useState("");
   const [notes, setNotes] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -169,19 +171,57 @@ export default function EnquiryModal({
                   />
                 </div>
                 <div>
-                  <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1">
-                    Travellers
-                  </label>
-                  <select
-                    value={travellers}
-                    onChange={(e) => setTravellers(e.target.value)}
-                    className="w-full text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#B58238]"
-                  >
-                    <option value="1 Solo Traveller">1 Solo</option>
-                    <option value="2 Adults (Couple)">2 Adults (Couple)</option>
-                    <option value="Family (3-4 People)">Family (3-4 People)</option>
-                    <option value="Group (5+ People)">Group (5+ People)</option>
-                  </select>
+                  <div className="flex items-center justify-between mb-1">
+                    <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider">
+                      Travellers
+                    </label>
+                    {isCustomTraveller && (
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setIsCustomTraveller(false);
+                          setTravellers("2 Adults (Couple)");
+                        }}
+                        className="text-[10px] font-bold text-[#B58238] hover:underline cursor-pointer"
+                      >
+                        List ✕
+                      </button>
+                    )}
+                  </div>
+                  {isCustomTraveller ? (
+                    <input
+                      type="text"
+                      autoFocus
+                      placeholder="e.g. 15 adults, 4 kids"
+                      value={customTravellerText}
+                      onChange={(e) => {
+                        setCustomTravellerText(e.target.value);
+                        setTravellers(e.target.value || "Custom");
+                      }}
+                      className="w-full text-xs sm:text-sm bg-slate-50 border border-[#B58238] rounded-xl px-3.5 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#B58238] font-semibold text-slate-800"
+                    />
+                  ) : (
+                    <select
+                      value={travellers}
+                      onChange={(e) => {
+                        const val = e.target.value;
+                        if (val === "Custom") {
+                          setIsCustomTraveller(true);
+                          setTravellers("");
+                          setCustomTravellerText("");
+                        } else {
+                          setTravellers(val);
+                        }
+                      }}
+                      className="w-full text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#B58238]"
+                    >
+                      <option value="1 Solo Traveller">1 Solo</option>
+                      <option value="2 Adults (Couple)">2 Adults (Couple)</option>
+                      <option value="Family (3-4 People)">Family (3-4 People)</option>
+                      <option value="Group (5+ People)">Group (5+ People)</option>
+                      <option value="Custom">Custom (Type your own)</option>
+                    </select>
+                  )}
                 </div>
               </div>
 
