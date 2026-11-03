@@ -43,6 +43,7 @@ export default function Footer() {
     { name: "About Us", href: "/about-us" },
     { name: "Destinations", href: "/destinations" },
     { name: "Holiday Packages", href: "/packages" },
+    { name: "Car Hire", href: "/car-hire" },
     { name: "Experiences", href: "/experiences" },
     { name: "Travel Blog", href: "/articles" },
     { name: "Contact Us", href: "/contact-us" },

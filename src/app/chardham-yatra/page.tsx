@@ -29,7 +29,7 @@ export default function ChardhamYatraPage() {
   const [callbackEmail, setCallbackEmail] = useState("");
   const [callbackPhone, setCallbackPhone] = useState("");
   const [callbackPilgrims, setCallbackPilgrims] = useState(2);
-  const [callbackMonth, setCallbackMonth] = useState("May 2026 (Opening Season)");
+  const [callbackMonth, setCallbackMonth] = useState("May (Opening Season)");
   const [callbackSubmitted, setCallbackSubmitted] = useState(false);
 
   const handleCallbackSubmit = async (e: React.FormEvent) => {
@@ -411,10 +411,10 @@ export default function ChardhamYatraPage() {
                       onChange={(e) => setCallbackMonth(e.target.value)}
                       className="w-full mt-1 px-4 py-3 rounded-xl bg-[#10343e] border border-white/20 text-white text-xs outline-none focus:border-[#B58238]"
                     >
-                      <option>May 2026 (Opening Season)</option>
-                      <option>June 2026 (Summer Break)</option>
-                      <option>September 2026 (Autumn Clear Skies)</option>
-                      <option>October 2026 (Pre-Closing Season)</option>
+                      <option>May (Opening Season)</option>
+                      <option>June (Summer Break)</option>
+                      <option>September (Autumn Clear Skies)</option>
+                      <option>October (Pre-Closing Season)</option>
                     </select>
                   </div>
                   <button

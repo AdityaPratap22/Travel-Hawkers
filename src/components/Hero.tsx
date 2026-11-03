@@ -12,6 +12,7 @@ import {
   Palmtree,
   Hotel,
   Plane,
+  Car,
   Sparkles,
   Compass,
   ChevronDown,
@@ -101,7 +102,7 @@ const HERO_SLIDES: HeroSlide[] = [
 
 export default function Hero({ onSearch }: HeroProps) {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
-  const [activeTab, setActiveTab] = useState<"packages" | "hotels" | "flights" | "custom">("packages");
+  const [activeTab, setActiveTab] = useState<"packages" | "hotels" | "flights" | "cars" | "custom">("packages");
   const [destination, setDestination] = useState("");
   const [dates, setDates] = useState("");
   const [travellers, setTravellers] = useState("2 Travellers");
@@ -339,6 +340,24 @@ export default function Hero({ onSearch }: HeroProps) {
             </button>
             <button
               type="button"
+              onClick={() => {
+                setActiveTab("cars");
+                const el = document.getElementById("car-hire-section");
+                if (el) {
+                  el.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+              className={`pb-2 -mb-2.5 transition-colors flex items-center gap-1.5 sm:gap-2 whitespace-nowrap cursor-pointer ${
+                activeTab === "cars"
+                  ? "border-b-2 border-[#B58238] text-[#B58238] font-bold"
+                  : "text-slate-500 hover:text-slate-900 border-b-2 border-transparent"
+              }`}
+            >
+              <Car className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-slate-400" />
+              <span>Car Hire</span>
+            </button>
+            <button
+              type="button"
               onClick={() => setActiveTab("custom")}
               className={`pb-2 -mb-2.5 transition-colors flex items-center gap-1.5 sm:gap-2 whitespace-nowrap cursor-pointer ${
                 activeTab === "custom"
@@ -414,11 +433,11 @@ export default function Hero({ onSearch }: HeroProps) {
                     <option value="">Select dates</option>
                     <option value="Immediate / This Month">This Month (Immediate)</option>
                     <option value="Next Month">Next Month</option>
-                    <option value="Summer 2026 (May - June)">Summer 2026 (May - June)</option>
-                    <option value="Monsoon 2026 (July - August)">Monsoon 2026 (July - Aug)</option>
+                    <option value="Summer (May - June)">Summer (May - June)</option>
+                    <option value="Monsoon (July - August)">Monsoon (July - Aug)</option>
                     <option value="Festive Season (September - October)">Festive Season (Sep - Oct)</option>
                     <option value="Winter Escapes (November - December)">Winter Escapes (Nov - Dec)</option>
-                    <option value="New Year 2027 Getaways">New Year 2027</option>
+                    <option value="New Year Getaways">New Year Getaways</option>
                     <option value="Flexible Dates">Flexible / Any Dates</option>
                   </select>
                 </div>

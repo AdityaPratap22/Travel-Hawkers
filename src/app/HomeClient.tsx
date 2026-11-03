@@ -7,6 +7,7 @@ import TrustBar from "@/components/TrustBar";
 import PopularDestinations from "@/components/PopularDestinations";
 import TrendingPackages from "@/components/TrendingPackages";
 import PromotionalBanners from "@/components/PromotionalBanners";
+import CarHireSection from "@/components/CarHireSection";
 import TravelExperiences from "@/components/TravelExperiences";
 import WhyChooseUsAndCustomPlan from "@/components/WhyChooseUsAndCustomPlan";
 import Testimonials from "@/components/Testimonials";
@@ -76,7 +77,12 @@ export default function HomeClient() {
           }
         />
 
-        {/* 6. Travel Experiences */}
+        {/* 6. Car Hire & Outstation Cabs Fleet */}
+        <CarHireSection
+          onBookVehicle={(vehicle) => handleOpenEnquiry(`Car Hire Enquiry - ${vehicle}`)}
+        />
+
+        {/* 7. Travel Experiences */}
         <TravelExperiences
           onSelectExperience={(exp) => handleOpenEnquiry(exp)}
         />
