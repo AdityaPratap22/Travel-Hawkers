@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { articlesMetadata } from "@/data/articlesClientData";
 import { DOMESTIC_DESTINATIONS } from "@/data/domesticPackagesData";
+import { INTERNATIONAL_PACKAGES } from "@/data/internationalPackagesData";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://travelhawkers.com";
@@ -117,11 +118,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "golden-triangle-tour-packages",
     "same-day-tour-packages",
     "dubai-abu-dhabi",
+    "dubai-express",
+    "dubai-luxury-honeymoon",
     "thailand",
+    "phuket-krabi-island-hopper",
+    "complete-thailand-grand",
     "indonesia",
+    "bali-romantic-honeymoon",
+    "bali-adventure-getaway",
     "singapore-malaysia",
+    "singapore-city-gardens",
+    "best-of-malaysia",
     "vietnam",
+    "vietnam-danang-golden-bridge",
+    "vietnam-hanoi-halong-bay",
     "mystical-bhutan",
+    "bhutan-cultural-odyssey",
+    "europe-grand-tour",
+    "maldives-luxury",
     "chakrata",
     "kasauli",
     "mussoorie-the-queen-of-hills",
@@ -140,6 +154,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  // International package detail hub pages (/international-packages/[slug])
+  const internationalDynamicPages: MetadataRoute.Sitemap = Object.keys(INTERNATIONAL_PACKAGES).map(
+    (slug) => ({
+      url: `${baseUrl}/international-packages/${slug}`,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: 0.85,
+    })
+  );
+
   // All 450 unique travel articles
   const articlePages: MetadataRoute.Sitemap = articlesMetadata.map((art) => ({
     url: `${baseUrl}/articles/${art.slug}`,
@@ -148,5 +172,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...corePages, ...destinationHubs, ...packagePages, ...articlePages];
+  return [...corePages, ...destinationHubs, ...packagePages, ...internationalDynamicPages, ...articlePages];
 }

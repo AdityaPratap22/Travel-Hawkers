@@ -233,9 +233,331 @@ export default function InternationalPackagesPage() {
       inclusions: ["4-Star Hotels in Pattaya & Bangkok", "Daily Breakfast", "Coral Island Speedboat Tour", "All Airport & Inter-City Transfers"],
       visaInfo: "Visa-Free Exemption for Indian Passport Holders",
     },
+
+    {
+      id: "dubai-express",
+      slug: "/dubai-express",
+      title: "Dubai Highlights & Desert Safari Express",
+      country: "United Arab Emirates",
+      citiesCovered: ["Dubai City", "Dubai Marina", "Desert Dunes"],
+      duration: "4 Nights / 5 Days",
+      price: "₹32,999",
+      originalPrice: "₹42,000",
+      rating: 4.92,
+      reviews: 164,
+      badge: "Bestseller Express",
+      image: "https://images.unsplash.com/photo-1580674684081-7617fbf3d745?auto=format&fit=crop&w=1200&q=80",
+      overview: "Experience Dubai's top highlights in a compact 5-day escape! Take in 360-degree views from Burj Khalifa 124th floor, conquer the red dunes in a 4x4 Land Cruiser with BBQ dinner, and glide on a Marina Dhow Cruise.",
+      keyPoints: [
+        "Burj Khalifa: 124th floor observation deck with Dubai Mall & fountain show",
+        "Desert Safari: 4x4 red dune bashing, camel rides, Tanoura dance & BBQ dinner",
+        "Dubai Marina: Luxury evening dhow cruise with international dinner buffet",
+        "City Tour: Panoramic Dubai Frame, Palm Jumeirah & Gold Souk visit",
+      ],
+      highlights: [
+        "Burj Khalifa 124th floor ticket included",
+        "4x4 Desert Safari with dune bashing & BBQ dinner",
+        "Marina Dhow Cruise with buffet",
+        "Return airport transfers in private AC vehicle",
+      ],
+      inclusions: ["4-Star City Hotel", "Daily Buffet Breakfast", "Desert Safari & BBQ Dinner", "Dhow Cruise with Dinner", "Private Transfers"],
+      visaInfo: "Express 30-Day UAE Tourist Visa Processed in 48-72h",
+    },
+    {
+      id: "dubai-luxury-honeymoon",
+      slug: "/dubai-luxury-honeymoon",
+      title: "Luxury Dubai Honeymoon with Atlantis & Private Yacht",
+      country: "United Arab Emirates",
+      citiesCovered: ["Dubai Marina", "Palm Jumeirah", "Desert Resort"],
+      duration: "5 Nights / 6 Days",
+      price: "₹64,999",
+      originalPrice: "₹78,000",
+      rating: 4.98,
+      reviews: 118,
+      badge: "Honeymoon Special",
+      image: "https://images.unsplash.com/photo-1546412414-e1885259563a?auto=format&fit=crop&w=1200&q=80",
+      overview: "Celebrate romance in true ultra-luxury style. 5 nights in 5-star beachfront resorts, a 2-hour private yacht cruise along Dubai Marina and Palm Jumeirah, VIP desert cabana dinner, and Atlantis Aquaventure passes.",
+      keyPoints: [
+        "Private Yacht: 2-Hour private luxury yacht cruise around Marina and Palm Jumeirah",
+        "VIP Desert Safari: Private majlis cabana seating with gourmet 5-course dinner",
+        "Burj Khalifa VIP: 124th & 125th floor At The Top VIP access",
+        "Atlantis The Palm: Full-day Aquaventure Waterpark & Lost Chambers passes",
+        "Couples Spa: Rejuvenating 60-minute couples massage treatment",
+      ],
+      highlights: [
+        "2-Hour Private Yacht Cruise in Dubai Marina",
+        "VIP Desert Safari with private dining",
+        "Atlantis Aquaventure & Lost Chambers passes",
+        "Luxury vehicle transfers (Lexus / Mercedes)",
+      ],
+      inclusions: ["5-Star Luxury Resort Stay", "Daily Champagne Breakfast", "Private Yacht Cruise", "VIP Desert Safari", "Atlantis Pass", "Private Transfers"],
+      visaInfo: "Express 30-Day UAE Tourist Visa Processed in 48-72h",
+    },
+    {
+      id: "bali-romantic-honeymoon",
+      slug: "/bali-romantic-honeymoon",
+      title: "Romantic Bali Honeymoon with Pool Villa & Nusa Penida",
+      country: "Indonesia",
+      citiesCovered: ["Seminyak Beach", "Ubud Jungle", "Nusa Penida Island"],
+      duration: "6 Nights / 7 Days",
+      price: "₹46,999",
+      originalPrice: "₹58,000",
+      rating: 4.97,
+      reviews: 195,
+      badge: "Honeymoon Favorite",
+      image: "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=1200&q=80",
+      overview: "The quintessential romantic tropical getaway. 3 nights in ocean-view Seminyak and 3 nights in a private pool villa in Ubud. Includes floating breakfast, romantic candlelit dinner at Jimbaran Bay, and Nusa Penida island speedboat tour.",
+      keyPoints: [
+        "Private Pool Villa: Secluded luxury villa in Ubud with private swimming pool",
+        "Floating Breakfast: Signature flower-filled floating breakfast experience",
+        "Nusa Penida Island: Speedboat excursion to Kelingking T-Rex cliff and Broken Beach",
+        "Jimbaran Sunset: 3-course candlelit fresh seafood dinner on the beach sand",
+        "Couples Spa: 60-Minute authentic Balinese aromatherapy massage",
+      ],
+      highlights: [
+        "Private Pool Villa in Ubud with floating breakfast",
+        "Full-day Nusa Penida Island Speedboat Tour",
+        "Jimbaran romantic beach candlelit seafood dinner",
+        "Uluwatu Sunset Temple & Kecak fire dance",
+      ],
+      inclusions: ["3N 4-Star Resort + 3N Ubud Private Pool Villa", "Daily Breakfast + Floating Breakfast", "Jimbaran Candlelight Dinner", "Nusa Penida Tour", "Private Chauffeur"],
+      visaInfo: "Electronic Visa on Arrival (e-VOA) Assistance",
+    },
+    {
+      id: "bali-adventure-getaway",
+      slug: "/bali-adventure-getaway",
+      title: "Bali Volcano, River Rafting & Water Sports Escape",
+      country: "Indonesia",
+      citiesCovered: ["Kuta", "Tanjung Benoa", "Ayung River", "Mount Batur"],
+      duration: "4 Nights / 5 Days",
+      price: "₹29,999",
+      originalPrice: "₹37,000",
+      rating: 4.89,
+      reviews: 142,
+      badge: "Adventure Special",
+      image: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1200&q=80",
+      overview: "Designed for thrill-seekers! High-speed water sports at Tanjung Benoa, Class III white water rafting down the Ayung River in Ubud, and a sunrise 4x4 jeep safari across Mount Batur black lava fields.",
+      keyPoints: [
+        "Water Sports: Parasailing, Jet Ski & Banana Boat at Tanjung Benoa",
+        "Ayung River Rafting: 12km exhilarating rapids with rainforest waterfalls",
+        "4x4 Jeep Safari: Mount Batur sunrise volcanic black lava tour",
+        "Tanah Lot Temple: Spectacular offshore sunset ocean shrine",
+      ],
+      highlights: [
+        "Ayung River white water rafting with hot buffet lunch",
+        "Mount Batur 4x4 sunrise jeep safari",
+        "Tanjung Benoa thrilling water sports combo",
+        "Finns Beach Club sunset pass",
+      ],
+      inclusions: ["4-Star Hotel Stay", "Daily Buffet Breakfast", "Rafting & 4x4 Jeep Tours", "Water Sports Combo", "All Private Transfers"],
+      visaInfo: "Electronic Visa on Arrival (e-VOA) Assistance",
+    },
+    {
+      id: "phuket-krabi-island-hopper",
+      slug: "/phuket-krabi-island-hopper",
+      title: "Phuket & Krabi Exotic Island Hopper",
+      country: "Thailand",
+      citiesCovered: ["Phuket", "Phi Phi Islands", "Maya Bay", "Krabi Ao Nang"],
+      duration: "5 Nights / 6 Days",
+      price: "₹36,999",
+      originalPrice: "₹45,000",
+      rating: 4.93,
+      reviews: 210,
+      badge: "Island Paradise",
+      image: "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?auto=format&fit=crop&w=1200&q=80",
+      overview: "Witness Thailand's dramatic limestone islands and emerald lagoons. 3 nights in Phuket and 2 nights in Krabi with a speedboat expedition to Phi Phi Islands, Maya Bay, and Krabi's 4 Islands.",
+      keyPoints: [
+        "Phi Phi Islands: Speedboat tour to Maya Bay, Pileh Lagoon & snorkeling",
+        "Krabi 4 Islands: Longtail boat tour to Chicken Island, Tup Island sandbar & Phra Nang Cave",
+        "Phuket City Tour: Big Buddha, Wat Chalong & Promthep Cape sunset",
+        "Scenic Ferry Transfer: Cruise between Phuket and Krabi across Phang Nga bay",
+      ],
+      highlights: [
+        "Phi Phi Islands & Maya Bay speedboat tour with lunch",
+        "Krabi 4 Islands hopping tour with snorkeling",
+        "Phuket Big Buddha & scenic viewpoints",
+        "Sea ferry transfers between Phuket & Krabi",
+      ],
+      inclusions: ["3N Phuket + 2N Krabi 4-Star Beach Resorts", "Daily Buffet Breakfast", "Phi Phi & 4 Islands Tours with Lunches", "All Sea & Land Transfers"],
+      visaInfo: "Visa-Free Entry for Indian Nationals",
+    },
+    {
+      id: "complete-thailand-grand",
+      slug: "/complete-thailand-grand",
+      title: "Complete Thailand Grand Vacation: Bangkok, Pattaya & Phuket",
+      country: "Thailand",
+      citiesCovered: ["Pattaya", "Bangkok", "Phuket", "Phi Phi Islands"],
+      duration: "7 Nights / 8 Days",
+      price: "₹48,999",
+      originalPrice: "₹62,000",
+      rating: 4.95,
+      reviews: 184,
+      badge: "Grand Circuit",
+      image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=1200&q=80",
+      overview: "The grandest Thailand holiday! Includes internal domestic flight to Phuket, Coral Island speedboat excursion in Pattaya, Chao Phraya river dinner cruise in Bangkok, and Phi Phi Island tour in Phuket.",
+      keyPoints: [
+        "Internal Flight: Bangkok to Phuket domestic airfare included",
+        "Pattaya: Speedboat tour to Coral Island with Indian lunch & Alcazar show",
+        "Bangkok: Chao Phraya luxury river dinner cruise & Golden Buddha temple",
+        "Phuket: Speedboat expedition to Phi Phi Islands & Maya Bay",
+      ],
+      highlights: [
+        "Domestic Flight Bangkok to Phuket included",
+        "Coral Island Pattaya & Phi Phi Island Phuket tours",
+        "Chao Phraya Princess luxury dinner cruise",
+        "Alcazar Cabaret Show VIP seating",
+      ],
+      inclusions: ["2N Pattaya + 2N Bangkok + 3N Phuket 4-Star Hotels", "Bangkok-Phuket Domestic Flight", "Daily Breakfasts", "All Major Excursions & Transfers"],
+      visaInfo: "Visa-Free Entry for Indian Nationals",
+    },
+    {
+      id: "singapore-city-gardens",
+      slug: "/singapore-city-gardens",
+      title: "Singapore Universal Studios & Marina Bay Fantasy",
+      country: "Singapore & Malaysia",
+      citiesCovered: ["Singapore City", "Sentosa Island", "Marina Bay"],
+      duration: "4 Nights / 5 Days",
+      price: "₹39,999",
+      originalPrice: "₹49,000",
+      rating: 4.94,
+      reviews: 176,
+      badge: "Family Bestseller",
+      image: "https://images.unsplash.com/photo-1565967511849-76a60a516170?auto=format&fit=crop&w=1200&q=80",
+      overview: "Spend 4 glorious nights in the Lion City. Includes full-day passes to Universal Studios Sentosa, Gardens by the Bay double domes (Cloud Forest waterfall & Flower Dome), and Singapore Night Safari.",
+      keyPoints: [
+        "Universal Studios: 1-Day Pass with unlimited movie theme park rides",
+        "Gardens by the Bay: Cloud Forest mist waterfall & Flower Dome tickets",
+        "Night Safari: Guided tram ride through world's first nocturnal wildlife park",
+        "Marina Bay Sands: SkyPark observation deck 56th-floor views",
+      ],
+      highlights: [
+        "Universal Studios Singapore 1-Day Pass",
+        "Gardens by the Bay Flower Dome & Cloud Forest",
+        "Singapore Night Safari with tram ride",
+        "Sentosa Cable Car Sky Pass & Wings of Time show",
+      ],
+      inclusions: ["4 Nights 4-Star Central Singapore Hotel", "Daily Buffet Breakfast", "Universal Studios Pass", "Gardens by the Bay", "Airport Transfers"],
+      visaInfo: "Singapore e-Visa Assistance (3-5 Working Days)",
+    },
+    {
+      id: "best-of-malaysia",
+      slug: "/best-of-malaysia",
+      title: "Best of Malaysia: Kuala Lumpur & Langkawi Island Retreat",
+      country: "Singapore & Malaysia",
+      citiesCovered: ["Kuala Lumpur", "Batu Caves", "Langkawi Island"],
+      duration: "5 Nights / 6 Days",
+      price: "₹34,999",
+      originalPrice: "₹43,000",
+      rating: 4.91,
+      reviews: 138,
+      badge: "Nature & Beach",
+      image: "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=80",
+      overview: "Explore Malaysia's glittering capital and its premier tropical island. Marvel at Petronas Twin Towers and Batu Caves, followed by a domestic flight to Langkawi for white sands and the Langkawi SkyBridge.",
+      keyPoints: [
+        "Domestic Flight: Kuala Lumpur to Langkawi flight included",
+        "Kuala Lumpur: Petronas Twin Towers photo stop & Batu Caves golden statue",
+        "Langkawi: Island hopping boat cruise with eagle feeding sanctuary",
+        "Langkawi SkyCab: Scenic cable car to Mount Machinchang & curved SkyBridge",
+      ],
+      highlights: [
+        "Internal flight from KL to Langkawi included",
+        "Langkawi Island Hopping boat tour & beach relaxation",
+        "Batu Caves & Kuala Lumpur guided city tour",
+        "Langkawi SkyCab cable car ticket",
+      ],
+      inclusions: ["2N Kuala Lumpur + 3N Langkawi 4-Star Hotels", "KL-Langkawi Domestic Flight", "Daily Buffet Breakfast", "Island Hopping Tour", "Airport Transfers"],
+      visaInfo: "Malaysia Visa-Free Entry with Digital Arrival Card (MDAC)",
+    },
+    {
+      id: "vietnam-danang-golden-bridge",
+      slug: "/vietnam-danang-golden-bridge",
+      title: "Gems of Central Vietnam: Da Nang, Ba Na Hills & Hoi An",
+      country: "Vietnam",
+      citiesCovered: ["Da Nang", "Ba Na Hills", "Hoi An Ancient Town", "Cam Thanh"],
+      duration: "5 Nights / 6 Days",
+      price: "₹39,999",
+      originalPrice: "₹49,000",
+      rating: 4.96,
+      reviews: 152,
+      badge: "Most Photogenic",
+      image: "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=1200&q=80",
+      overview: "Walk across the breathtaking Golden Bridge suspended by giant stone hands at Ba Na Hills, take spinning bamboo basket boat rides through coconut waterways, and explore the lantern-lit streets of UNESCO Hoi An.",
+      keyPoints: [
+        "Golden Hand Bridge: Ba Na Hills cable car & suspension bridge in the clouds",
+        "Hoi An Ancient Town: UNESCO World Heritage lantern-lit walking tour",
+        "Cam Thanh Coconut Forest: Traditional round bamboo basket boat ride",
+        "Marble Mountains: Limestone peaks with sacred Buddhist cave shrines",
+      ],
+      highlights: [
+        "Ba Na Hills cable car & Golden Bridge tickets",
+        "Hoi An Ancient Town guided night lantern tour",
+        "Cam Thanh coconut forest basket boat experience",
+        "Private AC vehicle transfers throughout",
+      ],
+      inclusions: ["3N Da Nang + 2N Hoi An 4-Star Boutique Hotels", "Daily Buffet Breakfast", "Ba Na Hills Pass", "Cam Thanh Basket Boat Tour", "Private Transfers"],
+      visaInfo: "Vietnam e-Visa Assistance within 3 Working Days",
+    },
+    {
+      id: "vietnam-hanoi-halong-bay",
+      slug: "/vietnam-hanoi-halong-bay",
+      title: "Northern Vietnam Charms: Hanoi & Luxury Halong Cruise",
+      country: "Vietnam",
+      citiesCovered: ["Hanoi", "Halong Bay", "Sung Sot Cave"],
+      duration: "4 Nights / 5 Days",
+      price: "₹31,999",
+      originalPrice: "₹40,000",
+      rating: 4.93,
+      reviews: 124,
+      badge: "Heritage Cruise",
+      image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+      overview: "Combine Hanoi's historic Old Quarter and street food culture with an overnight 5-star cruise through the limestone islets of Halong Bay. Includes kayaking, cave exploration, and Tai Chi at sunrise.",
+      keyPoints: [
+        "Halong Bay Luxury Cruise: Overnight stay in private balcony ocean cabin",
+        "All Cruise Meals: Full-board gourmet dining on board the cruise",
+        "Activities: Kayaking, swimming, cave exploration & sunrise Tai Chi",
+        "Hanoi Old Quarter: Street food walk and traditional water puppet show",
+      ],
+      highlights: [
+        "Overnight 5-Star Cruise on UNESCO Halong Bay",
+        "All meals on board cruise included",
+        "Kayaking and Sung Sot Cave exploration",
+        "Hanoi Old Quarter water puppet show",
+      ],
+      inclusions: ["3N Hanoi 4-Star Hotel + 1N Halong Cruise", "Daily Breakfast + All Cruise Meals", "Halong Kayaking & Cave Entry", "Limousine Coach Transfers"],
+      visaInfo: "Vietnam e-Visa Assistance within 3 Working Days",
+    },
+    {
+      id: "bhutan-cultural-odyssey",
+      slug: "/bhutan-cultural-odyssey",
+      title: "Bhutan Cultural Odyssey & Tiger's Nest Hike",
+      country: "Bhutan",
+      citiesCovered: ["Paro", "Thimphu", "Punakha", "Dochula Pass"],
+      duration: "5 Nights / 6 Days",
+      price: "₹29,999",
+      originalPrice: "₹37,000",
+      rating: 4.97,
+      reviews: 110,
+      badge: "Spiritual Trek",
+      image: "https://images.unsplash.com/photo-1578637387939-43c525550085?auto=format&fit=crop&w=1200&q=80",
+      overview: "Hike to the legendary cliff-hanging Tiger's Nest monastery, gaze at the 169ft Buddha Dordenma in Thimphu, cross Dochula Pass with 108 memorial stupas, and soak in a traditional hot stone herbal bath.",
+      keyPoints: [
+        "Tiger's Nest (Taktsang): World-famous pilgrimage hike 900m above Paro valley",
+        "Thimphu: 169ft bronze gilded Buddha Dordenma & Tashichho Dzong",
+        "Dochula Pass: 3,100m high mountain pass with panoramic Himalayan views",
+        "Punakha Dzong: Magnificent 17th-century fortress palace at the river confluence",
+      ],
+      highlights: [
+        "Taktsang Monastery (Tiger's Nest) guided hike",
+        "All meals daily included (Breakfast, Lunch & Dinner)",
+        "Dedicated private SUV with licensed Bhutanese guide & driver",
+        "Complimentary traditional Bhutanese hot stone herbal bath",
+      ],
+      inclusions: ["5 Nights in Certified 3-Star Bhutanese Hotels", "All Meals (Breakfast, Lunch & Dinner)", "Dedicated SUV with Chauffeur", "Certified Tour Guide", "All Permits"],
+      visaInfo: "No Visa Needed for Indians (Entry Permit via Voter ID / Passport)",
+    },
     {
       id: "europe-grand-tour",
-      slug: "/packages",
+      slug: "/europe-grand-tour",
       title: "Paris & Swiss Alps Dream Vacation",
       country: "Europe",
       citiesCovered: ["Paris", "Lucerne", "Interlaken", "Zurich"],
@@ -266,7 +588,7 @@ export default function InternationalPackagesPage() {
     },
     {
       id: "maldives-luxury",
-      slug: "/packages",
+      slug: "/maldives-luxury",
       title: "Maldives Overwater Luxury Villa Escape",
       country: "Maldives",
       citiesCovered: ["North Malé Atoll", "Private Resort Island"],
@@ -459,7 +781,13 @@ export default function InternationalPackagesPage() {
 
                     {/* Title */}
                     <h3 className="text-lg font-serif font-bold text-slate-900 group-hover:text-[#B58238] transition-colors leading-snug">
-                      {pkg.title}
+                      <Link
+                        href={pkg.slug}
+                        onClick={(e) => e.stopPropagation()}
+                        className="hover:underline"
+                      >
+                        {pkg.title}
+                      </Link>
                     </h3>
 
                     {/* Cities Covered Badges */}
@@ -504,16 +832,14 @@ export default function InternationalPackagesPage() {
                     </div>
 
                     <div className="flex items-center gap-2">
-                      <button
-                        type="button"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleOpenModal(pkg);
-                        }}
-                        className="bg-[#FAF5ED] hover:bg-[#F3E8D7] text-[#B58238] border border-[#EADBCC] text-xs font-bold py-2.5 px-3 rounded-lg transition-all cursor-pointer"
+                      <Link
+                        href={pkg.slug}
+                        onClick={(e) => e.stopPropagation()}
+                        className="bg-[#FAF5ED] hover:bg-[#F3E8D7] text-[#B58238] border border-[#EADBCC] text-xs font-bold py-2.5 px-3 rounded-lg transition-all cursor-pointer inline-flex items-center gap-1"
                       >
-                        Details
-                      </button>
+                        <span>Details</span>
+                        <ArrowRight className="w-3 h-3" />
+                      </Link>
 
                       <button
                         type="button"
