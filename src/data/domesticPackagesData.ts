@@ -9,6 +9,7 @@ export interface DestinationPackageItem {
   reviews: number;
   badge?: string;
   image: string;
+  gallery?: string[];
   overview: string;
   highlights: string[];
   inclusions: string[];
@@ -21,6 +22,7 @@ export interface DayPlan {
   day: string;
   title: string;
   description: string;
+  image?: string;
 }
 
 export interface DomesticDestinationData {

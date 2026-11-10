@@ -9,6 +9,7 @@ export interface InternationalPackageData {
   rating: number;
   reviews: number;
   image: string;
+  gallery?: string[];
   badge?: string;
   overview: string;
   fullOverview?: string[];
@@ -16,7 +17,7 @@ export interface InternationalPackageData {
   highlights: string[];
   inclusions: string[];
   exclusions?: string[];
-  daywise?: { day: string; title: string; desc: string }[];
+  daywise?: { day: string; title: string; desc: string; image?: string }[];
   visaInfo: string;
 }
 
@@ -35,6 +36,13 @@ export const INTERNATIONAL_PACKAGES: Record<string, InternationalPackageData> = 
     route: "Dubai – Desert Safari – Abu Dhabi – Ferrari World – Dubai",
     image:
       "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1580674684081-7617fbf3d745?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1451337516015-6b6e9a44a8a3?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1578895101408-1a36b834405b?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1546412414-e1885259563a?auto=format&fit=crop&w=800&q=80",
+    ],
     overview:
       "Journey Through the World’s Most Futuristic Destinations! Travel Hawker’s Dubai Abu Dhabi Tour Package invites you to experience the finest blend of modern marvels, desert adventures, and rich Arabian culture. From the towering heights of the Burj Khalifa to the thrilling rides of Ferrari World and the architectural magnificence of the Sheikh Zayed Grand Mosque, this journey promises memories of a lifetime.",
     highlights: [
@@ -87,6 +95,13 @@ export const INTERNATIONAL_PACKAGES: Record<string, InternationalPackageData> = 
     route: "Kuala Lumpur – Genting Highlands – Malacca – Singapore – Sentosa",
     image:
       "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1565967511849-76a60a516170?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1506351421178-63b52a2d2562?auto=format&fit=crop&w=800&q=80",
+    ],
     overview:
       "Singapore and Malaysia offer a captivating journey through modern marvels, cultural heritage, and tropical landscapes. Marvel at Universal Studios Sentosa, Gardens by the Bay futuristic Supertrees, Genting Highlands cable car, and Petronas Twin Towers in Kuala Lumpur.",
     highlights: [
@@ -187,6 +202,13 @@ export const INTERNATIONAL_PACKAGES: Record<string, InternationalPackageData> = 
     route: "Paro – Thimphu – Punakha – Paro (Tiger's Nest)",
     image:
       "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1578637387939-43c525550085?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=800&q=80",
+    ],
     overview:
       "Bhutan is a fascinating country ideally situated in the majestic Himalayas. Its pure natural beauty, ancient Buddhist dzongs, cliff-hanging monasteries, and philosophy of Gross National Happiness make it one of the most peaceful places on earth.",
     highlights: [
@@ -331,6 +353,13 @@ export const INTERNATIONAL_PACKAGES: Record<string, InternationalPackageData> = 
     badge: "Bestseller Express",
     route: "Dubai – Marina Dhow Cruise – Desert Safari – Burj Khalifa",
     image: "https://images.unsplash.com/photo-1580674684081-7617fbf3d745?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1580674684081-7617fbf3d745?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1451337516015-6b6e9a44a8a3?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1546412414-e1885259563a?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&w=800&q=80",
+    ],
     overview:
       "Experience the pinnacle of Dubai in a compact, action-packed holiday. Marvel at the city's futuristic skyline from Burj Khalifa 124th floor, conquer the red dunes in a 4x4 Land Cruiser with BBQ dinner under the stars, and glide along Dubai Marina on a luxury dhow cruise.",
     highlights: [
@@ -378,6 +407,13 @@ export const INTERNATIONAL_PACKAGES: Record<string, InternationalPackageData> = 
     badge: "Honeymoon Special",
     route: "Dubai – Palm Jumeirah – Private Yacht – VIP Desert Safari – Atlantis",
     image: "https://images.unsplash.com/photo-1546412414-e1885259563a?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1546412414-e1885259563a?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1451337516015-6b6e9a44a8a3?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80",
+    ],
     overview:
       "Celebrate your romance in true royal style! Enjoy luxury 5-star beachfront accommodations, a 2-hour private yacht cruise along Dubai Marina and Palm Jumeirah, VIP seating at a premium desert safari, and complimentary access to Atlantis Aquaventure waterpark.",
     highlights: [
@@ -426,6 +462,13 @@ export const INTERNATIONAL_PACKAGES: Record<string, InternationalPackageData> = 
     badge: "Honeymoon Favorite",
     route: "Seminyak Beach – Ubud Jungle Villa – Nusa Penida – Jimbaran Sunset",
     image: "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?auto=format&fit=crop&w=800&q=80",
+    ],
     overview:
       "Crafted exclusively for couples seeking romance and exotic tropical charm. Spend 3 nights in an ocean-view Seminyak resort and 3 nights in an ultra-private Ubud pool villa. Includes floating breakfast, romantic beach candlelit dinner at Jimbaran Bay, and an excursion to Nusa Penida.",
     highlights: [
@@ -475,6 +518,13 @@ export const INTERNATIONAL_PACKAGES: Record<string, InternationalPackageData> = 
     badge: "Adventure Special",
     route: "Kuta – Tanjung Benoa – Ayung River – Mount Batur Jeep Safari",
     image: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1555400038-63f5ba517a47?auto=format&fit=crop&w=800&q=80",
+    ],
     overview:
       "Designed for thrill-seekers and active vacationers! Experience high-speed water sports at Tanjung Benoa, conquer Class III rapids on the Ayung River in Ubud, embark on a 4x4 sunrise jeep safari across Mount Batur black lava fields, and unwind at Bali's coolest beach clubs.",
     highlights: [
@@ -520,6 +570,13 @@ export const INTERNATIONAL_PACKAGES: Record<string, InternationalPackageData> = 
     badge: "Island Paradise",
     route: "Phuket – Phi Phi Islands – Maya Bay – Krabi – 4 Islands Tour",
     image: "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+    ],
     overview:
       "Witness Thailand's most dramatic limestone karsts and turquoise waters. Stay 3 nights in Phuket and 2 nights in Krabi. Sail by speedboat to the legendary Phi Phi Islands and Maya Bay, explore Krabi's 4 Islands, and enjoy vibrant night markets.",
     highlights: [
@@ -566,6 +623,13 @@ export const INTERNATIONAL_PACKAGES: Record<string, InternationalPackageData> = 
     badge: "Grand Circuit",
     route: "Pattaya – Coral Island – Bangkok – Temples – Phuket – Phi Phi",
     image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1563492065599-3580f7752046?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?auto=format&fit=crop&w=800&q=80",
+    ],
     overview:
       "The ultimate all-inclusive Thai journey! Combines the high-energy entertainment of Pattaya, the cultural splendour and world-class shopping of Bangkok, and the tropical island serenity of Phuket. Includes internal domestic flight to Phuket.",
     highlights: [
@@ -618,6 +682,13 @@ export const INTERNATIONAL_PACKAGES: Record<string, InternationalPackageData> = 
     badge: "Family Bestseller",
     route: "Marina Bay – Universal Studios Sentosa – Gardens by the Bay – Night Safari",
     image: "https://images.unsplash.com/photo-1565967511849-76a60a516170?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1565967511849-76a60a516170?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1506351421178-63b52a2d2562?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=800&q=80",
+    ],
     overview:
       "Immerse yourself in the futuristic Lion City! Spend 4 nights discovering the wonders of Singapore: thrilling rides at Universal Studios Sentosa, the cascading indoor waterfall at Gardens by the Bay Cloud Forest, and world-famous Singapore Night Safari.",
     highlights: [
@@ -665,6 +736,13 @@ export const INTERNATIONAL_PACKAGES: Record<string, InternationalPackageData> = 
     badge: "Nature & Beach",
     route: "Kuala Lumpur – Batu Caves – Genting – Langkawi Island – Cable Car",
     image: "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1565967511849-76a60a516170?auto=format&fit=crop&w=800&q=80",
+    ],
     overview:
       "The perfect fusion of bustling cosmopolitan flair and tropical island peace. Explore the Petronas Twin Towers and Batu Caves in Kuala Lumpur, followed by a flight to Langkawi for white sand beaches, island hopping, and the Langkawi Sky Bridge.",
     highlights: [
@@ -712,6 +790,13 @@ export const INTERNATIONAL_PACKAGES: Record<string, InternationalPackageData> = 
     badge: "Most Photogenic",
     route: "Da Nang – Ba Na Hills Golden Bridge – Hoi An Lantern Town – Cam Thanh",
     image: "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80",
+    ],
     overview:
       "Central Vietnam is a treasure trove of culture and architectural marvels. Walk across the world-famous Golden Bridge suspended by gigantic stone hands at Ba Na Hills, explore the UNESCO World Heritage lantern-lit streets of Hoi An, and glide on round coconut basket boats.",
     highlights: [
@@ -758,6 +843,13 @@ export const INTERNATIONAL_PACKAGES: Record<string, InternationalPackageData> = 
     badge: "Heritage Cruise",
     route: "Hanoi Old Quarter – Halong Bay Luxury Overnight Cruise – Sung Sot Cave",
     image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80",
+    ],
     overview:
       "A timeless Northern Vietnam retreat combining the bustling French colonial charm of Hanoi with an unforgettable overnight 5-star cruise on Halong Bay. Kayak through limestone caves, practice morning Tai Chi on deck, and taste authentic Vietnamese pho.",
     highlights: [
@@ -802,6 +894,13 @@ export const INTERNATIONAL_PACKAGES: Record<string, InternationalPackageData> = 
     badge: "Spiritual Trek",
     route: "Paro – Thimphu – Dochula Pass – Punakha – Tiger's Nest",
     image: "https://images.unsplash.com/photo-1578637387939-43c525550085?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1578637387939-43c525550085?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=800&q=80",
+    ],
     overview:
       "A transformative Himalayan journey into the Kingdom of Bhutan. Experience the majestic fortress dzongs, the gigantic Buddha Dordenma in Thimphu, 108 memorial chortens at Dochula Pass, and the legendary pilgrimage hike to Tiger's Nest monastery.",
     highlights: [
@@ -847,6 +946,13 @@ export const INTERNATIONAL_PACKAGES: Record<string, InternationalPackageData> = 
     badge: "Luxury Flagship",
     route: "Paris – TGV Lyria Train – Lucerne – Mt. Titlis – Zurich",
     image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1527668752968-14dc70a27c95?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=800&q=80",
+    ],
     overview:
       "Paris romance meets Swiss alpine majesty. Experience the top deck of Eiffel Tower, Seine river cruise, Lucerne Chapel Bridge, and the snowclad peak of Mt. Titlis with world-famous Rotair cable car.",
     highlights: [
@@ -896,6 +1002,13 @@ export const INTERNATIONAL_PACKAGES: Record<string, InternationalPackageData> = 
     badge: "All-Inclusive Resort",
     route: "Velana Airport – Speedboat – Overwater Villa – Private Coral Reef",
     image: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80",
+    ],
     overview:
       "Wake up above crystal turquoise lagoons with direct access to vibrant coral reefs. Stay in luxury overwater villas with all-inclusive dining, sunset dolphin cruises, and complimentary snorkeling gear.",
     highlights: [

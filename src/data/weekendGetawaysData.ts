@@ -12,10 +12,11 @@ export interface WeekendGetawayData {
   rating: number;
   reviews: number;
   image: string;
+  gallery?: string[];
   badge?: string;
   overview: string;
   highlights: string[];
-  daywise: { day: string; title: string; desc: string }[];
+  daywise: { day: string; title: string; desc: string; image?: string }[];
   inclusions: string[];
   exclusions: string[];
 }
@@ -161,6 +162,13 @@ export const WEEKEND_GETAWAYS: Record<string, WeekendGetawayData> = {
     badge: "Royal Weekend",
     image:
       "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1605649487212-47bdab064df8?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800&q=80",
+    ],
     overview:
       "Jaipur, the capital city of Rajasthan, India, is famously known as the 'Pink City' because of the distinctive pink color of its buildings, painted to welcome the Prince of Wales in 1876. A city of royal palaces, vibrant bazaars, and world-heritage hilltop forts.",
     highlights: [
@@ -202,6 +210,13 @@ export const WEEKEND_GETAWAYS: Record<string, WeekendGetawayData> = {
     badge: "Classic Favourite",
     image:
       "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1588714477688-cf28a50e94f7?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+    ],
     overview:
       "Shimla, the capital city of Himachal Pradesh, is one of the most popular hill stations in India. Located in the foothills of the Himalayas at 2,276 meters (7,467 feet), it was once the summer capital of British India, celebrated for colonial architecture, pleasant climate, and pine-clad hills.",
     highlights: [
@@ -243,6 +258,13 @@ export const WEEKEND_GETAWAYS: Record<string, WeekendGetawayData> = {
     badge: "Lakes & Hills",
     image:
       "https://images.unsplash.com/photo-1582650625119-3a31f8fa2699?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1588714477688-cf28a50e94f7?auto=format&fit=crop&w=800&q=80",
+    ],
     overview:
       "Nainital, a charming hill station in the Kumaon region of Uttarakhand, India, is often called the 'Lake District of India'. Located around the eye-shaped emerald Naini Lake, it offers scenic hills, pleasant weather, yacht boating, and spiritual serenity.",
     highlights: [
@@ -284,6 +306,13 @@ export const WEEKEND_GETAWAYS: Record<string, WeekendGetawayData> = {
     badge: "Romantic Charm",
     image:
       "https://images.unsplash.com/photo-1588714477688-cf28a50e94f7?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1588714477688-cf28a50e94f7?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?auto=format&fit=crop&w=800&q=80",
+    ],
     overview:
       "Mussoorie, often referred to as the 'Queen of the Hills', is a picturesque hill station situated in the Garhwal Himalayan range of Uttarakhand, India. Elevated at 2,005 meters (6,578 feet), it is known for stunning views of the Doon Valley, lush green hills, and historic colonial heritage.",
     highlights: [
@@ -325,6 +354,13 @@ export const WEEKEND_GETAWAYS: Record<string, WeekendGetawayData> = {
     badge: "Big Cat Safari",
     image:
       "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+    ],
     overview:
       "Ranthambore National Park, located in the Sawai Madhopur district of Rajasthan, India, is one of the most famous and largest national parks in northern India. Known for its rich population of Royal Bengal tigers, dramatic dry deciduous forests, and ancient 10th-century hill fortress.",
     highlights: [
@@ -366,6 +402,13 @@ export const WEEKEND_GETAWAYS: Record<string, WeekendGetawayData> = {
     badge: "Wildlife Adventure",
     image:
       "https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=800&q=80",
+    ],
     overview:
       "Jim Corbett National Park, located in the Nainital district of Uttarakhand, India, is the oldest national park in India, established in 1936 as Hailey National Park. Named after the legendary British hunter and naturalist Jim Corbett, it is celebrated for its wild Asian elephants, elusive tigers, and scenic Ramganga riverbanks.",
     highlights: [

@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import EnquiryModal from "@/components/EnquiryModal";
 import WhatsAppIcon from "./WhatsAppIcon";
 import StructuredData from "@/components/StructuredData";
+import TourPhotoGallery from "./TourPhotoGallery";
 import {
   DestinationPackageItem,
   DomesticDestinationData,
@@ -29,6 +30,7 @@ import {
   Coffee,
   HelpCircle,
   ChevronDown,
+  Camera,
 } from "lucide-react";
 
 interface Props {
@@ -55,6 +57,14 @@ export default function TourPackageDetailView({
   };
 
   const otherPackages = relatedPackages.filter((p) => p.id !== pkg.id);
+
+  const galleryImages = (pkg.gallery && pkg.gallery.length > 0)
+    ? pkg.gallery
+    : [
+        pkg.image || destination.heroImage,
+        ...(destination.highlights?.map((h) => h.image) || []),
+        destination.heroImage,
+      ].filter(Boolean);
 
   // SEO Schemas
   const cleanPrice = parseInt(pkg.price.replace(/[^0-9]/g, ""), 10) || 9999;
@@ -316,8 +326,17 @@ export default function TourPackageDetailView({
         </div>
 
         {/* Main Content Area */}
-        <section className="py-12 sm:py-16 bg-white">
+        <section className="py-10 sm:py-14 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Tour Photo Mosaic Showcase */}
+            <div className="mb-10 sm:mb-14">
+              <TourPhotoGallery
+                title={pkg.title}
+                images={galleryImages}
+                badge={pkg.badge || `${destination.name} Tour`}
+              />
+            </div>
+
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
               {/* Left Column: Itinerary, Overview, Inclusions */}
               <div className="lg:col-span-8 space-y-12">
@@ -395,8 +414,22 @@ export default function TourPackageDetailView({
                             </button>
 
                             {isOpen && (
-                              <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 font-normal">
-                                {plan.description}
+                              <div className="px-5 pb-5 pt-3 border-t border-slate-100 flex flex-col sm:flex-row gap-4 items-start font-normal">
+                                <div className="relative w-full sm:w-52 h-36 rounded-xl overflow-hidden shrink-0 bg-slate-100 shadow-xs border border-slate-200/80">
+                                  <Image
+                                    src={plan.image || galleryImages[(idx + 1) % galleryImages.length]}
+                                    alt={plan.title}
+                                    fill
+                                    sizes="(max-width: 640px) 100vw, 220px"
+                                    className="object-cover"
+                                  />
+                                  <span className="absolute bottom-1.5 left-1.5 bg-black/70 backdrop-blur-xs text-white text-[10px] font-bold px-2 py-0.5 rounded">
+                                    {plan.day}
+                                  </span>
+                                </div>
+                                <div className="flex-1 text-xs sm:text-sm text-slate-600 leading-relaxed pt-1">
+                                  {plan.description}
+                                </div>
                               </div>
                             )}
                           </div>
@@ -452,6 +485,36 @@ export default function TourPackageDetailView({
                         </li>
                       ))}
                     </ul>
+                  </div>
+                </div>
+
+                {/* Sights & Experiences Photo Gallery Strip */}
+                <div className="space-y-4 pt-2">
+                  <div className="flex items-center justify-between">
+                    <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight flex items-center gap-2">
+                      <Camera className="w-5 h-5 text-[#f05a28]" />
+                      <span>Sights &amp; Moments You&apos;ll Witness</span>
+                    </h2>
+                    <span className="text-xs text-slate-500 font-medium">
+                      {galleryImages.length} Curated Sights
+                    </span>
+                  </div>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                    {galleryImages.slice(0, 6).map((img, i) => (
+                      <div
+                        key={i}
+                        className="relative h-32 sm:h-44 rounded-2xl overflow-hidden group bg-slate-100 border border-slate-200 shadow-xs"
+                      >
+                        <Image
+                          src={img}
+                          alt={`${pkg.title} sight ${i + 1}`}
+                          fill
+                          sizes="(max-width: 640px) 50vw, 33vw"
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity" />
+                      </div>
+                    ))}
                   </div>
                 </div>
 

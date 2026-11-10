@@ -6,6 +6,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import EnquiryModal from "@/components/EnquiryModal";
+import TourPhotoGallery from "@/components/TourPhotoGallery";
 import {
   DomesticDestinationData,
   DOMESTIC_DESTINATIONS,
@@ -159,8 +160,21 @@ export default function DomesticDestinationView({ destination }: Props) {
         </div>
 
         {/* Detailed Overview Section */}
-        <section className="py-16 sm:py-20 bg-white">
+        <section className="py-12 sm:py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Destination Photo Mosaic Gallery */}
+            <div className="mb-10 sm:mb-14">
+              <TourPhotoGallery
+                title={`${destination.name} Photo Gallery`}
+                images={[
+                  destination.heroImage,
+                  ...(destination.highlights?.map((h) => h.image) || []),
+                  ...(destination.packages?.map((p) => p.image) || []),
+                ].filter(Boolean)}
+                badge={`${destination.name} Sights`}
+              />
+            </div>
+
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
               <div className="lg:col-span-8 space-y-6">
                 <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
@@ -304,20 +318,33 @@ export default function DomesticDestinationView({ destination }: Props) {
               {destination.packages.map((pkg) => (
                 <div
                   key={pkg.id}
-                  className="bg-white rounded-3xl border border-slate-200/90 shadow-md hover:shadow-xl hover:border-orange-200 transition-all p-6 sm:p-8 flex flex-col justify-between space-y-6"
+                  className="bg-white rounded-3xl border border-slate-200/90 shadow-md hover:shadow-xl hover:border-orange-200 transition-all overflow-hidden flex flex-col justify-between group"
                 >
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between">
-                      {pkg.badge && (
-                        <span className="text-[11px] font-bold text-[#f05a28] bg-orange-50 px-3 py-1 rounded-full border border-orange-100">
-                          {pkg.badge}
-                        </span>
-                      )}
-                      <div className="flex items-center gap-1.5 text-xs text-slate-500 font-semibold ml-auto">
-                        <Clock className="w-4 h-4 text-slate-400" />
-                        <span>{pkg.duration}</span>
-                      </div>
+                  {/* Tour Photo Banner */}
+                  <div className="relative h-56 w-full overflow-hidden bg-slate-100">
+                    <Image
+                      src={pkg.image || destination.heroImage}
+                      alt={pkg.title}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-50" />
+
+                    {pkg.badge && (
+                      <span className="absolute top-3.5 left-3.5 text-[11px] font-bold text-white bg-[#f05a28] px-3 py-1 rounded-full shadow-md">
+                        {pkg.badge}
+                      </span>
+                    )}
+
+                    <div className="absolute bottom-3 right-3 bg-black/70 backdrop-blur-md text-white text-xs font-semibold px-2.5 py-1 rounded-lg flex items-center gap-1.5 shadow-sm">
+                      <Clock className="w-3.5 h-3.5 text-orange-400" />
+                      <span>{pkg.duration}</span>
                     </div>
+                  </div>
+
+                  <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6">
+                    <div className="space-y-4">
 
                     <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 leading-snug">
                       {pkg.slug ? (
@@ -399,6 +426,7 @@ export default function DomesticDestinationView({ destination }: Props) {
                     </div>
                   </div>
                 </div>
+              </div>
               ))}
             </div>
           </div>
