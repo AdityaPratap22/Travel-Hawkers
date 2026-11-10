@@ -17,7 +17,7 @@ export default function ExperiencesPage() {
       title: "Trekking & Adventure",
       tagline: "Conquer scenic ridges, glacial passes, and untamed mountain trails.",
       icon: Compass,
-      image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80",
+      image: "/images/himachal/solang_valley.webp",
       topDestinations: ["Leh Ladakh", "Manali", "Rishikesh", "Spiti Valley", "Nepal"],
       features: [
         "Certified mountaineering guides & medical oxygen backup",
@@ -31,7 +31,7 @@ export default function ExperiencesPage() {
       title: "Honeymoon Holidays",
       tagline: "Celebrate your love in secluded villas, private beaches, and romantic hideaways.",
       icon: Heart,
-      image: "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=900&q=80",
+      image: "/images/international/maldives_overwater.webp",
       topDestinations: ["Bali", "Maldives", "Kashmir", "Switzerland", "Goa"],
       features: [
         "Private pool villas with flower bed decor & champagne",
@@ -45,7 +45,7 @@ export default function ExperiencesPage() {
       title: "Family Vacations",
       tagline: "Pre-planned comfort, kid-friendly theme parks, and spacious resorts.",
       icon: Users,
-      image: "https://images.unsplash.com/photo-1507034589631-9433cc6bc453?auto=format&fit=crop&w=900&q=80",
+      image: "/images/international/singapore_sentosa.webp",
       topDestinations: ["Dubai", "Singapore", "Kerala", "Thailand", "Andaman"],
       features: [
         "Child-friendly resorts with swimming pools & recreational clubs",
@@ -59,7 +59,7 @@ export default function ExperiencesPage() {
       title: "Group Tours",
       tagline: "Unforgettable group adventures for friends, college groups, and corporate teams.",
       icon: Flame,
-      image: "https://images.unsplash.com/photo-1539635278303-d4002c07eae3?auto=format&fit=crop&w=900&q=80",
+      image: "/images/goa/goa_watersports.webp",
       topDestinations: ["Goa", "Thailand", "Kasol", "Dubai", "Rajasthan"],
       features: [
         "Dedicated tour captain to coordinate all logistics",
@@ -73,7 +73,7 @@ export default function ExperiencesPage() {
       title: "Wildlife Tours",
       tagline: "Get up-close with Bengal tigers, wild elephants, and exotic bird species.",
       icon: Binoculars,
-      image: "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=900&q=80",
+      image: "/images/weekend/corbett_tiger.webp",
       topDestinations: ["Ranthambore", "Jim Corbett", "Kaziranga", "Gir", "Masai Mara"],
       features: [
         "Exclusive open-top 4x4 Gypsy jungle safaris",
@@ -87,7 +87,7 @@ export default function ExperiencesPage() {
       title: "Pilgrimage Tours",
       tagline: "Sacred journeys, ancient architectural temples, and inner spiritual peace.",
       icon: Landmark,
-      image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=900&q=80",
+      image: "/images/chardham/kedarnath_temple.webp",
       topDestinations: ["Varanasi", "Char Dham", "Amritsar", "Tirupati", "Rameshwaram"],
       features: [
         "VIP Darshan arrangements where permitted",

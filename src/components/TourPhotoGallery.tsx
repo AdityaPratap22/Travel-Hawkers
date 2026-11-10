@@ -18,13 +18,32 @@ export default function TourPhotoGallery({
   const [isOpen, setIsOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Filter out any duplicates or empty strings
+  // Filter out any duplicates or empty strings to guarantee strictly UNIQUE images
   const validImages = Array.from(new Set(images.filter(Boolean)));
 
-  // Ensure we have at least 5 images by reusing if needed
-  const displayImages = validImages.length > 0 ? validImages : [
-    "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80"
+  // Curated diverse high-resolution fallback pool so no tile ever duplicates
+  const fallbackList = [
+    "/images/kashmir/dal_lake_shikara.webp",
+    "/images/himachal/solang_valley.webp",
+    "/images/rajasthan/amber_fort.webp",
+    "/images/kerala/alleppey_houseboat.webp",
+    "/images/tours/taj_mahal_sunrise.webp",
+    "/images/goa/goa_beach.webp",
+    "/images/ladakh/pangong_lake.webp",
+    "/images/international/dubai_burj_khalifa.webp",
+    "/images/international/singapore_mbs.webp",
+    "/images/international/bali_nusa_penida.webp",
   ];
+
+  // Start with unique valid images
+  const displayImages = [...validImages];
+  // Fill remaining slots up to 5 ONLY with non-colliding fallback images so every tile is unique
+  for (const fallback of fallbackList) {
+    if (displayImages.length >= 5) break;
+    if (!displayImages.includes(fallback)) {
+      displayImages.push(fallback);
+    }
+  }
 
   const primaryImage = displayImages[0];
   const sideImages = displayImages.slice(1, 5);
@@ -101,7 +120,7 @@ export default function TourPhotoGallery({
           </div>
 
           {/* Right 5 cols (2x2 grid) */}
-          <div className="col-span-5 grid grid-cols-2 gap-2 h-full">
+          <div className="col-span-5 grid grid-cols-2 grid-rows-2 gap-2 h-full">
             {sideImages.map((img, idx) => {
               const actualIdx = idx + 1;
               const isLast = idx === 3 || actualIdx === displayImages.length - 1;

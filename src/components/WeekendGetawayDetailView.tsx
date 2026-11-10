@@ -44,9 +44,23 @@ export default function WeekendGetawayDetailView({ getaway }: Props) {
     (g) => g.id !== getaway.id
   );
 
-  const galleryImages = (getaway.gallery && getaway.gallery.length > 0)
-    ? getaway.gallery
-    : [getaway.image];
+  const galleryImages = Array.from(
+    new Set(
+      [
+        getaway.image,
+        ...(getaway.gallery || []),
+        ...(getaway.daywise?.map((d) => d.image).filter(Boolean) as string[] || []),
+        ...Object.values(WEEKEND_GETAWAYS)
+          .filter((w) => w.state === getaway.state && w.id !== getaway.id)
+          .map((w) => w.image)
+          .filter(Boolean),
+        ...Object.values(WEEKEND_GETAWAYS)
+          .filter((w) => w.id !== getaway.id)
+          .map((w) => w.image)
+          .filter(Boolean),
+      ].filter(Boolean)
+    )
+  );
 
   const cleanPrice = parseInt(getaway.price.replace(/[^0-9]/g, ""), 10) || 5999;
   const productSchema = {
@@ -186,11 +200,15 @@ export default function WeekendGetawayDetailView({ getaway }: Props) {
                     / person
                   </span>
                 </div>
-                {getaway.originalPrice && (
+                {getaway.originalPrice ? (
                   <div className="text-[11px] text-slate-400 line-through">
                     {getaway.originalPrice}
                   </div>
-                )}
+                ) : null}
+                <div className="text-[10px] text-amber-300 font-bold flex items-center gap-1 mt-1">
+                  <ShieldCheck className="w-3 h-3 text-amber-300" />
+                  <span>Price Match Guaranteed</span>
+                </div>
               </div>
 
               <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-4">
@@ -505,6 +523,26 @@ export default function WeekendGetawayDetailView({ getaway }: Props) {
                       <Phone className="w-3.5 h-3.5 text-[#f05a28]" />
                       <span>+91 93554 86036</span>
                     </a>
+                  </div>
+                </div>
+
+                {/* Price Match Guaranteed Badge Box */}
+                <div className="bg-gradient-to-br from-amber-50 via-orange-50/40 to-stone-50 border border-amber-300/80 rounded-2xl p-4.5 shadow-sm flex items-start gap-3.5">
+                  <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-300 flex items-center justify-center text-[#B58238] shrink-0 mt-0.5">
+                    <ShieldCheck className="w-5 h-5 stroke-[2.2]" />
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs font-bold text-slate-900 tracking-tight">
+                        Price Match Guaranteed
+                      </span>
+                      <span className="text-[10px] font-extrabold bg-[#B58238] text-white px-2 py-0.5 rounded-full">
+                        100% Verified
+                      </span>
+                    </div>
+                    <p className="text-[11px] text-slate-600 mt-1 leading-relaxed">
+                      Found a lower comparable quote for the same resort and private cab? We match or beat the rate.
+                    </p>
                   </div>
                 </div>
 

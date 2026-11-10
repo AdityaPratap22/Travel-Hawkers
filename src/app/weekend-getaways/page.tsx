@@ -61,7 +61,7 @@ export default function WeekendGetawaysPage() {
       reviews: 145,
       badge: "Offbeat Haven",
       image:
-        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80",
+        "/images/weekend/chakrata_tiger_falls.webp",
       overview:
         "Nestled at 2,118m altitude amidst dense deodar forests, Chakrata is a peaceful cantonment town away from crowded commercial hills. Famous for Tiger Falls, ancient Budher Caves, and golden sunsets at Chilmiri Neck.",
       highlights: [
@@ -90,7 +90,7 @@ export default function WeekendGetawaysPage() {
       reviews: 160,
       badge: "Quiet Retreat",
       image:
-        "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=900&q=80",
+        "/images/weekend/kasauli_church.webp",
       overview:
         "A peaceful colonial-era retreat characterized by pine-scented lanes, the quiet Gilbert Trail, Sunset Point, and the Gothic architecture of Christ Church. Perfect for couples and family resets.",
       highlights: [
@@ -119,7 +119,7 @@ export default function WeekendGetawaysPage() {
       reviews: 310,
       badge: "Adventure & Peace",
       image:
-        "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=900&q=80",
+        "/images/weekend/rishikesh_rafting.webp",
       overview:
         "Where spirituality meets adrenaline on the holy banks of Mother Ganga. White-water river rafting over Grade III/IV rapids, riverside camping, cliff jumping, and the spellbinding Ganga Aarti at Triveni Ghat.",
       highlights: [
@@ -147,7 +147,7 @@ export default function WeekendGetawaysPage() {
       reviews: 280,
       badge: "Royal Weekend",
       image:
-        "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=900&q=80",
+        "/images/weekend/jaipur_city_palace.webp",
       overview:
         "Hop onto the Delhi-Mumbai Expressway and arrive in royal Rajasthan in under 4 hours. Explore Amber Fort, City Palace, Hawa Mahal, Nahargarh sunset views, and gorge on authentic Pyaaz Kachoris and Dal Baati.",
       highlights: [
@@ -176,7 +176,7 @@ export default function WeekendGetawaysPage() {
       reviews: 210,
       badge: "Classic Favourite",
       image:
-        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+        "/images/himachal/shimla_manali.webp",
       overview:
         "The former summer capital of British India with its iconic Ridge, Mall Road, Christ Church, and snow-capped views from Jakhoo Hill. Enjoy horse riding and go-karting at Kufri.",
       highlights: [
@@ -205,7 +205,7 @@ export default function WeekendGetawaysPage() {
       reviews: 195,
       badge: "Romantic Charm",
       image:
-        "https://images.unsplash.com/photo-1588714477688-cf28a50e94f7?auto=format&fit=crop&w=900&q=80",
+        "/images/weekend/mussoorie_kempty.webp",
       overview:
         "Overlooking the Doon Valley, Mussoorie charms with misty mountain views, Kempty Falls, Gun Hill cable car, Camel's Back Road walks, and the quiet colonial allure of Landour Bakehouse.",
       highlights: [
@@ -234,7 +234,7 @@ export default function WeekendGetawaysPage() {
       reviews: 180,
       badge: "Big Cat Safari",
       image:
-        "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=900&q=80",
+        "/images/weekend/ranthambore_lake.webp",
       overview:
         "One of the best places in the world to spot the Royal Bengal Tiger in broad daylight. Open gypsy safaris inside dense dry deciduous forest ruins with the ancient Ranthambore Fort perched above.",
       highlights: [
@@ -263,7 +263,7 @@ export default function WeekendGetawaysPage() {
       reviews: 260,
       badge: "Wildlife Adventure",
       image:
-        "https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=900&q=80",
+        "/images/weekend/corbett_jeep.webp",
       overview:
         "India’s oldest national park nestled in the foothills of Kumaon. Famous for wild Asian elephants, Bengal tigers, Ramganga river suspension bridges, and riverside luxury forest lodges.",
       highlights: [
@@ -292,7 +292,7 @@ export default function WeekendGetawaysPage() {
       reviews: 220,
       badge: "Lakes & Hills",
       image:
-        "https://images.unsplash.com/photo-1582650625119-3a31f8fa2699?auto=format&fit=crop&w=900&q=80",
+        "/images/weekend/nainital_lake.webp",
       overview:
         "Centered around the emerald eye-shaped Naini Lake, this beloved hill town offers colorful yacht sailing, Naina Devi Temple, Snow View ropeway, Cave Garden, and the quiet beauty of Bhimtal and Naukuchiatal.",
       highlights: [

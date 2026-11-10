@@ -186,7 +186,7 @@ export default function AboutPage() {
               <div className="lg:col-span-5 relative">
                 <div className="relative h-96 sm:h-[440px] rounded-3xl overflow-hidden shadow-2xl border border-slate-100">
                   <Image
-                    src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80"
+                    src="/images/himachal/shimla_ridge.webp"
                     alt="Travel Hawkers Team & Hospitality"
                     fill
                     sizes="(max-width: 1024px) 100vw, 45vw"
@@ -211,7 +211,7 @@ export default function AboutPage() {
               <div className="lg:col-span-5 relative order-2 lg:order-1">
                 <div className="relative h-80 sm:h-96 rounded-3xl overflow-hidden shadow-xl border border-amber-200/80">
                   <Image
-                    src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1200&q=80"
+                    src="/images/tours/taj_mahal_sunrise.webp"
                     alt="Incredible India - Taj Mahal & Cultural Heritage"
                     fill
                     sizes="(max-width: 1024px) 100vw, 40vw"

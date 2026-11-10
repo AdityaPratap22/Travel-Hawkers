@@ -59,7 +59,7 @@ export default function InternationalPackagesPage() {
       rating: 4.96,
       reviews: 284,
       badge: "Most Popular",
-      image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80",
+      image: "/images/international/dubai_burj_khalifa.webp",
       overview:
         "Journey through the world’s most futuristic destinations! Dubai 4 Nights & Abu Dhabi 2 Nights. Enjoy 360-degree views from Burj Khalifa 124th floor, Ferrari World, Desert Safari dune bashing, and Sheikh Zayed Grand Mosque.",
       keyPoints: [
@@ -90,7 +90,7 @@ export default function InternationalPackagesPage() {
       rating: 4.93,
       reviews: 215,
       badge: "Family Favorite",
-      image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1200&q=80",
+      image: "/images/international/singapore_mbs.webp",
       overview:
         "Kuala Lumpur 3 Nights & Singapore 3 Nights. Marvel at Universal Studios Sentosa, Gardens by the Bay futuristic Supertrees, Genting Highlands cable car, and Petronas Twin Towers.",
       keyPoints: [
@@ -121,7 +121,7 @@ export default function InternationalPackagesPage() {
       rating: 4.94,
       reviews: 178,
       badge: "Trending Destination",
-      image: "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1200&q=80",
+      image: "/images/international/vietnam_halong_bay.webp",
       overview:
         "2 Days Hanoi, 1 Day Halong Bay Cruise, 2 Days Da Nang & 2 Days Hoi An. Cruise through Halong Bay limestone karsts, marvel at the Golden Hand Bridge in Ba Na Hills, and stroll lantern-lit Hoi An.",
       keyPoints: [
@@ -152,7 +152,7 @@ export default function InternationalPackagesPage() {
       rating: 4.98,
       reviews: 132,
       badge: "Himalayan Serenity",
-      image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80",
+      image: "/images/international/bhutan_tigers_nest.webp",
       overview:
         "Gross National Happiness in the majestic Eastern Himalayas. Paro 2N, Thimphu 2N, Punakha 2N. Trek to the iconic Tiger’s Nest (Taktsang Monastery) perched 900m above the valley floor.",
       keyPoints: [
@@ -183,7 +183,7 @@ export default function InternationalPackagesPage() {
       rating: 4.91,
       reviews: 260,
       badge: "Honeymoon Special",
-      image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1200&q=80",
+      image: "/images/international/bali_uluwatu.webp",
       overview:
         "Ubud private pool villa stays, Tegallalang rice terrace jungle swings, sacred Tanah Lot sunset temple, and an exhilarating speedboat island excursion to Nusa Penida's Kelingking T-Rex cliff.",
       keyPoints: [
@@ -214,7 +214,7 @@ export default function InternationalPackagesPage() {
       rating: 4.87,
       reviews: 320,
       badge: "Super Value",
-      image: "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=1200&q=80",
+      image: "/images/international/thailand_phi_phi.webp",
       overview:
         "Thailand offers the ultimate tropical escape. Speedboat to Coral Island Pattaya with parasailing and undersea walk, followed by Bangkok’s glittering Golden Buddha temples and Chao Phraya dinner cruise.",
       keyPoints: [
@@ -246,7 +246,7 @@ export default function InternationalPackagesPage() {
       rating: 4.92,
       reviews: 164,
       badge: "Bestseller Express",
-      image: "https://images.unsplash.com/photo-1580674684081-7617fbf3d745?auto=format&fit=crop&w=1200&q=80",
+      image: "/images/international/dubai_desert_safari.webp",
       overview: "Experience Dubai's top highlights in a compact 5-day escape! Take in 360-degree views from Burj Khalifa 124th floor, conquer the red dunes in a 4x4 Land Cruiser with BBQ dinner, and glide on a Marina Dhow Cruise.",
       keyPoints: [
         "Burj Khalifa: 124th floor observation deck with Dubai Mall & fountain show",
@@ -275,7 +275,7 @@ export default function InternationalPackagesPage() {
       rating: 4.98,
       reviews: 118,
       badge: "Honeymoon Special",
-      image: "https://images.unsplash.com/photo-1546412414-e1885259563a?auto=format&fit=crop&w=1200&q=80",
+      image: "/images/international/dubai_palm_atlantis.webp",
       overview: "Celebrate romance in true ultra-luxury style. 5 nights in 5-star beachfront resorts, a 2-hour private yacht cruise along Dubai Marina and Palm Jumeirah, VIP desert cabana dinner, and Atlantis Aquaventure passes.",
       keyPoints: [
         "Private Yacht: 2-Hour private luxury yacht cruise around Marina and Palm Jumeirah",
@@ -305,7 +305,7 @@ export default function InternationalPackagesPage() {
       rating: 4.97,
       reviews: 195,
       badge: "Honeymoon Favorite",
-      image: "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=1200&q=80",
+      image: "/images/international/bali_nusa_penida.webp",
       overview: "The quintessential romantic tropical getaway. 3 nights in ocean-view Seminyak and 3 nights in a private pool villa in Ubud. Includes floating breakfast, romantic candlelit dinner at Jimbaran Bay, and Nusa Penida island speedboat tour.",
       keyPoints: [
         "Private Pool Villa: Secluded luxury villa in Ubud with private swimming pool",
@@ -335,7 +335,7 @@ export default function InternationalPackagesPage() {
       rating: 4.89,
       reviews: 142,
       badge: "Adventure Special",
-      image: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1200&q=80",
+      image: "/images/international/bali_tegalalang.webp",
       overview: "Designed for thrill-seekers! High-speed water sports at Tanjung Benoa, Class III white water rafting down the Ayung River in Ubud, and a sunrise 4x4 jeep safari across Mount Batur black lava fields.",
       keyPoints: [
         "Water Sports: Parasailing, Jet Ski & Banana Boat at Tanjung Benoa",
@@ -364,7 +364,7 @@ export default function InternationalPackagesPage() {
       rating: 4.93,
       reviews: 210,
       badge: "Island Paradise",
-      image: "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?auto=format&fit=crop&w=1200&q=80",
+      image: "/images/international/thailand_phuket.webp",
       overview: "Witness Thailand's dramatic limestone islands and emerald lagoons. 3 nights in Phuket and 2 nights in Krabi with a speedboat expedition to Phi Phi Islands, Maya Bay, and Krabi's 4 Islands.",
       keyPoints: [
         "Phi Phi Islands: Speedboat tour to Maya Bay, Pileh Lagoon & snorkeling",
@@ -393,7 +393,7 @@ export default function InternationalPackagesPage() {
       rating: 4.95,
       reviews: 184,
       badge: "Grand Circuit",
-      image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=1200&q=80",
+      image: "/images/international/thailand_wat_arun.webp",
       overview: "The grandest Thailand holiday! Includes internal domestic flight to Phuket, Coral Island speedboat excursion in Pattaya, Chao Phraya river dinner cruise in Bangkok, and Phi Phi Island tour in Phuket.",
       keyPoints: [
         "Internal Flight: Bangkok to Phuket domestic airfare included",
@@ -422,7 +422,7 @@ export default function InternationalPackagesPage() {
       rating: 4.94,
       reviews: 176,
       badge: "Family Bestseller",
-      image: "https://images.unsplash.com/photo-1565967511849-76a60a516170?auto=format&fit=crop&w=1200&q=80",
+      image: "/images/international/singapore_supertree.webp",
       overview: "Spend 4 glorious nights in the Lion City. Includes full-day passes to Universal Studios Sentosa, Gardens by the Bay double domes (Cloud Forest waterfall & Flower Dome), and Singapore Night Safari.",
       keyPoints: [
         "Universal Studios: 1-Day Pass with unlimited movie theme park rides",
@@ -451,7 +451,7 @@ export default function InternationalPackagesPage() {
       rating: 4.91,
       reviews: 138,
       badge: "Nature & Beach",
-      image: "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=80",
+      image: "/images/international/malaysia_petronas.webp",
       overview: "Explore Malaysia's glittering capital and its premier tropical island. Marvel at Petronas Twin Towers and Batu Caves, followed by a domestic flight to Langkawi for white sands and the Langkawi SkyBridge.",
       keyPoints: [
         "Domestic Flight: Kuala Lumpur to Langkawi flight included",
@@ -480,7 +480,7 @@ export default function InternationalPackagesPage() {
       rating: 4.96,
       reviews: 152,
       badge: "Most Photogenic",
-      image: "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=1200&q=80",
+      image: "/images/international/vietnam_golden_bridge.webp",
       overview: "Walk across the breathtaking Golden Bridge suspended by giant stone hands at Ba Na Hills, take spinning bamboo basket boat rides through coconut waterways, and explore the lantern-lit streets of UNESCO Hoi An.",
       keyPoints: [
         "Golden Hand Bridge: Ba Na Hills cable car & suspension bridge in the clouds",
@@ -509,7 +509,7 @@ export default function InternationalPackagesPage() {
       rating: 4.93,
       reviews: 124,
       badge: "Heritage Cruise",
-      image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+      image: "/images/international/vietnam_halong_bay.webp",
       overview: "Combine Hanoi's historic Old Quarter and street food culture with an overnight 5-star cruise through the limestone islets of Halong Bay. Includes kayaking, cave exploration, and Tai Chi at sunrise.",
       keyPoints: [
         "Halong Bay Luxury Cruise: Overnight stay in private balcony ocean cabin",
@@ -538,7 +538,7 @@ export default function InternationalPackagesPage() {
       rating: 4.97,
       reviews: 110,
       badge: "Spiritual Trek",
-      image: "https://images.unsplash.com/photo-1578637387939-43c525550085?auto=format&fit=crop&w=1200&q=80",
+      image: "/images/international/bhutan_tigers_nest.webp",
       overview: "Hike to the legendary cliff-hanging Tiger's Nest monastery, gaze at the 169ft Buddha Dordenma in Thimphu, cross Dochula Pass with 108 memorial stupas, and soak in a traditional hot stone herbal bath.",
       keyPoints: [
         "Tiger's Nest (Taktsang): World-famous pilgrimage hike 900m above Paro valley",
@@ -567,7 +567,7 @@ export default function InternationalPackagesPage() {
       rating: 4.97,
       reviews: 95,
       badge: "Luxury Flagship",
-      image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=80",
+      image: "/images/international/europe_eiffel_tower.webp",
       overview:
         "Paris romance meets Swiss alpine majesty. Experience the top deck of Eiffel Tower, Seine river cruise, Lucerne Chapel Bridge, and the snowclad peak of Mt. Titlis with world-famous Rotair cable car.",
       keyPoints: [
@@ -598,7 +598,7 @@ export default function InternationalPackagesPage() {
       rating: 4.99,
       reviews: 142,
       badge: "All-Inclusive Resort",
-      image: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=1200&q=80",
+      image: "/images/international/maldives_overwater.webp",
       overview:
         "Wake up above crystal turquoise lagoons with direct access to vibrant coral reefs. Stay in luxury overwater villas with all-inclusive dining, sunset dolphin cruises, and complimentary snorkeling gear.",
       keyPoints: [

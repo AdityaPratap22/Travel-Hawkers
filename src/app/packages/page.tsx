@@ -235,7 +235,7 @@ function getAllTravelPackages(): UnifiedPackage[] {
     numericPrice: 28500,
     originalPrice: "₹35,000",
     badge: "Spiritual Yatra",
-    image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=900&q=80",
+    image: "/images/chardham/kedarnath_temple.webp",
     overview:
       "Embark on the sacred journey to Yamunotri, Gangotri, Kedarnath, and Badrinath with verified hotel stays, VIP darshan assistance and private transfers.",
     category: "Domestic",
@@ -360,6 +360,21 @@ export default function PackagesPage() {
             <p className="text-xs sm:text-base text-stone-300 max-w-2xl mx-auto font-normal leading-relaxed">
               Explore our complete collection of verified domestic circuits, international escapes, weekend retreats, and spiritual yatras. Transparent pricing, verified 4-star stays, and 24/7 dedicated support.
             </p>
+
+            <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+              <span className="inline-flex items-center gap-1.5 text-xs text-amber-300 bg-white/10 backdrop-blur-md border border-amber-300/30 px-3.5 py-1.5 rounded-full font-semibold shadow-xs">
+                <ShieldCheck className="w-3.5 h-3.5 text-amber-300" />
+                Price Match Guaranteed
+              </span>
+              <span className="inline-flex items-center gap-1.5 text-xs text-stone-200 bg-white/10 backdrop-blur-md border border-white/20 px-3.5 py-1.5 rounded-full font-medium">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                100% Customized Itineraries
+              </span>
+              <span className="inline-flex items-center gap-1.5 text-xs text-stone-200 bg-white/10 backdrop-blur-md border border-white/20 px-3.5 py-1.5 rounded-full font-medium">
+                <Star className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
+                4.9/5 Rated by 10,000+ Travelers
+              </span>
+            </div>
           </div>
         </section>
 
@@ -569,8 +584,9 @@ export default function PackagesPage() {
                             <span className="text-[11px] text-slate-400 line-through">
                               {pkg.originalPrice}
                             </span>
-                            <span className="text-[9px] font-bold bg-amber-50 text-[#B58238] border border-amber-200 px-1.5 py-0.5 rounded">
-                              SPECIAL DEAL
+                            <span className="text-[9px] font-bold bg-amber-50 text-[#B58238] border border-amber-200 px-1.5 py-0.5 rounded flex items-center gap-0.5">
+                              <ShieldCheck className="w-2.5 h-2.5 text-[#B58238]" />
+                              PRICE MATCH GUARANTEE
                             </span>
                           </div>
                           <div className="text-xl font-extrabold text-slate-900 font-serif">

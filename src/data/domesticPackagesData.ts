@@ -58,7 +58,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
     name: "Himachal Pradesh",
     title: "Himachal Tour Packages",
     tagline: "The Best Of Himachal Tour Packages & Holidays",
-    heroImage: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=2000&q=80",
+    heroImage: "/images/himachal/hero.webp",
     description:
       "The region full of picturesque, popular, and yet offbeat places lies in this mystical land, full of flawless natural treasures. Bollywood’s personal favourite and a lively winter sports destination, it is the dearest choice of every travel enthusiast.",
     fullOverview: [
@@ -76,17 +76,17 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
       {
         title: "Solang Valley & Rohtang Pass Adventure",
         description: "Experience paragliding, zorbing, snow scooter rides, and crossing the legendary Atal Tunnel into Lahaul Valley.",
-        image: "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=800&q=80",
+        image: "/images/himachal/solang_valley.webp",
       },
       {
         title: "Shimla Mall Road & Kufri",
         description: "Colonial architecture, Christ Church, horseback riding in Kufri, and panoramic Himalayan vistas from Jakhoo Hill.",
-        image: "https://images.unsplash.com/photo-1588714477688-cf28a50e94f7?auto=format&fit=crop&w=800&q=80",
+        image: "/images/himachal/shimla_ridge.webp",
       },
       {
         title: "Spiritual Temples & Hot Springs",
         description: "Pay homage at the 500-year-old Hidimba Devi Temple nestled in cedar woods and soak in the natural sulphur baths of Vashisht.",
-        image: "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?auto=format&fit=crop&w=800&q=80",
+        image: "/images/himachal/hidimba_temple.webp",
       },
     ],
     itinerary: [
@@ -109,7 +109,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         reviews: 184,
         badge: "Bestseller",
         route: "Chandigarh – Manali – Solang/Rohtang – Kullu – Shimla – Kufri – Chandigarh",
-        image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=800&q=80",
+        image: "/images/himachal/shimla_manali.webp",
         overview:
           "The signature Himachal vacation. Explore Manali's ancient temples, Solang Valley and Rohtang Pass snow point, Beas River rafting in Kullu, and colonial charm in Shimla and Kufri.",
         highlights: [
@@ -185,7 +185,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         reviews: 135,
         badge: "Couples Special",
         route: "Delhi – Kullu – Manali – Solang Valley – Delhi",
-        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+        image: "/images/himachal/manali_honeymoon.webp",
         overview:
           "A romantic escape designed for newlyweds. Scenic drive via Kullu along the Beas River, thrilling snow activities at Solang Valley, local Manali temples, Van Vihar walks, plus romantic candlelight dinner and flower bed decoration.",
         highlights: [
@@ -245,7 +245,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         reviews: 95,
         badge: "Spiritual & Mountain",
         route: "Amritsar – Dharamshala – McLeod Ganj – Amritsar",
-        image: "https://images.unsplash.com/photo-1598091383021-15ddea10925d?auto=format&fit=crop&w=800&q=80",
+        image: "/images/himachal/amritsar_golden_temple.webp",
         overview:
           "Experience spiritual solace and mountain majesty. Visit the Golden Temple, Jallianwala Bagh, and Wagah Border ceremony in Amritsar, then ascend to the serene Dhauladhar pine forests, Dalai Lama's residence, and HPCA Stadium in Dharamshala.",
         highlights: [
@@ -305,7 +305,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         reviews: 120,
         badge: "Complete Circuit",
         route: "Amritsar – Dharamshala – Dalhousie – Khajjiar – Amritsar",
-        image: "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?auto=format&fit=crop&w=800&q=80",
+        image: "/images/himachal/dalhousie_khajjiar.webp",
         overview:
           "A comprehensive northern circuit from the spiritual heritage of Amritsar to Tibetan Buddhist serenity in Dharamshala, and onward to the colonial architecture and pine meadows of Khajjiar (India's Mini Switzerland) in Dalhousie.",
         highlights: [
@@ -378,7 +378,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         rating: 4.96,
         reviews: 148,
         badge: "Grand Explorer",
-        image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80",
+        image: "/images/himachal/himachal_circuit.webp",
         overview: "The definitive Himachal journey covering British summer capital Shimla, snow paradise Manali, Tibetan cultural center Dharamshala, and Mini Switzerland Khajjiar in Dalhousie.",
         highlights: ["2N Shimla, 3N Manali, 2N Dharamshala, 1N Dalhousie", "Kufri snow point & Solang Valley adventure", "Dalai Lama Temple & McLeod Ganj", "Khajjiar meadow & Kalatop Sanctuary"],
         inclusions: ["8 Nights Luxury Hotel Accommodations", "Daily Breakfast & Dinner", "Dedicated Private Chauffeur Cab for Entire Circuit", "All Interstate Road Taxes, Tolls & Parking"],
@@ -392,7 +392,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         rating: 4.98,
         reviews: 96,
         badge: "Adventure Special",
-        image: "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&w=800&q=80",
+        image: "/images/himachal/spiti_valley.webp",
         overview: "Venture into the raw landscapes of the Middle Land. Visit 1000-year-old Tabo Monastery, Key Gompa, high-altitude Chandratal Lake, and the world's highest post office at Hikkim.",
         highlights: ["Chitkul - last village on Indo-Tibetan border", "Key Monastery & Tabo UNESCO heritage", "Chandratal Lake camping under billion stars", "Kunzum Pass (15,060 ft) crossing"],
         inclusions: ["7 Nights Homestays & Luxury Camps", "All Meals (Breakfast & Dinner)", "Dedicated 4x4 Scorpio / Innova with Expert Mountain Pilot", "Inner Line Permits & Oxygen Support"],
@@ -410,7 +410,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
     name: "Jammu & Kashmir",
     title: "Kashmir Tour Packages",
     tagline: "Paradise on Earth - The Crown of India",
-    heroImage: "https://images.unsplash.com/photo-1598091383021-15ddea10925d?auto=format&fit=crop&w=2000&q=80",
+    heroImage: "/images/kashmir/hero.webp",
     description:
       "Kashmir, known as the Crown of India, is truly a Paradise on Earth. As Mughal Emperor Jehangir once said, 'If there is a heaven on earth, it’s here, it’s here, it’s here.' Every traveler dreams of visiting this beautiful land at least once in their lifetime.",
     fullOverview: [
@@ -428,17 +428,17 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
       {
         title: "Dal Lake Shikara & Heritage Houseboat",
         description: "Cruise peacefully past floating flower gardens and stay in intricately hand-carved cedarwood houseboats.",
-        image: "https://images.unsplash.com/photo-1598091383021-15ddea10925d?auto=format&fit=crop&w=800&q=80",
+        image: "/images/kashmir/dal_lake_shikara.webp",
       },
       {
         title: "Gulmarg Gondola Ride",
         description: "Ascend to Phase 1 (Kongdoori) and Phase 2 (Apharwat Peak at 13,780 ft) on Asia's highest cable car.",
-        image: "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?auto=format&fit=crop&w=800&q=80",
+        image: "/images/kashmir/gulmarg_gondola.webp",
       },
       {
         title: "Pahalgam Valleys & Saffron Fields",
         description: "Meander along the Lidder River, visit Betaab Valley, Aru Valley, and sample pure Kashmiri saffron in Pampore.",
-        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+        image: "/images/kashmir/pahalgam_betaab_valley.webp",
       },
     ],
     itinerary: [
@@ -459,7 +459,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         rating: 4.96,
         reviews: 218,
         badge: "Top Rated",
-        image: "https://images.unsplash.com/photo-1598091383021-15ddea10925d?auto=format&fit=crop&w=800&q=80",
+        image: "/images/kashmir/kashmir_paradise.webp",
         overview: "Complete Kashmir experience with 1 Night Deluxe Houseboat and 4 Nights in luxury 4-star hotels.",
         highlights: ["1N Houseboat + 4N Hotel", "Gulmarg Gondola support", "Shikara ride included", "Pahalgam Lidder valley"],
         inclusions: ["Deluxe Houseboat + 4-Star Stays", "Breakfast & Dinner", "Dedicated Cab & Chauffeur", "Shikara Ride"],
@@ -473,7 +473,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         rating: 4.98,
         reviews: 135,
         badge: "Honeymoon Special",
-        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+        image: "/images/kashmir/kashmir_honeymoon.webp",
         overview: "Special romantic holiday featuring candlelight dinner on Dal Lake, flower decoration, and private transfers.",
         highlights: ["Candlelight dinner on houseboat", "Pahalgam riverside resort", "Gulmarg snow experience", "Special gift hamper"],
         inclusions: ["Luxury Accommodations", "Daily Breakfast & Dinner", "Honeymoon Special Inclusions", "Private Chauffeur"],
@@ -487,7 +487,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         rating: 4.88,
         reviews: 112,
         badge: "Weekend Escape",
-        image: "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?auto=format&fit=crop&w=800&q=80",
+        image: "/images/kashmir/gulmarg_snow.webp",
         overview: "A refreshing short holiday to Srinagar and Gulmarg with a luxury Dal Lake Shikara ride and Gulmarg snow meadows.",
         highlights: ["1N Dal Lake Houseboat stay", "Gulmarg Gondola snow ride", "Sunset Shikara ride on Dal Lake", "Mughal Gardens (Nishat & Shalimar)"],
         inclusions: ["1N Houseboat + 2N Hotel", "Daily Breakfast & Dinner", "Private AC Cab & Chauffeur", "Shikara Ride Ticket"],
@@ -501,7 +501,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         rating: 4.97,
         reviews: 148,
         badge: "Explorer Choice",
-        image: "https://images.unsplash.com/photo-1566837945700-30057527ade0?auto=format&fit=crop&w=800&q=80",
+        image: "/images/kashmir/sonamarg_glacier.webp",
         overview: "Comprehensive Kashmir journey exploring Sonamarg's Thajiwas Glacier, Doodhpathri's lush meadows of milk, Pahalgam's valleys, and Gulmarg.",
         highlights: ["Doodhpathri offbeat meadow exploration", "Sonamarg Thajiwas Glacier pony excursion", "Pahalgam Betaab Valley & Aru Valley", "Gulmarg Apharwat Peak cable car"],
         inclusions: ["6 Nights Deluxe Accommodations", "Daily Breakfast & Dinner", "All Internal Transfers by Dedicated Cab", "1-Hour Dal Lake Shikara Ride"],
@@ -515,7 +515,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         rating: 4.95,
         reviews: 189,
         badge: "Spiritual & Scenic",
-        image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=800&q=80",
+        image: "/images/kashmir/vaishno_devi.webp",
         overview: "Combine the sacred darshan of Mata Vaishno Devi at Katra with the picturesque lakes, houseboats, and snow peaks of Kashmir.",
         highlights: ["Katra Mata Vaishno Devi Bhawan Darshan assistance", "Scenic drive via Patnitop & Chenani-Nashri Tunnel", "Dal Lake Deluxe Houseboat stay", "Gulmarg & Pahalgam sightseeing"],
         inclusions: ["2N Katra + 1N Houseboat + 4N Hotels", "Daily MAP Meals (Breakfast & Dinner)", "All Tolls, Parking & Private Chauffeur Cab", "Assistance for Vaishno Devi Yatra Registration"],
@@ -533,7 +533,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
     name: "Rajasthan",
     title: "Rajasthan Tour Packages",
     tagline: "Royal Heritage, Desert Dunes & Majestic Palaces",
-    heroImage: "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=2000&q=80",
+    heroImage: "/images/rajasthan/hero.webp",
     description:
       "Discover the enchanting land of Rajasthan, where grand palaces, vibrant culture, intricate handicrafts, and mouthwatering cuisine come together to create an unforgettable experience. Set against the backdrop of vast deserts, Rajasthan embodies the spirit of romance and valor.",
     fullOverview: [
@@ -551,17 +551,17 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
       {
         title: "Grand Rajput Forts & Palaces",
         description: "Explore Amber Fort in Jaipur, Mehrangarh Fort in Jodhpur, and Udaipur City Palace overlooking Lake Pichola.",
-        image: "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=800&q=80",
+        image: "/images/rajasthan/amber_fort.webp",
       },
       {
         title: "Sam Sand Dunes Camel Safari",
         description: "Sunset camel rides in the Thar Desert, overnight luxury Swiss tent camping, and traditional Kalbelia folk performances.",
-        image: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1200&q=80",
+        image: "/images/rajasthan/sam_sand_dunes.webp",
       },
       {
         title: "Lake Pichola Boat Cruise",
         description: "Sunset boat ride in Udaipur past the floating Lake Palace and Jag Mandir against the Aravali hills.",
-        image: "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=800&q=80",
+        image: "/images/rajasthan/lake_pichola.webp",
       },
     ],
     itinerary: [
@@ -584,7 +584,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         reviews: 178,
         badge: "Heritage Circuit",
         route: "Jaipur – Jodhpur – Udaipur – Jaisalmer – Pushkar – Bikaner – Ajmer",
-        image: "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=800&q=80",
+        image: "/images/rajasthan/mehrangarh_fort.webp",
         overview:
           "A Forts and Palaces tour in Rajasthan is a popular and fascinating way to explore the rich history and architectural marvels of the region. Rajasthan, known as the 'Land of Kings', is renowned for its majestic forts, opulent palaces, and vibrant culture.",
         highlights: [
@@ -667,7 +667,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         reviews: 142,
         badge: "Couples Special",
         route: "Jaipur – Jodhpur – Ranakpur – Udaipur – Pushkar – Jaipur",
-        image: "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=800&q=80",
+        image: "/images/rajasthan/udaipur_palace.webp",
         overview:
           "A 7-day honeymoon tour in Rajasthan, India, offers the perfect blend of romance, history, culture, and adventure. Rajasthan is known for its stunning palaces, forts, vibrant bazaars, and rich cultural heritage.",
         highlights: [
@@ -750,7 +750,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         reviews: 119,
         badge: "Lakes & Hills",
         route: "Udaipur – Mount Abu – Jodhpur – Jaipur",
-        image: "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=800&q=80",
+        image: "/images/rajasthan/mount_abu_dilwara.webp",
         overview:
           "Rajasthan is known for preserving royal monuments and dedication to folk art. Each city retains its own unique beauty—from the romantic lakes and palaces of Udaipur to the misty green folds of Mount Abu (Rajasthan's only hill station) and the towering sandstone bastions of Jodhpur.",
         highlights: [
@@ -827,7 +827,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         reviews: 205,
         badge: "Weekend Special",
         route: "Jaipur – Amber Fort – City Palace – Nahargarh – Jaipur",
-        image: "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=800&q=80",
+        image: "/images/weekend/jaipur_nahargarh.webp",
         overview:
           "Jaipur, renowned for its architectural splendour and historical significance, is a true gem of Rajasthan. Over the years, this city has captivated countless tourists with its allure, pink sandstone facade, majestic hilltop forts, and rich heritage.",
         highlights: [
@@ -883,7 +883,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         rating: 4.90,
         reviews: 138,
         badge: "Desert Magic",
-        image: "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=800&q=80",
+        image: "/images/rajasthan/jaisalmer_fort.webp",
         overview: "Experience the living golden fortress of Jaisalmer, intricately carved Patwon ki Haveli, and thrilling dune bashing under star-studded Thar desert skies.",
         highlights: ["1N Luxury Swiss Desert Camp with Campfire", "Thar Desert camel & 4x4 Jeep Safari", "Jaisalmer Golden Fort & Kuldhara ghost village", "Kalbelia traditional folk dance & buffet"],
         inclusions: ["2N Hotel + 1N Swiss Tent in Sam Dunes", "Breakfast, Dinner & Evening High Tea at Camp", "Camel Ride & Folk Entertainment", "Private Chauffeur Sedan/SUV"],
@@ -897,7 +897,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         rating: 4.97,
         reviews: 210,
         badge: "Royal Grandeur",
-        image: "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=800&q=80",
+        image: "/images/rajasthan/shekhawati_haveli.webp",
         overview: "The ultimate royal voyage across the Land of Kings. Marvel at Jaipur's Amer Fort, holy Pushkar Lake, Jodhpur's blue Mehrangarh, golden Jaisalmer, and Udaipur's romantic Lake Pichola.",
         highlights: ["Comprehensive 5-city royal circuit", "Mehrangarh Fort & Jaswant Thada", "Lake Pichola sunset boat cruise in Udaipur", "Sam Sand Dunes royal camping experience", "Ranakpur 1444-pillar marble Jain Temple"],
         inclusions: ["9 Nights Luxury Accommodations", "Daily Buffet Breakfast & Dinners", "Private AC Cab for Complete 10-Day Road Journey", "All State Taxes, Tolls & Parking"],
@@ -914,7 +914,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
     name: "Kerala",
     title: "Kerala Tour Packages",
     tagline: "God's Own Country - Backwaters, Tea Hills & Ayurveda",
-    heroImage: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=2000&q=80",
+    heroImage: "/images/kerala/hero.webp",
     description:
       "Kerala, known as God’s Own Country, is a place that amazes every visitor. It was the first place in India where Vasco da Gama arrived, opening India to the western world. Every year, travelers visit Kerala to enjoy its natural beauty, peaceful backwaters, and relaxing atmosphere.",
     fullOverview: [
@@ -932,17 +932,17 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
       {
         title: "Exclusive Alleppey Houseboat Cruise",
         description: "Sail past palm-fringed canals, lush paddy fields, and enjoy fresh Karimeen fish prepared by your personal onboard chef.",
-        image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&q=80",
+        image: "/images/kerala/alleppey_houseboat.webp",
       },
       {
         title: "Munnar Tea Plantations & Waterfalls",
         description: "Rolling emerald hills, Mattupetty Dam, tea factory museum, and spotting endangered Nilgiri Tahr at Eravikulam.",
-        image: "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?auto=format&fit=crop&w=800&q=80",
+        image: "/images/kerala/munnar_tea_gardens.webp",
       },
       {
         title: "Thekkady Spice Plantation & Periyar Lake",
         description: "Guided spice garden walk discovering cardamom and cinnamon, boat safari in Periyar Tiger Reserve, and Kathakali show.",
-        image: "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=800&q=80",
+        image: "/images/kerala/periyar_lake.webp",
       },
     ],
     itinerary: [
@@ -965,7 +965,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         reviews: 167,
         badge: "Bestseller",
         route: "Cochin – Munnar – Alleppey – Cochin",
-        image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&q=80",
+        image: "/images/kerala/kerala_best.webp",
         overview:
           "Explore the signature highlights of Kerala. From Cochin's historic Jewish Synagogue and Dutch Palace to Munnar's rolling tea estates and an unforgettable overnight cruise on an authentic Kerala style houseboat in Alleppey.",
         highlights: [
@@ -1034,7 +1034,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         reviews: 138,
         badge: "Couples Special",
         route: "Cochin – Munnar – Alleppey – Cochin",
-        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+        image: "/images/kerala/kerala_honeymoon.webp",
         overview:
           "The premier romantic escape in South India. Surrounded by mist-covered hills and emerald tea plantations in Munnar, followed by a romantic private houseboat cruise through the palm-fringed backwaters of Alleppey.",
         highlights: [
@@ -1096,7 +1096,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         reviews: 92,
         badge: "Grand Circuit",
         route: "Cochin – Alleppey – Periyar – Madurai – Trichy – Pondicherry – Mahabalipuram – Chennai",
-        image: "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=800&q=80",
+        image: "/images/kerala/munnar_mist.webp",
         overview:
           "The ultimate 13-day Grand South India expedition. Journey from Kerala's tranquil backwaters and Periyar wildlife sanctuary into Tamil Nadu's architectural wonders—Madurai Meenakshi temple, Trichy Rock Fort, French colonial Pondicherry, Mahabalipuram UNESCO shore temples, and Chennai.",
         highlights: [
@@ -1214,7 +1214,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         rating: 4.89,
         reviews: 95,
         badge: "Nature Escape",
-        image: "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?auto=format&fit=crop&w=800&q=80",
+        image: "/images/kerala/wayanad_hills.webp",
         overview: "Nestled in the lush Western Ghats, unwind amidst mist-covered coffee estates, prehistoric Edakkal rock caves, and serene Banasura Sagar dam.",
         highlights: ["Stay in serene plantation eco-resort", "Edakkal Caves ancient rock petroglyphs", "Banasura Sagar Dam speedboating", "Soochipara cascading waterfalls"],
         inclusions: ["3 Nights Plantation Resort Stay", "Daily Breakfast & Dinner", "Dedicated AC Chauffeur Cab", "Calicut Airport / Railway Station Transfers"],
@@ -1228,7 +1228,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         rating: 4.92,
         reviews: 130,
         badge: "Coastal Sunsets",
-        image: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=800&q=80",
+        image: "/images/kerala/kovalam_beach.webp",
         overview: "Bask in the golden sunsets of Kovalam Lighthouse Beach, cruise the mangrove backwaters of Poovar Island, and witness the confluence of three oceans at Kanyakumari.",
         highlights: ["Kovalam crescent beach & Lighthouse viewpoint", "Poovar Golden Sand Beach mangrove boat cruise", "Kanyakumari Vivekananda Rock Memorial & sunset", "Padmanabhaswamy Temple Trivandrum visit"],
         inclusions: ["3N Kovalam + 1N Kanyakumari Beachfront Resorts", "Daily Buffet Breakfast", "Private AC Cab for All Sightseeing", "Trivandrum Airport Transfers"],
@@ -1245,7 +1245,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
     name: "Goa",
     title: "Goa Tour Packages",
     tagline: "Sun-Kissed Beaches, Island Cruises & Portuguese Heritage",
-    heroImage: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=2000&q=80",
+    heroImage: "/images/goa/hero.webp",
     description:
       "Goa has been an active and popular travel destination for ages now. With time, the place itself has gained a lot of popularity, making it a hotspot for young travellers and newly married folks who are always on the lookout for Goa packages for couples.",
     fullOverview: [
@@ -1263,17 +1263,17 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
       {
         title: "North Goa Beach Circuit & Water Sports",
         description: "Parasailing, jet skiing, banana rides at Calangute and Baga beach, followed by sunset vibes at Curlies Anjuna.",
-        image: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=800&q=80",
+        image: "/images/goa/baga_beach.webp",
       },
       {
         title: "Mandovi River Sunset Cruise & Latin Quarter",
         description: "Evening music cruise on Mandovi River and photo walk through the colorful Portuguese villas of Fontainhas Panaji.",
-        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+        image: "/images/goa/mandovi_cruise.webp",
       },
       {
         title: "Grand Island Scuba & Snorkeling Excursion",
         description: "Boat ride with dolphin spotting, snorkeling, guided scuba diving with underwater video, and beach barbecue.",
-        image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80",
+        image: "/images/goa/goa_scuba.webp",
       },
     ],
     itinerary: [
@@ -1292,7 +1292,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         rating: 4.85,
         reviews: 240,
         badge: "Top Value",
-        image: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=800&q=80",
+        image: "/images/goa/candolim_beach.webp",
         overview: "Stay in 4-star resort with swimming pool, North & South Goa sightseeing, and airport transfers.",
         highlights: ["4-Star beachside resort", "North & South Goa tours", "Mandovi sunset cruise", "Airport pick & drop"],
         inclusions: ["Resort with Swimming Pool", "Buffet Breakfast", "Private AC Cab for Sightseeing", "Airport Transfers"],
@@ -1308,7 +1308,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         reviews: 145,
         badge: "Honeymoon Special",
         route: "North Goa – South Goa – Mandovi River – Grand Island",
-        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+        image: "/images/goa/goa_honeymoon.webp",
         overview: "Celebrate love in India's coastal paradise! Beachfront luxury resort stay, romantic sunset cruise on the Mandovi River, private candlelight beach dinner with wine, couples photo sessions, and water sports.",
         highlights: [
           "Beachfront 4-star / 5-star resort with private beach access",
@@ -1370,7 +1370,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         rating: 4.91,
         reviews: 165,
         badge: "Adventure & Island",
-        image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80",
+        image: "/images/goa/goa_watersports.webp",
         overview: "The complete Goa vacation covering Grand Island scuba diving with underwater video, historic Old Goa churches, vibrant beach shacks, and Mandovi river cruise.",
         highlights: ["Grande Island boat trip with Scuba Diving & Dolphin sighting", "Fontainhas colorful Portuguese Latin Quarter photowalk", "North Goa Baga, Anjuna & Vagator sunset cliff", "Mandovi luxury river cruise ticket"],
         inclusions: ["5 Nights 4-Star Resort with Swimming Pool", "Daily Buffet Breakfast", "Grand Island Scuba Diving with Equipment & Video", "Private AC Cab for Transfers & Tours"],
@@ -1384,7 +1384,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         rating: 4.88,
         reviews: 124,
         badge: "Jungle & Waterfalls",
-        image: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=800&q=80",
+        image: "/images/goa/dudhsagar_falls.webp",
         overview: "Head into the lush Western Ghats on a thrilling 4x4 open-top jeep safari to the cascading Dudhsagar Waterfalls, followed by authentic Goan spice plantation tour and beach relaxation.",
         highlights: ["4x4 Jeep Safari across Bhagwan Mahaveer Wildlife Sanctuary", "Swim at base of Dudhsagar 4-tiered waterfalls", "Traditional Goan buffet lunch at organic spice plantation", "Aguada Fort & Calangute beach leisure"],
         inclusions: ["4 Nights 4-Star Resort Accommodation", "Daily Breakfast + Spice Plantation Buffet Lunch", "Dudhsagar Jeep Safari & Forest Permits", "Airport Pick and Drop by Private AC Cab"],
@@ -1398,7 +1398,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         rating: 4.98,
         reviews: 82,
         badge: "Ultra Luxury",
-        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+        image: "/images/goa/goa_villa.webp",
         overview: "Indulge in an exclusive coastal getaway featuring a private luxury villa with private plunge pool, personal concierge, and a 2-hour private yacht cruise along the Arabian Sea.",
         highlights: ["Exclusive Private Luxury Villa with Swimming Pool", "2-Hour Private Yacht Charter with Champagne & Canapes", "Quiet pristine beaches of Morjim & Ashwem", "VIP reservations at top beach clubs"],
         inclusions: ["3 Nights Private Luxury Villa Stay", "Chef-prepared daily gourmet breakfast", "Private Yacht Sailing Charter in Arabian Sea", "Chauffeur-driven Innova Crysta for entire stay"],
@@ -1415,7 +1415,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
     name: "Ladakh",
     title: "Ladakh Tour Packages",
     tagline: "The Land of High Mountain Passes & Azure Lakes",
-    heroImage: "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&w=2000&q=80",
+    heroImage: "/images/ladakh/hero.webp",
     description:
       "A trip to Leh Ladakh is a once-in-a-lifetime experience! This breathtaking destination has won the hearts of travelers and Bollywood alike, making it a dream place to visit. With its untouched beauty and stunning landscapes, Ladakh remains one of India’s most special travel spots.",
     fullOverview: [
@@ -1433,17 +1433,17 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
       {
         title: "Pangong Tso Lake Camping",
         description: "Overnight stay in luxury dome tents beside the world's highest saltwater lake at 14,270 ft.",
-        image: "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&w=800&q=80",
+        image: "/images/ladakh/pangong_lake.webp",
       },
       {
         title: "Nubra Valley & Hunder Sand Dunes",
         description: "Ride rare double-humped Bactrian camels across cold mountain sand dunes surrounded by snow peaks.",
-        image: "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?auto=format&fit=crop&w=800&q=80",
+        image: "/images/ladakh/hunder_sand_dunes.webp",
       },
       {
         title: "Khardung La Pass Crossing",
         description: "Cross one of the highest motorable mountain passes in the world at 18,380 ft with breathtaking vistas.",
-        image: "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=800&q=80",
+        image: "/images/ladakh/khardung_la.webp",
       },
     ],
     itinerary: [
@@ -1467,7 +1467,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         reviews: 184,
         badge: "Top Rated",
         route: "Leh – Sangam – Magnetic Hill – Nubra Valley – Pangong Lake – Leh",
-        image: "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&w=800&q=80",
+        image: "/images/ladakh/nubra_diskit_monastery.webp",
         overview:
           "A once-in-a-lifetime Himalayan adventure. Cross the world's highest motorable road at Khardung La (18,380 ft), ride double-humped Bactrian camels in Hunder sand dunes, camp beside the crystal waters of Pangong Lake, and explore ancient Buddhist monasteries.",
         highlights: [
@@ -1548,7 +1548,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         reviews: 126,
         badge: "Essential Ladakh",
         route: "Leh – Sangam – Pangong Lake – Khardungla Top – Leh",
-        image: "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=800&q=80",
+        image: "/images/ladakh/shanti_stupa.webp",
         overview:
           "An ideal short Himalayan escape to experience the premier highlights of Ladakh. Visit the sacred Indus-Zanskar confluence, mysterious Magnetic Hill, take a full-day excursion to Pangong Lake across Changla Pass, and ascend Khardungla Top.",
         highlights: [
@@ -1613,7 +1613,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         rating: 4.89,
         reviews: 98,
         badge: "Short Circuit",
-        image: "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&w=800&q=80",
+        image: "/images/ladakh/lamayuru.webp",
         overview: "Ideal for travelers with limited days who want to experience the spiritual serenity, Indus-Zanskar confluence, Magnetic Hill, and high-altitude mountain air of Leh.",
         highlights: ["Leh Palace & Shanti Stupa panoramic sunsets", "Indus & Zanskar river confluence at Sangam", "Gravity-defying Magnetic Hill & Gurudwara Pathar Sahib", "Tibetan handicraft shopping in Leh Main Bazaar"],
         inclusions: ["4 Nights in Premium Leh Hotel", "Daily Breakfast & Dinner", "Dedicated Private SUV for All Sightseeing", "Airport Pick & Drop with Oxygen Cylinder Support"],
@@ -1627,7 +1627,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         rating: 4.98,
         reviews: 140,
         badge: "Royal Enfield Safari",
-        image: "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=800&q=80",
+        image: "/images/ladakh/ladakh_bike_safari.webp",
         overview: "Ride the highest motorable passes in the world on a 500cc Royal Enfield Himalayan. Traverse Khardung La, Chang La, Nubra Valley sand dunes, and the turquoise shores of Pangong Tso.",
         highlights: ["Royal Enfield 500cc / Himalayan with Fuel Included", "Dedicated Support Truck with Marshall & Mechanic", "Crossing Khardung La (18,380 ft) & Chang La", "Turtuk - northernmost Balti border village"],
         inclusions: ["7 Nights Stays (Hotels & Swiss Camps)", "Daily Breakfast & Dinner", "Royal Enfield Bike + Helmet + Riding Gear", "Backup Support Vehicle with Spare Parts & Oxygen"],
@@ -1641,7 +1641,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         rating: 4.97,
         reviews: 86,
         badge: "Luxury Glamping",
-        image: "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&w=800&q=80",
+        image: "/images/ladakh/ladakh_camp.webp",
         overview: "A romantic high-altitude escape with heated luxury glamping tents in Nubra Valley, candlelight dinner under a canopy of stars, and private cottage stay by Pangong Lake.",
         highlights: ["Luxury heated glamping tents in Hunder Nubra", "Pangong Lake sunrise view from private cottage", "Private chauffeur Innova Crysta for exclusive travel", "Special candlelight dinner with Kashmiri wine"],
         inclusions: ["6 Nights Luxury Accommodations & Camps", "Daily Gourmet Breakfast & Dinner", "Dedicated Private Innova Crysta throughout", "Inner Line Permits & Wildlife Fees Included"],
@@ -1658,7 +1658,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
     name: "Golden Triangle",
     title: "Golden Triangle Tour Packages",
     tagline: "Delhi, Agra & Jaipur - India's Premier Heritage Circuit",
-    heroImage: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=2000&q=80",
+    heroImage: "/images/tours/taj_mahal_sunrise.webp",
     description:
       "The Golden Triangle is one of India’s most famous travel routes, covering three amazing cities—Delhi, Agra, and Jaipur. This tour gives you a glimpse of India’s rich history, culture, and architectural beauty.",
     fullOverview: [
@@ -1678,17 +1678,17 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
       {
         title: "Sunrise at the Immortal Taj Mahal",
         description: "Witness the morning sun illuminate the pristine white marble of the world's greatest monument of love.",
-        image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800&q=80",
+        image: "/images/tours/taj_mahal_sunrise.webp",
       },
       {
         title: "Amber Palace & Hawa Mahal in Jaipur",
         description: "Ride up to the hilltop Amer Fort, photograph the honeycomb facade of Hawa Mahal, and visit Jantar Mantar observatory.",
-        image: "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=800&q=80",
+        image: "/images/rajasthan/hawa_mahal.webp",
       },
       {
         title: "Old & New Delhi City Tour",
         description: "Drive past Rashtrapati Bhavan, India Gate, visit Qutub Minar, and experience the historic lanes of Chandni Chowk.",
-        image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=1200&q=80",
+        image: "/images/tours/delhi_qutub_minar.webp",
       },
     ],
     itinerary: [
@@ -1708,7 +1708,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         rating: 4.89,
         reviews: 175,
         badge: "Bestseller",
-        image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800&q=80",
+        image: "/images/tours/delhi_india_gate.webp",
         overview: "2N Jaipur, 1N Agra, 1N Delhi with dedicated English-speaking guides and private AC cab.",
         highlights: ["Taj Mahal sunrise tour", "Amer Fort jeep ride", "Yamuna & NE4 expressways", "Certified monument guides"],
         inclusions: ["4-Star Hotel Accommodations", "Daily Buffet Breakfast", "Private AC Chauffeur Cab", "All Expressway Tolls"],
@@ -1722,7 +1722,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         rating: 4.94,
         reviews: 142,
         badge: "Heritage & Wildlife",
-        image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800&q=80",
+        image: "/images/rajasthan/ranthambore_tiger.webp",
         overview: "Combine India's legendary architectural circuit with thrilling wildlife safaris in Ranthambore National Park, home to the elusive Royal Bengal Tiger.",
         highlights: ["Taj Mahal sunrise & Agra Fort UNESCO heritage", "2 Open-Top Canter/Gypsy Jungle Safaris in Ranthambore", "Jaipur Amer Fort jeep ascent & City Palace", "Fatehpur Sikri Buland Darwaza visit"],
         inclusions: ["6 Nights 4-Star Stays (Delhi, Agra, Ranthambore, Jaipur)", "Daily Buffet Breakfast & All Meals in Ranthambore", "2 Tiger Safaris with Forest Permits & Naturalist Guide", "Private AC Cab with Chauffeur for Entire Circuit"],
@@ -1736,7 +1736,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         rating: 4.93,
         reviews: 118,
         badge: "Spiritual Heritage",
-        image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=800&q=80",
+        image: "/images/tours/amritsar_wagah_border.webp",
         overview: "Witness the magnificent Taj Mahal and royal forts of Rajasthan, complemented by the spiritual aura of Amritsar's Golden Temple and the patriotic energy of Wagah Border.",
         highlights: ["Golden Temple night Palki Sahib ceremony", "High-energy Wagah Border Indo-Pak retreat ceremony", "Taj Mahal sunrise & Amer Fort jeep ride", "Qutub Minar & Delhi monuments"],
         inclusions: ["6 Nights Accommodations in 4-Star Hotels", "Daily Buffet Breakfast", "AC Express Train / Private Cab to Amritsar", "Private AC Chauffeur Cab for All Sightseeing"],
@@ -1750,7 +1750,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         rating: 4.87,
         reviews: 160,
         badge: "Fast Track",
-        image: "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=800&q=80",
+        image: "/images/tours/agra_fort.webp",
         overview: "A perfectly paced express tour for travelers wanting to see the Taj Mahal, Agra Fort, and the Pink City of Jaipur via modern expressways in just 4 days.",
         highlights: ["Speedy travel via Yamuna & NE4 Expressways", "Taj Mahal & Agra Fort UNESCO tours", "Amber Fort, Hawa Mahal & City Palace in Jaipur", "Door-to-door private AC cab pickup from Delhi"],
         inclusions: ["3 Nights Hotel Stays (1N Agra + 2N Jaipur)", "Daily Breakfast at Hotels", "Private AC Chauffeur Cab for All Travel", "All Expressway Tolls, Parking & Driver DA"],
@@ -1767,7 +1767,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
     name: "Same Day Tours",
     title: "Same Day Tour Packages",
     tagline: "Quick, Exciting 1-Day Road Trips from Delhi NCR",
-    heroImage: "https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=2000&q=80",
+    heroImage: "/images/tours/fatehpur_sikri.webp",
     description:
       "Short on time but eager to explore? Travel Hawkers’ Same Day Tour Packages are perfect for travelers who want to experience the best of India in just one day with doorstep pickup and drop in Delhi NCR.",
     fullOverview: [
@@ -1785,17 +1785,17 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
       {
         title: "Same Day Agra Taj Mahal Express",
         description: "Early morning pickup via Yamuna Expressway, visit Taj Mahal, Agra Fort, Mughlai lunch, and return home by 9 PM.",
-        image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800&q=80",
+        image: "/images/weekend/agra_taj_reflection.webp",
       },
       {
         title: "Same Day Mathura-Vrindavan Spiritual Yatra",
         description: "Visit Krishna Janmabhoomi, Banke Bihari Temple, Prem Mandir light and fountain show, returning same night.",
-        image: "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?auto=format&fit=crop&w=800&q=80",
+        image: "/images/tours/mathura_vrindavan.webp",
       },
       {
         title: "Same Day Haridwar & Rishikesh Ganga Aarti",
         description: "Visit Har Ki Pauri, Mansa Devi ropeway, Ram Jhula & Laxman Jhula, and witness the magical evening Ganga Aarti.",
-        image: "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=800&q=80",
+        image: "/images/tours/haridwar_rishikesh.webp",
       },
     ],
     itinerary: [
@@ -1816,7 +1816,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         rating: 4.92,
         reviews: 140,
         badge: "Bestseller",
-        image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800&q=80",
+        image: "/images/weekend/agra_mehtab_bagh.webp",
         overview: "Taj Mahal, Agra Fort, Mehtab Bagh with doorstep pickup & drop in Delhi NCR via Yamuna Expressway.",
         highlights: ["Taj Mahal & Agra Fort", "Yamuna Expressway tolls included", "Doorstep pickup in NCR", "English-speaking guide"],
         inclusions: ["Private Dedicated AC Cab", "All Expressway Tolls & Parking", "Experienced Chauffeur DA", "Doorstep Pickup & Drop"],
@@ -1830,7 +1830,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         rating: 4.88,
         reviews: 95,
         badge: "Spiritual Special",
-        image: "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?auto=format&fit=crop&w=800&q=80",
+        image: "/images/tours/vrindavan_prem_mandir.webp",
         overview: "Visit Krishna Janmasthan, Banke Bihari temple, ISKCON, and Prem Mandir musical fountain light show.",
         highlights: ["Krishna Janmabhoomi", "Banke Bihari VIP Darshan guidance", "Prem Mandir evening lights", "Clean AC cab"],
         inclusions: ["Private AC Car", "All Tolls & Parking", "Chauffeur Allowance", "Doorstep Pickup & Drop"],
@@ -1844,7 +1844,7 @@ export const DOMESTIC_DESTINATIONS: Record<string, DomesticDestinationData> = {
         rating: 4.86,
         reviews: 70,
         badge: "Fast Track",
-        image: "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=800&q=80",
+        image: "/images/tours/jaipur_express.webp",
         overview: "Reach Jaipur in just 3.5 hrs via Delhi-Mumbai Expressway. Visit Amber Fort, Jal Mahal, and City Palace in one day.",
         highlights: ["3.5 hours drive via NE4", "Amber Fort & Hawa Mahal", "Pink City markets", "Return same night"],
         inclusions: ["Private Sedan / SUV", "All NE4 Tolls & Parking", "Professional Chauffeur", "Delhi NCR Pickup"],

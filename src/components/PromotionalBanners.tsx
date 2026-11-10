@@ -15,7 +15,7 @@ export default function PromotionalBanners({ onSelectCategory }: PromotionalBann
           {/* International Holidays Banner */}
           <div className="reveal-left group relative h-72 sm:h-84 md:h-96 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover-shine-container transform hover:-translate-y-2 bg-[#0B2724]">
             <Image
-              src="https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1200&q=80"
+              src="/images/international/europe_eiffel_tower.webp"
               alt="International Holidays"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -50,7 +50,7 @@ export default function PromotionalBanners({ onSelectCategory }: PromotionalBann
           {/* Domestic Getaways Banner */}
           <div className="reveal-right delay-150 group relative h-72 sm:h-84 md:h-96 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover-shine-container transform hover:-translate-y-2 bg-[#0B2724]">
             <Image
-              src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1200&q=80"
+              src="/images/kashmir/kashmir_paradise.webp"
               alt="Domestic Getaways"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"

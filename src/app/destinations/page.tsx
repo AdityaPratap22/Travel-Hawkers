@@ -32,7 +32,7 @@ export default function DestinationsPage() {
       category: ["Domestic India", "Mountain & Hills", "Culture & Heritage"],
       bestTime: "May to Sep",
       priceFrom: 28999,
-      image: "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&w=900&q=80",
+      image: "/images/ladakh/hero.webp",
       description: "High-altitude mountain passes, serene azure Pangong Lake, and centuries-old Buddhist gompas.",
       highlights: ["Pangong Lake", "Nubra Valley", "Khardung La Pass", "Thiksey Monastery"],
     },
@@ -44,7 +44,7 @@ export default function DestinationsPage() {
       category: ["International", "Beach Escapes", "Culture & Heritage"],
       bestTime: "Apr to Oct",
       priceFrom: 54999,
-      image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=900&q=80",
+      image: "/images/international/bali_uluwatu.webp",
       description: "Lush rice terraces in Ubud, mystical water temples, and world-class beachfront sunsets.",
       highlights: ["Uluwatu Temple", "Ubud Monkey Forest", "Tegalalang Rice Terraces", "Seminyak Beach"],
     },
@@ -56,7 +56,7 @@ export default function DestinationsPage() {
       category: ["International"],
       bestTime: "Nov to Mar",
       priceFrom: 49999,
-      image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=80",
+      image: "/images/international/dubai_burj_khalifa.webp",
       description: "Futuristic skyscrapers, luxury shopping malls, thrilling desert safaris, and Arabian hospitality.",
       highlights: ["Burj Khalifa", "Desert Safari with BBQ", "Dubai Mall & Fountain", "Palm Jumeirah"],
     },
@@ -68,7 +68,7 @@ export default function DestinationsPage() {
       category: ["Domestic India", "Beach Escapes"],
       bestTime: "Oct to Apr",
       priceFrom: 12999,
-      image: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=900&q=80",
+      image: "/images/goa/hero.webp",
       description: "Golden sand beaches, vibrant coastal nightlife, Portuguese architecture, and fresh seafood shacks.",
       highlights: ["Baga & Calangute Beach", "Dudhsagar Waterfalls", "Old Goa Churches", "Sunset Cruise"],
     },
@@ -80,7 +80,7 @@ export default function DestinationsPage() {
       category: ["Domestic India", "Culture & Heritage"],
       bestTime: "Oct to Mar",
       priceFrom: 16499,
-      image: "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=900&q=80",
+      image: "/images/rajasthan/hawa_mahal.webp",
       description: "The Pink City featuring royal palaces, hill-top majestic forts, and rich artisan bazaars.",
       highlights: ["Hawa Mahal", "Amer Fort", "City Palace", "Chokhi Dhani Heritage Village"],
     },
@@ -92,7 +92,7 @@ export default function DestinationsPage() {
       category: ["Domestic India", "Beach Escapes", "Mountain & Hills"],
       bestTime: "Sep to Mar",
       priceFrom: 21999,
-      image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=900&q=80",
+      image: "/images/kerala/hero.webp",
       description: "God's Own Country with tranquil Alleppey houseboats, Munnar tea hills, and ayurvedic spas.",
       highlights: ["Alleppey Backwaters Houseboat", "Munnar Tea Plantations", "Periyar Wildlife Sanctuary", "Kovalam Beach"],
     },
@@ -104,7 +104,7 @@ export default function DestinationsPage() {
       category: ["International", "Beach Escapes", "Culture & Heritage"],
       bestTime: "Nov to Apr",
       priceFrom: 34999,
-      image: "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=900&q=80",
+      image: "/images/international/thailand_phi_phi.webp",
       description: "Exotic islands, floating markets, ornate golden temples, and lively night markets.",
       highlights: ["Phi Phi Islands", "Bangkok Grand Palace", "Phuket Beaches", "Chiang Mai Temples"],
     },
@@ -116,7 +116,7 @@ export default function DestinationsPage() {
       category: ["Domestic India", "Mountain & Hills"],
       bestTime: "Year Round",
       priceFrom: 32499,
-      image: "https://images.unsplash.com/photo-1566837945700-30057527ade0?auto=format&fit=crop&w=900&q=80",
+      image: "/images/kashmir/hero.webp",
       description: "Paradise on Earth with shikara rides on Dal Lake, snow slopes of Gulmarg, and lush Pahalgam valleys.",
       highlights: ["Dal Lake Shikara & Houseboat", "Gulmarg Gondola Ride", "Pahalgam Betaab Valley", "Sonamarg Glaciers"],
     },
@@ -140,7 +140,7 @@ export default function DestinationsPage() {
         <div className="relative bg-[#0b252c] text-white py-16 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
           <div className="absolute inset-0 opacity-20 pointer-events-none">
             <Image
-              src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80"
+              src="/images/international/europe_swiss_alps.webp"
               alt="Destinations cover"
               fill
               className="object-cover"

@@ -58,7 +58,7 @@ export default function ChardhamYatraPage() {
       altitude: "3,291 m",
       desc: "The sacred origin of the Yamuna River. Pilgrims take a holy dip in the natural hot spring of Surya Kund and seek blessings at the sacred Divya Shila.",
       highlight: "Holy dip in Surya Kund hot springs & scenic mountain trek",
-      image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=800&q=80",
+      image: "/images/chardham/yamunotri_temple.webp",
     },
     {
       name: "Gangotri",
@@ -66,7 +66,7 @@ export default function ChardhamYatraPage() {
       altitude: "3,100 m",
       desc: "The venerated origin seat of River Ganga on the banks of the Bhagirathi River. Surrounded by towering deodar and pine forests in the greater Himalayas.",
       highlight: "Bhagirath Shila, Submerged Shivling & peaceful prayer ghats",
-      image: "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?auto=format&fit=crop&w=800&q=80",
+      image: "/images/chardham/gangotri_temple.webp",
     },
     {
       name: "Kedarnath",
@@ -74,7 +74,7 @@ export default function ChardhamYatraPage() {
       altitude: "3,584 m",
       desc: "One of the 12 sacred Jyotirlingas, nestled majestically against the snow-clad Kedarnath peak and Mandakini River. Reachable by trek, pony, or helicopter.",
       highlight: "Ancient stone temple, Mandakini riverbank & evening Bhairavnath Aarti",
-      image: "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=800&q=80",
+      image: "/images/chardham/kedarnath_temple.webp",
     },
     {
       name: "Badrinath",
@@ -82,7 +82,7 @@ export default function ChardhamYatraPage() {
       altitude: "3,300 m",
       desc: "The holy abode of Lord Vishnu between the Nar and Narayana mountain ranges along the Alaknanda River. Home to Tapt Kund and the last Indian village of Mana.",
       highlight: "Badrinath Temple Darshan, Tapt Kund & Vyas Gufa in Mana",
-      image: "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=800&q=80",
+      image: "/images/chardham/badrinath_temple.webp",
     },
   ];
 
@@ -139,7 +139,7 @@ export default function ChardhamYatraPage() {
         <div className="relative bg-[#0b252c] text-white py-16 sm:py-24 overflow-hidden">
           <div className="absolute inset-0 opacity-25">
             <Image
-              src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=2000&q=80"
+              src="/images/chardham/kedarnath_temple.webp"
               alt="Himalayan sacred mountains"
               fill
               className="object-cover"

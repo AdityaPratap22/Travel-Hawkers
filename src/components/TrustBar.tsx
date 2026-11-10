@@ -4,8 +4,8 @@ export default function TrustBar() {
   const benefits = [
     {
       icon: ShieldCheck,
-      title: "Best Price Guaranteed",
-      subtitle: "Unbeatable deals",
+      title: "Price Match Guaranteed",
+      subtitle: "Found lower? We'll match it",
     },
     {
       icon: Sparkles,

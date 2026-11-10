@@ -218,6 +218,10 @@ export default function DomesticDestinationView({ destination }: Props) {
                 </div>
 
                 <div className="space-y-3 pt-2">
+                  <div className="flex items-center gap-2.5 text-xs text-amber-900 bg-amber-50 border border-amber-200/90 rounded-xl p-2.5 font-bold shadow-2xs">
+                    <ShieldCheck className="w-4 h-4 text-[#B58238] shrink-0" />
+                    <span>Price Match Guaranteed: Found lower? We match or beat it!</span>
+                  </div>
                   <div className="flex items-center gap-3 text-xs text-slate-700 font-medium">
                     <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
                     <span>100% Customized Itineraries</span>
@@ -282,6 +286,7 @@ export default function DomesticDestinationView({ destination }: Props) {
                       src={h.image}
                       alt={h.title}
                       fill
+                      loading="eager"
                       sizes="(max-width: 768px) 100vw, 33vw"
                       className="object-cover"
                     />
@@ -326,6 +331,7 @@ export default function DomesticDestinationView({ destination }: Props) {
                       src={pkg.image || destination.heroImage}
                       alt={pkg.title}
                       fill
+                      loading="eager"
                       sizes="(max-width: 1024px) 100vw, 50vw"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />

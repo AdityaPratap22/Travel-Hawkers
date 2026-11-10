@@ -55,7 +55,7 @@ export default function DomesticPackagesPage() {
       reviews: 142,
       badge: "Bestseller",
       image:
-        "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=900&q=80",
+        "/images/himachal/hero.webp",
       overview:
         "Bollywood’s personal favourite and a lively winter sports destination. Experience paragliding, mountain biking, zorbing at Solang Valley, Rohtang Pass, and ancient temples like Hidimba Devi.",
       highlights: [
@@ -77,7 +77,7 @@ export default function DomesticPackagesPage() {
       reviews: 218,
       badge: "Trending",
       image:
-        "https://images.unsplash.com/photo-1598091383021-15ddea10925d?auto=format&fit=crop&w=900&q=80",
+        "/images/kashmir/hero.webp",
       overview:
         "Mughal Emperor Jehangir’s heaven on earth. Enjoy peaceful Shikara rides on Dal Lake, stay in a heritage cedar wood houseboat, ride the Gulmarg Gondola, and visit Betaab Valley.",
       highlights: [
@@ -99,7 +99,7 @@ export default function DomesticPackagesPage() {
       reviews: 164,
       badge: "Royal Special",
       image:
-        "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=900&q=80",
+        "/images/rajasthan/hero.webp",
       overview:
         "Immerse yourself in the grandeur of the Rajput era. Grand palaces, Thar Desert camel safaris with folk dances, vintage car collections, and colorful bazaars.",
       highlights: [
@@ -121,7 +121,7 @@ export default function DomesticPackagesPage() {
       reviews: 189,
       badge: "Nature Escape",
       image:
-        "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=900&q=80",
+        "/images/kerala/hero.webp",
       overview:
         "Rolling emerald tea estates in Munnar, spice plantations and Periyar wildlife sanctuary in Thekkady, capped with an unforgettable luxury private houseboat cruise through Alleppey backwaters.",
       highlights: [
@@ -143,7 +143,7 @@ export default function DomesticPackagesPage() {
       reviews: 310,
       badge: "High Altitude Thrill",
       image:
-        "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&w=900&q=80",
+        "/images/ladakh/hero.webp",
       overview:
         "Once-in-a-lifetime expedition to the rooftop of the world. Cross Khardung La (18,380 ft), ride double-humped camels in Hunder sand dunes, and camp beside the surreal blue waters of Pangong Tso.",
       highlights: [
@@ -165,7 +165,7 @@ export default function DomesticPackagesPage() {
       reviews: 240,
       badge: "Weekend Friendly",
       image:
-        "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=900&q=80",
+        "/images/goa/hero.webp",
       overview:
         "Unwind on golden sands, sample fresh Goan seafood curries, explore Portuguese churches in Old Goa, and dance the sunset away on a private catamaran cruise with watersports.",
       highlights: [
@@ -186,7 +186,7 @@ export default function DomesticPackagesPage() {
       rating: 4.89,
       reviews: 175,
       image:
-        "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=900&q=80",
+        "/images/tours/taj_mahal_sunrise.webp",
       overview:
         "The most celebrated cultural triangle of India. Witness the immortal Taj Mahal at sunrise, Delhi’s Red Fort & Qutub Minar, and the magnificent pink sandstone architecture of Jaipur.",
       highlights: [
@@ -207,7 +207,7 @@ export default function DomesticPackagesPage() {
       rating: 4.82,
       reviews: 95,
       image:
-        "https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=1200&q=80",
+        "/images/tours/fatehpur_sikri.webp",
       overview:
         "Short on time? Board our early morning sanitized chauffeur cab from Delhi NCR, explore iconic destinations like the Taj Mahal or Mathura-Vrindavan temples, and return home comfortably by nightfall.",
       highlights: [

@@ -46,7 +46,7 @@ const HERO_SLIDES: HeroSlide[] = [
     country: "Indonesia",
     tagline: "Tropical Clifftop Villas, Ubud Greenery & Sacred Temples",
     link: "/international-packages#bali",
-    image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=2000&q=85",
+    image: "/images/international/bali_uluwatu.webp",
   },
   {
     id: "kashmir",
@@ -56,7 +56,7 @@ const HERO_SLIDES: HeroSlide[] = [
     country: "India",
     tagline: "Dal Lake Luxury Houseboats, Gulmarg Gondola & Snow Peaks",
     link: "/packages#kashmir-paradise",
-    image: "https://images.unsplash.com/photo-1598091383021-15ddea10925d?auto=format&fit=crop&w=2000&q=85",
+    image: "/images/kashmir/hero.webp",
   },
   {
     id: "dubai",
@@ -66,7 +66,7 @@ const HERO_SLIDES: HeroSlide[] = [
     country: "UAE",
     tagline: "Burj Khalifa, Arabian Desert Safari & Sheikh Zayed Mosque",
     link: "/international-packages#dubai",
-    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=85",
+    image: "/images/international/dubai_burj_khalifa.webp",
   },
   {
     id: "kerala",
@@ -75,8 +75,8 @@ const HERO_SLIDES: HeroSlide[] = [
     destination: "Kerala",
     country: "India",
     tagline: "Alleppey Houseboat Backwaters, Tea Plantations & Ayurvedic Spas",
-    link: "/packages#goa-getaway",
-    image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=2000&q=85",
+    link: "/domestic-packages/kerala",
+    image: "/images/kerala/hero.webp",
   },
   {
     id: "vietnam",
@@ -86,7 +86,7 @@ const HERO_SLIDES: HeroSlide[] = [
     country: "Da Nang & Halong",
     tagline: "Emerald Halong Bay Cruises & Iconic Golden Hand Bridge",
     link: "/international-packages#vietnam",
-    image: "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=2000&q=85",
+    image: "/images/international/vietnam_halong_bay.webp",
   },
   {
     id: "ladakh",
@@ -96,7 +96,7 @@ const HERO_SLIDES: HeroSlide[] = [
     country: "India",
     tagline: "Azure Pangong Tso, Khardung La Pass & Ancient Monasteries",
     link: "/packages#leh-ladakh-escape",
-    image: "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?auto=format&fit=crop&w=2000&q=85",
+    image: "/images/ladakh/hero.webp",
   },
 ];
 
@@ -230,7 +230,7 @@ export default function Hero({ onSearch }: HeroProps) {
                 {/* Taj Mahal Image */}
                 <div className="relative h-36 sm:h-44 md:h-38 lg:h-52 xl:h-56 w-full rounded-xl overflow-hidden bg-stone-100 shadow-inner">
                   <Image
-                    src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800&q=80"
+                    src="/images/tours/taj_mahal_sunrise.webp"
                     alt="Taj Mahal Agra Wonder of the World"
                     fill
                     sizes="(max-width: 640px) 240px, (max-width: 1024px) 260px, 340px"

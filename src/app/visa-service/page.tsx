@@ -100,7 +100,7 @@ export default function VisaServicePage() {
         <div className="relative bg-[#0b252c] text-white py-16 sm:py-24 overflow-hidden">
           <div className="absolute inset-0 opacity-20">
             <Image
-              src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=2000&q=80"
+              src="/images/international/singapore_jewel.webp"
               alt="Global visa travel"
               fill
               className="object-cover"
@@ -111,11 +111,21 @@ export default function VisaServicePage() {
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4">
               Fast, Reliable <span className="text-[#f05a28]">Visa Services</span>
             </h1>
-            <p className="text-sm sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed mb-4">
               Wherever you are traveling—from Asia to the USA, the Middle East to Europe—Travel Hawkers
               makes your visa process smooth, transparent, and completely stress-free.
             </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <div className="flex flex-wrap items-center justify-center gap-3 text-xs font-semibold text-emerald-300 mb-6">
+              <span className="inline-flex items-center gap-1.5 bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 backdrop-blur-md">
+                <ShieldCheck className="w-4 h-4 text-[#DEB887]" />
+                Price Match Guaranteed • Lowest Visa Service Fees
+              </span>
+              <span className="inline-flex items-center gap-1.5 bg-white/10 px-3.5 py-1.5 rounded-full border border-white/15 backdrop-blur-md">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                99.4% Approval Assistance
+              </span>
+            </div>
+            <div className="flex flex-wrap justify-center gap-4">
               <button
                 onClick={() => openModal("Tourist Visa Consultation")}
                 className="bg-[#f05a28] hover:bg-[#dc4816] text-white text-sm font-bold px-7 py-3.5 rounded-full shadow-lg transition-transform transform hover:scale-105"
