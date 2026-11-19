@@ -26,6 +26,10 @@ import {
   Globe2,
   FileCheck,
   Camera,
+  Building2,
+  Plane,
+  FileText,
+  Sparkles,
 } from "lucide-react";
 
 interface Props {
@@ -269,6 +273,31 @@ export default function InternationalPackageDetailView({ pkg }: Props) {
               </div>
             </div>
 
+            {/* Flight / Peak Season Pricing Option Banner */}
+            {pkg.flightPrice && (
+              <div className="bg-white/10 backdrop-blur-md border border-amber-400/40 rounded-2xl p-4 max-w-3xl flex flex-wrap items-center justify-between gap-3 text-white">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-400/30 flex items-center justify-center shrink-0">
+                    <Plane className="w-5 h-5 text-amber-300" />
+                  </div>
+                  <div>
+                    <div className="text-[11px] font-bold text-amber-300 uppercase tracking-wider">
+                      Peak Season Pricing (GST &amp; All Taxes Included)
+                    </div>
+                    <div className="text-xs sm:text-sm text-slate-200 mt-0.5">
+                      <strong className="text-white">Land Only:</strong> {pkg.price}* / person &bull;{" "}
+                      <strong className="text-white">With Return Flights:</strong> {pkg.flightPrice}* / person
+                    </div>
+                  </div>
+                </div>
+                {pkg.peakSeasonWindow && (
+                  <span className="text-[11px] text-amber-200 bg-amber-400/20 border border-amber-400/30 px-3 py-1 rounded-full font-medium">
+                    Valid: {pkg.peakSeasonWindow}
+                  </span>
+                )}
+              </div>
+            )}
+
             {/* CTAs */}
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <button
@@ -450,16 +479,130 @@ export default function InternationalPackageDetailView({ pkg }: Props) {
                   </div>
                 </div>
 
+                {/* Accommodation Details (when specified) */}
+                {pkg.accommodation && pkg.accommodation.length > 0 && (
+                  <div className="bg-amber-50/40 border border-amber-200/80 rounded-3xl p-6 sm:p-7 space-y-4">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+                        <Building2 className="w-5 h-5 text-amber-600" />
+                        <span>Accommodation ({pkg.duration} — 4-Star Properties)</span>
+                      </h3>
+                      <span className="text-[11px] font-bold text-amber-900 bg-amber-100 border border-amber-300 px-3 py-1 rounded-full">
+                        Daily Breakfast included (CP)
+                      </span>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
+                      {pkg.accommodation.map((acc, idx) => (
+                        <div
+                          key={idx}
+                          className="bg-white border border-amber-200/70 rounded-2xl p-5 shadow-2xs space-y-2 hover:border-amber-300 transition-colors"
+                        >
+                          <div className="flex items-center justify-between">
+                            <span className="text-[11px] font-bold text-amber-800 uppercase tracking-wider bg-amber-50 px-2.5 py-0.5 rounded-md border border-amber-200/60">
+                              {acc.nights} in {acc.place}
+                            </span>
+                            <div className="flex items-center gap-0.5 text-amber-400">
+                              {[...Array(4)].map((_, s) => (
+                                <Star key={s} className="w-3.5 h-3.5 fill-amber-400" />
+                              ))}
+                            </div>
+                          </div>
+                          <div className="text-sm sm:text-base font-extrabold text-slate-900 leading-snug">
+                            {acc.hotel}
+                          </div>
+                          {acc.mealPlan && (
+                            <div className="text-xs text-slate-600 font-medium flex items-center gap-1.5 pt-2 border-t border-slate-100">
+                              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                              <span>{acc.mealPlan}</span>
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Peak Season Pricing Options Card */}
+                {pkg.flightPrice && (
+                  <div className="bg-gradient-to-br from-[#0B2724] to-slate-900 border border-amber-400/40 rounded-3xl p-6 sm:p-7 text-white space-y-5 shadow-xl">
+                    <div className="flex flex-wrap items-center justify-between gap-2 border-b border-white/10 pb-3">
+                      <div className="flex items-center gap-2">
+                        <Sparkles className="w-5 h-5 text-amber-400" />
+                        <span className="text-sm font-bold text-amber-300 uppercase tracking-wider">
+                          Peak Season Package Pricing
+                        </span>
+                      </div>
+                      {pkg.peakSeasonWindow && (
+                        <span className="text-xs text-amber-200 bg-amber-400/10 border border-amber-400/30 px-3 py-1 rounded-full font-medium">
+                          Valid: {pkg.peakSeasonWindow}
+                        </span>
+                      )}
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="bg-white/10 border border-white/15 rounded-2xl p-5 space-y-1.5">
+                        <div className="text-xs font-semibold text-slate-300 uppercase tracking-wide">
+                          Land-Only Package
+                        </div>
+                        <div className="text-2xl sm:text-3xl font-black text-amber-400">
+                          {pkg.price}*
+                          <span className="text-xs font-normal text-slate-300"> / person</span>
+                        </div>
+                        <div className="text-[11px] text-emerald-400 font-medium flex items-center gap-1">
+                          <CheckCircle2 className="w-3 h-3 text-emerald-400" />
+                          <span>Inclusive of GST &amp; all taxes</span>
+                        </div>
+                      </div>
+                      <div className="bg-white/10 border border-white/15 rounded-2xl p-5 space-y-1.5">
+                        <div className="text-xs font-semibold text-slate-300 uppercase tracking-wide">
+                          With Return Flights
+                        </div>
+                        <div className="text-2xl sm:text-3xl font-black text-white">
+                          {pkg.flightPrice}*
+                          <span className="text-xs font-normal text-slate-300"> / person</span>
+                        </div>
+                        <div className="text-[11px] text-emerald-400 font-medium flex items-center gap-1">
+                          <CheckCircle2 className="w-3 h-3 text-emerald-400" />
+                          <span>Inclusive of GST &amp; all taxes</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="text-[11px] text-slate-300 leading-relaxed font-normal pt-1 border-t border-white/10">
+                      *Starting rates based on a minimum of 6 guests traveling together. Flight-inclusive rates subject to live airline seat availability at time of confirmation.
+                    </div>
+                  </div>
+                )}
+
                 {/* Visa Information */}
                 {pkg.visaInfo && (
                   <div className="bg-blue-50/50 border border-blue-200/80 rounded-3xl p-6 sm:p-7 space-y-3">
                     <div className="flex items-center gap-2 text-sm font-bold text-slate-900">
                       <FileCheck className="w-5 h-5 text-blue-600" />
-                      <span>Visa Guidelines:</span>
+                      <span>Visa &amp; Entry Requirements:</span>
                     </div>
-                    <p className="text-xs sm:text-sm text-slate-700 font-medium">
-                      {pkg.visaInfo}. Our dedicated visa documentation desk assists you with end-to-end processing and required embassy formalities.
+                    <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                      {pkg.visaInfo}
                     </p>
+                  </div>
+                )}
+
+                {/* Terms and Conditions (when specified) */}
+                {pkg.termsAndConditions && pkg.termsAndConditions.length > 0 && (
+                  <div className="bg-slate-50 border border-slate-200/90 rounded-3xl p-6 sm:p-7 space-y-4">
+                    <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+                      <FileText className="w-5 h-5 text-slate-700" />
+                      <span>Important Terms &amp; Conditions</span>
+                    </h3>
+                    <ul className="space-y-3">
+                      {pkg.termsAndConditions.map((tc, idx) => (
+                        <li
+                          key={idx}
+                          className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 leading-relaxed font-medium"
+                        >
+                          <span className="text-[#f05a28] font-bold text-base leading-none mt-0.5 shrink-0">•</span>
+                          <span>{tc}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 )}
 
@@ -501,18 +644,54 @@ export default function InternationalPackageDetailView({ pkg }: Props) {
                     <div className="text-xs font-bold text-slate-500 uppercase tracking-wide">
                       Starting Price
                     </div>
-                    <div className="mt-2 flex items-baseline gap-3">
-                      <span className="text-3xl sm:text-4xl font-black text-slate-900">
-                        {pkg.price}
-                      </span>
-                      {pkg.originalPrice && (
-                        <span className="text-sm font-semibold text-slate-400 line-through">
-                          {pkg.originalPrice}
-                        </span>
-                      )}
-                    </div>
-                    <div className="text-xs text-slate-500 mt-1">
-                      Per person on twin sharing • Customizable dates &amp; hotels
+                    {pkg.flightPrice ? (
+                      <div className="mt-2 space-y-2">
+                        <div className="bg-amber-50/80 border border-amber-200/80 rounded-2xl p-3.5 space-y-0.5">
+                          <div className="text-[11px] font-bold text-amber-900 uppercase">
+                            Land Only Package
+                          </div>
+                          <div className="text-2xl sm:text-3xl font-black text-slate-900">
+                            {pkg.price}*
+                            <span className="text-xs font-normal text-slate-500"> / person</span>
+                          </div>
+                          <div className="text-[10px] text-emerald-600 font-bold">
+                            Inclusive of GST &amp; all taxes
+                          </div>
+                        </div>
+
+                        <div className="bg-slate-50 border border-slate-200 rounded-2xl p-3.5 space-y-0.5">
+                          <div className="text-[11px] font-bold text-slate-700 uppercase">
+                            With Return Flights
+                          </div>
+                          <div className="text-2xl sm:text-3xl font-black text-[#f05a28]">
+                            {pkg.flightPrice}*
+                            <span className="text-xs font-normal text-slate-500"> / person</span>
+                          </div>
+                          <div className="text-[10px] text-slate-500 font-medium">
+                            Inclusive of GST &amp; live airline fares
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                      <>
+                        <div className="mt-2 flex items-baseline gap-3">
+                          <span className="text-3xl sm:text-4xl font-black text-slate-900">
+                            {pkg.price}
+                          </span>
+                          {pkg.originalPrice && (
+                            <span className="text-sm font-semibold text-slate-400 line-through">
+                              {pkg.originalPrice}
+                            </span>
+                          )}
+                        </div>
+                        <div className="text-xs text-slate-500 mt-1">
+                          Per person on twin sharing • Customizable dates &amp; hotels
+                        </div>
+                      </>
+                    )}
+                    <div className="mt-3 flex items-center gap-2 text-xs text-amber-900 bg-amber-50/80 border border-amber-200/90 rounded-xl p-2.5 font-bold shadow-2xs">
+                      <ShieldCheck className="w-4 h-4 text-[#B58238] shrink-0" />
+                      <span>Price Match Guaranteed</span>
                     </div>
                   </div>
 

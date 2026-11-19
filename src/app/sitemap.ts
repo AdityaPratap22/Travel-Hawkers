@@ -121,6 +121,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "dubai-express",
     "dubai-luxury-honeymoon",
     "thailand",
+    "thailand-escape",
     "phuket-krabi-island-hopper",
     "complete-thailand-grand",
     "indonesia",

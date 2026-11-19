@@ -122,6 +122,7 @@ const ROUTE_LOOKUP: Record<string, string> = {
   "bali-romantic-honeymoon": "/bali-romantic-honeymoon",
   "bali-adventure-getaway": "/bali-adventure-getaway",
   "thailand": "/thailand",
+  "thailand-escape": "/thailand-escape",
   "phuket-krabi-island-hopper": "/phuket-krabi-island-hopper",
   "complete-thailand-grand": "/complete-thailand-grand",
   "europe-grand-tour": "/europe-grand-tour",

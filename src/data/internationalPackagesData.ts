@@ -19,6 +19,11 @@ export interface InternationalPackageData {
   exclusions?: string[];
   daywise?: { day: string; title: string; desc: string; image?: string }[];
   visaInfo: string;
+  flightPrice?: string;
+  peakSeasonWindow?: string;
+  pricingNote?: string;
+  accommodation?: { nights: string; place: string; hotel: string; mealPlan?: string }[];
+  termsAndConditions?: string[];
 }
 
 export const INTERNATIONAL_PACKAGES: Record<string, InternationalPackageData> = {
@@ -629,6 +634,114 @@ export const INTERNATIONAL_PACKAGES: Record<string, InternationalPackageData> = 
       { day: "Day 6", title: "Departure from Krabi", desc: "Breakfast at hotel and private transfer to Krabi Airport (or Phuket Airport) for onward flight." },
     ],
     visaInfo: "Visa-Free Entry for Indian Nationals",
+  },
+
+  "thailand-escape": {
+    id: "thailand-escape",
+    slug: "thailand-escape",
+    title: "Thailand Escape — Phuket & Bangkok",
+    country: "Thailand",
+    duration: "5 Nights / 6 Days",
+    price: "₹31,600",
+    flightPrice: "₹61,200",
+    originalPrice: "₹42,000",
+    peakSeasonWindow: "November – February & April",
+    pricingNote: "Peak Season Starting Cost: INR 31,600* per person — Land Only (Inclusive of GST & all taxes) | With Return Flights Starting Cost: INR 61,200* per person (Inclusive of GST & all taxes)",
+    rating: 4.96,
+    reviews: 248,
+    badge: "Peak Season Special",
+    route: "Phuket (3 Nights) – Phi Phi Islands – Bangkok (2 Nights) – Chao Phraya Cruise",
+    image: "/images/international/thailand_phuket.webp",
+    gallery: [
+      "/images/international/thailand_phuket.webp",
+      "/images/international/thailand_phi_phi.webp",
+      "/images/international/thailand_wat_arun.webp",
+      "/images/international/thailand_james_bond.webp",
+      "/images/international/thailand_big_buddha.webp",
+    ],
+    overview:
+      "Thailand Escape (5 Nights / 6 Days) is the ultimate tropical-meets-cosmopolitan vacation. Relax in stunning 4-star properties across Phuket and Bangkok with daily breakfast included. Sail across turquoise waters on a premium catamaran to the world-famous Phi Phi Islands, discover the cultural grandeur of Phuket's Big Buddha, admire Bangkok's gilded Buddhist temples, and dine under starlit skies aboard a luxury Chao Phraya River dinner cruise.",
+    highlights: [
+      "3 Nights in Phuket at Patong Resort Phuket or similar (4-Star)",
+      "2 Nights in Bangkok at Ramada by Wyndham Sukhumvit Soi 11 or similar (4-Star)",
+      "Phi Phi Islands Premium Catamaran Tour with snorkeling & buffet lunch",
+      "Phuket City Tour: Big Buddha, Wat Chalong & panoramic viewpoints",
+      "Bangkok Temples Tour: Wat Traimit (Golden Buddha) & Marble Temple",
+      "Chao Phraya River Luxury Dinner Cruise with live international entertainment",
+      "Return Private Airport Transfers (Phuket & Bangkok)",
+      "Complimentary Local-Use SIM Card with high-speed mobile data",
+      "All applicable taxes & GST included in package rate",
+    ],
+    accommodation: [
+      {
+        nights: "3 Nights",
+        place: "Phuket",
+        hotel: "Patong Resort Phuket or similar",
+        mealPlan: "Daily Breakfast included (CP)",
+      },
+      {
+        nights: "2 Nights",
+        place: "Bangkok",
+        hotel: "Ramada by Wyndham Bangkok Sukhumvit Soi 11 or similar",
+        mealPlan: "Daily Breakfast included (CP)",
+      },
+    ],
+    inclusions: [
+      "Accommodation (5 Nights — 4-Star Properties: 3N Phuket + 2N Bangkok)",
+      "Meal Plan: Daily Buffet Breakfast included (CP)",
+      "Phuket City Tour with Big Buddha & Wat Chalong",
+      "Phi Phi Islands Premium Catamaran Tour with snorkeling & buffet lunch",
+      "Bangkok City & Temples Tour (Wat Traimit & Wat Benchamabophit)",
+      "Chao Phraya River Luxury Dinner Cruise tickets",
+      "Transfers: Return Private Airport Transfers",
+      "Extras: Complimentary Local-Use SIM Card",
+      "Taxes: All applicable taxes & GST included",
+    ],
+    exclusions: [
+      "Flights: Excluded in Land-Only package (INR 31,600/person); Included in Flight-Inclusive package (INR 61,200/person)",
+      "National Park fee in Phi Phi (approx. 400 THB per person, payable directly in cash)",
+      "Personal expenses, room service, alcoholic beverages, and tipping for guides/drivers",
+      "Travel insurance (recommended, available upon request)",
+    ],
+    termsAndConditions: [
+      "Group Size: Starting rates are based on a minimum group size of 6 guests traveling together.",
+      "Seasonal & Availability Policy: Rates reflect peak-season pricing and remain subject to hotel, flight, and service availability at the time of booking; if primary hotels are sold out, equivalent 4-star properties will be provided.",
+      "Flights: Excluded in the Land-Only package (INR 31,600/person); included in the Flight-Inclusive package (INR 61,200/person, subject to live fare availability).",
+      "Visa & Entry Requirements: Indian passport holders currently qualify for visa-free tourist entry for up to 30 days (free of charge; mandatory Thailand Digital Arrival Card [TDAC] must be completed online free of charge within 72 hours prior to arrival).",
+    ],
+    daywise: [
+      {
+        day: "Day 1",
+        title: "Arrival in Phuket & Private Airport Transfer",
+        desc: "Sawadee ka! Welcome to Phuket, Thailand's premier tropical paradise. Upon arrival at Phuket International Airport, meet our representative for your private transfer to Patong Resort Phuket (4-Star). Receive your complimentary local-use SIM card for instant connectivity. Spend your evening relaxing on Patong Beach or exploring the vibrant cafes and night markets of Bangla Road.",
+      },
+      {
+        day: "Day 2",
+        title: "Phi Phi Islands Premium Catamaran Tour",
+        desc: "Embark on an exhilarating full-day cruise to the world-famous Phi Phi archipelago aboard a premium luxury catamaran. Sail past towering limestone cliffs to Maya Bay (famed from 'The Beach'), swim and snorkel in the emerald waters of Pileh Lagoon, visit mysterious Viking Cave, and see Monkey Beach. Enjoy a lavish buffet lunch on the island before sailing back at sunset.",
+      },
+      {
+        day: "Day 3",
+        title: "Phuket City Sightseeing & Cultural Tour",
+        desc: "Discover Phuket's rich culture and coastal majesty. Visit the iconic 45-meter-tall Big Buddha seated high on Nakkerd Hill offering panoramic island views, tour the ornate sacred shrines of Wat Chalong, stroll through historic Sino-Portuguese shophouses in Phuket Old Town, and stop at scenic viewpoints along the Andaman coastline.",
+      },
+      {
+        day: "Day 4",
+        title: "Phuket to Bangkok & Chao Phraya Dinner Cruise",
+        desc: "Enjoy breakfast at Patong Resort. Board your private transfer to Phuket Airport for your flight to Bangkok. Upon landing at Bangkok (BKK/DMK), enjoy private transfer to Ramada by Wyndham Bangkok Sukhumvit Soi 11 (4-Star). In the evening, step aboard a luxury dinner cruise on the Chao Phraya River, gliding past illuminated temples with a feast of Thai and international dishes and live musical entertainment.",
+      },
+      {
+        day: "Day 5",
+        title: "Bangkok Temples Tour & City Shopping",
+        desc: "Embark on a guided Bangkok city and temple tour: marvel at the world's largest solid-gold Buddha statue at Wat Traimit (5.5 tons of pure gold) and visit the magnificent Italian marble facade of Wat Benchamabophit (Marble Temple). Spend your afternoon shopping at Bangkok's top lifestyle hubs: CentralWorld, Pratunam Market, Platinum Fashion Mall, or Siam Paragon.",
+      },
+      {
+        day: "Day 6",
+        title: "Bangkok Leisure & Departure Transfer",
+        desc: "Savor a leisurely breakfast at Ramada Sukhumvit 11. Enjoy last-minute shopping for Thai silks, souvenirs, and authentic local snacks. At the scheduled time, board your private transfer to Bangkok International Airport for your onward flight with unforgettable memories of your Thailand Escape.",
+      },
+    ],
+    visaInfo: "Visa-Free Tourist Entry for Indian Passport Holders (up to 30 Days) • Mandatory TDAC online form within 72h prior to arrival",
   },
 
   "complete-thailand-grand": {

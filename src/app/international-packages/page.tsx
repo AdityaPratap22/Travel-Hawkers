@@ -27,6 +27,7 @@ interface InternationalPackage {
   citiesCovered: string[];
   duration: string;
   price: string;
+  flightPrice?: string;
   originalPrice: string;
   rating: number;
   reviews: number;
@@ -232,6 +233,52 @@ export default function InternationalPackagesPage() {
       ],
       inclusions: ["4-Star Hotels in Pattaya & Bangkok", "Daily Breakfast", "Coral Island Speedboat Tour", "All Airport & Inter-City Transfers"],
       visaInfo: "Visa-Free Exemption for Indian Passport Holders",
+    },
+    {
+      id: "thailand-escape",
+      slug: "/thailand-escape",
+      title: "Thailand Escape (Phuket & Bangkok)",
+      country: "Thailand",
+      citiesCovered: ["Phuket", "Phi Phi Islands", "Bangkok"],
+      duration: "5 Nights / 6 Days",
+      price: "₹31,600",
+      flightPrice: "₹61,200",
+      originalPrice: "₹42,000",
+      rating: 4.96,
+      reviews: 248,
+      badge: "Peak Season Special",
+      image: "/images/international/thailand_phuket.webp",
+      overview:
+        "The ultimate 5 Nights / 6 Days Thai getaway combining tropical island bliss in Phuket with the vibrant cultural energy of Bangkok. Stay in curated 4-star properties, explore Phi Phi Islands aboard a premium catamaran, marvel at Bangkok's sacred temples, and dine under starlit skies aboard a Chao Phraya River dinner cruise.",
+      keyPoints: [
+        "Accommodation: 3N Phuket (Patong Resort or similar) + 2N Bangkok (Ramada Sukhumvit 11 or similar) — 4-Star Properties",
+        "Meal Plan: Daily Breakfast included (CP) across all hotels",
+        "Phi Phi Islands: Full-day Premium Catamaran Tour with snorkeling & buffet lunch",
+        "Phuket City Tour: Big Buddha, Wat Chalong & panoramic viewpoints",
+        "Bangkok Temples Tour: Wat Traimit (Golden Buddha) & Marble Temple",
+        "Chao Phraya River: Luxury dinner cruise with live international entertainment",
+        "Private Transfers: Return private airport transfers in Phuket & Bangkok",
+        "Extras: Complimentary local-use SIM card + All GST & taxes included",
+        "Pricing: Land-Only from INR 31,600* | With Return Flights from INR 61,200* (Peak Season: Nov–Feb & Apr)",
+      ],
+      highlights: [
+        "Phi Phi Islands Premium Catamaran Tour with snorkeling & lunch",
+        "Phuket City Tour & Big Buddha atop Nakkerd Hill",
+        "Bangkok Temples Tour (Wat Traimit & Marble Temple)",
+        "Chao Phraya River Luxury Dinner Cruise",
+        "3N Patong Resort Phuket + 2N Ramada Wyndham Bangkok (4-Star)",
+      ],
+      inclusions: [
+        "5 Nights in 4-Star Properties (3N Phuket + 2N Bangkok)",
+        "Daily Breakfast (CP Plan)",
+        "Phi Phi Catamaran Tour with Lunch",
+        "Phuket City Tour & Bangkok Temples Tour",
+        "Chao Phraya Dinner Cruise",
+        "Return Private Airport Transfers",
+        "Complimentary Local SIM Card",
+        "All Taxes & GST Included",
+      ],
+      visaInfo: "Visa-Free Tourist Entry for Indian Passport Holders (up to 30 Days) • Mandatory TDAC online form",
     },
 
     {
