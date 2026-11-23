@@ -22,8 +22,6 @@ const caveat = Caveat({
 const playfair = Playfair_Display({
   variable: "--font-serif",
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
-  style: ["normal", "italic"],
   display: "swap",
 });
 
