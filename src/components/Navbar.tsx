@@ -63,7 +63,7 @@ export default function Navbar({}: NavbarProps) {
       ],
     },
     {
-      title: "Weekend getaways",
+      title: "Weekend Getaways",
       href: "/weekend-getaways",
       isActive: pathname.startsWith("/weekend-getaways"),
       hasDropdown: true,
